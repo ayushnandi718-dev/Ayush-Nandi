@@ -90,18 +90,50 @@ const EXPERIENCES = [
 // --- Sub-Components ---
 
 const ComingSoonOverlay = ({ onClose }) => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    // Target date: January 2nd, 2026
+    const targetDate = new Date('January 2, 2026 00:00:00').getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatNumber = (num) => String(num).padStart(2, '0');
+
   return (
-    <div className="fixed inset-0 z-[1000] bg-zinc-950 flex flex-col items-center justify-center overflow-hidden animate-fade-in touch-none">
-      {/* Back Arrow Button - Fixed position */}
+    <div className="fixed inset-0 z-[9999] bg-zinc-950 flex flex-col items-center justify-center overflow-hidden animate-fade-in touch-none overscroll-none">
+      {/* Back Arrow Button */}
       <button 
         onClick={onClose}
-        className="absolute top-8 left-8 p-4 text-zinc-400 hover:text-white transition-all bg-white/5 hover:bg-white/10 rounded-full border border-white/5 z-[1010] group"
+        className="absolute top-8 left-8 p-4 text-zinc-400 hover:text-white transition-all bg-white/5 hover:bg-white/10 rounded-full border border-white/5 z-[10000] group"
         aria-label="Go back"
       >
         <ArrowLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
       </button>
 
-      {/* Background Decorative Text Spams */}
+      {/* Background Decorative Text */}
       <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none flex flex-wrap content-start justify-center gap-4 text-4xl md:text-7xl font-bold tracking-tighter uppercase overflow-hidden">
         {Array.from({ length: 80 }).map((_, i) => (
           <span key={i} className="animate-pulse" style={{ animationDelay: `${i * 100}ms` }}>COMING SOON</span>
@@ -121,14 +153,19 @@ const ComingSoonOverlay = ({ onClose }) => {
         </div>
 
         <p className="text-zinc-400 text-sm md:text-lg max-w-md mx-auto leading-relaxed font-light mb-12">
-          We're currently refining the digital architecture for EMAUR. Something extraordinary is being built in the shadows.
+          We're refining the digital architecture for EMAUR. Something extraordinary is being built in the shadows.
         </p>
 
         <div className="grid grid-cols-4 gap-4 md:gap-8 max-w-sm mx-auto">
-          {['DAYS', 'HRS', 'MIN', 'SEC'].map((unit) => (
-            <div key={unit} className="flex flex-col gap-2">
-              <div className="text-2xl md:text-3xl font-mono text-white">00</div>
-              <div className="text-[8px] tracking-widest text-zinc-600 font-bold uppercase">{unit}</div>
+          {[
+            { label: 'DAYS', value: timeLeft.days },
+            { label: 'HRS', value: timeLeft.hours },
+            { label: 'MIN', value: timeLeft.minutes },
+            { label: 'SEC', value: timeLeft.seconds }
+          ].map((item) => (
+            <div key={item.label} className="flex flex-col gap-2">
+              <div className="text-2xl md:text-3xl font-mono text-white">{formatNumber(item.value)}</div>
+              <div className="text-[8px] tracking-widest text-zinc-600 font-bold uppercase">{item.label}</div>
             </div>
           ))}
         </div>
@@ -157,8 +194,12 @@ const Navbar = () => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     }
   }, [isOpen]);
 
@@ -304,8 +345,19 @@ const QuotesSection = () => {
 const GlobalStyles = () => (
   <style dangerouslySetInnerHTML={{ __html: `
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@200;300;400;700&display=swap');
-    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
-    body { background-color: #09090b; color: #a1a1aa; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+    html { 
+      scroll-behavior: smooth; 
+      -webkit-tap-highlight-color: transparent; 
+      overscroll-behavior: none;
+    }
+    body { 
+      background-color: #09090b; 
+      color: #a1a1aa; 
+      font-family: 'Inter', sans-serif; 
+      margin: 0; 
+      overflow-x: hidden; 
+      width: 100%; 
+    }
     .font-serif { font-family: 'Playfair Display', serif; }
     @keyframes slow-zoom { from { transform: scale(1); } to { transform: scale(1.1); } }
     .animate-slow-zoom { animation: slow-zoom 20s ease-in-out infinite alternate; }
@@ -325,20 +377,35 @@ export default function App() {
 
   useEffect(() => {
     if (showComingSoon) {
-      document.body.style.overflow = 'hidden';
+      // Robust scroll locking
+      const scrollY = window.pageYOffset;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflowY = 'scroll'; // Prevent layout shift
       document.documentElement.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'auto';
-      document.documentElement.style.overflow = 'auto';
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
+      document.documentElement.style.overflow = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
     }
+    
     return () => {
-      document.body.style.overflow = 'auto';
-      document.documentElement.style.overflow = 'auto';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.documentElement.style.overflow = '';
     };
   }, [showComingSoon]);
 
   return (
-    <div className={`min-h-screen selection:bg-zinc-100 selection:text-zinc-900 overflow-x-hidden bg-zinc-950 ${showComingSoon ? 'h-screen overflow-hidden' : ''}`}>
+    <div className="min-h-screen selection:bg-zinc-100 selection:text-zinc-900 overflow-x-hidden bg-zinc-950">
       <GlobalStyles />
       
       {showComingSoon && <ComingSoonOverlay onClose={() => setShowComingSoon(false)} />}
