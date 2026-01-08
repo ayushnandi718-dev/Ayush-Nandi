@@ -64,6 +64,42 @@
             height: 20px;
             fill: currentColor;
         }
+        
+        .github-box {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .github-box:hover {
+            border-color: rgba(255,255,255,0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .github-box .bg-image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            transition: transform 0.8s ease, opacity 0.5s ease;
+            z-index: 0;
+        }
+
+        .github-box:hover .bg-image {
+            transform: scale(1.1);
+            opacity: 0.5;
+        }
+
+        .github-box .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .github-box:hover .icon-bounce {
+            transform: scale(1.1) rotate(5deg);
+        }
     </style>
 </head>
 <body id="home">
@@ -78,6 +114,7 @@
             <div class="hidden md:flex space-x-12 text-xs tracking-widest uppercase font-medium text-zinc-400">
                 <a href="#home" class="hover:text-white transition-all duration-300 py-2 relative group">Home</a>
                 <a href="#works" class="hover:text-white transition-all duration-300 py-2 relative group">Works</a>
+                <a href="#github" class="hover:text-white transition-all duration-300 py-2 relative group">Github</a>
                 <a href="#experience" class="hover:text-white transition-all duration-300 py-2 relative group">Experience</a>
                 <a href="#about" class="hover:text-white transition-all duration-300 py-2 relative group">About</a>
                 <a href="#contact" class="hover:text-white transition-all duration-300 py-2 relative group">Contact</a>
@@ -94,6 +131,7 @@
         <button onclick="toggleMobileMenu()" class="absolute top-8 right-8 text-white p-4"><i data-lucide="x" size="32"></i></button>
         <a href="#home" onclick="toggleMobileMenu()" class="text-3xl font-light tracking-widest text-zinc-100 uppercase py-6 w-full text-center border-b border-white/5">Home</a>
         <a href="#works" onclick="toggleMobileMenu()" class="text-3xl font-light tracking-widest text-zinc-100 uppercase py-6 w-full text-center border-b border-white/5">Works</a>
+        <a href="#github" onclick="toggleMobileMenu()" class="text-3xl font-light tracking-widest text-zinc-100 uppercase py-6 w-full text-center border-b border-white/5">Github</a>
         <a href="#experience" onclick="toggleMobileMenu()" class="text-3xl font-light tracking-widest text-zinc-100 uppercase py-6 w-full text-center border-b border-white/5">Experience</a>
         <a href="#about" onclick="toggleMobileMenu()" class="text-3xl font-light tracking-widest text-zinc-100 uppercase py-6 w-full text-center border-b border-white/5">About</a>
         <a href="#contact" onclick="toggleMobileMenu()" class="text-3xl font-light tracking-widest text-zinc-100 uppercase py-6 w-full text-center">Contact</a>
@@ -118,8 +156,7 @@
             </div>
             <p class="text-zinc-300 text-base md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up delay-500">A blend of raw photography, intentional design, and the subtle dance of technology.</p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 animate-fade-in-up delay-700 w-full px-4">
-                <a href="#works" class="w-full sm:w-auto px-10 py-5 bg-zinc-100 text-zinc-950 text-xs md:text-sm tracking-widest uppercase font-bold hover:bg-white active:scale-95 transition-all rounded-full flex items-center justify-center gap-2 shadow-lg">Explore <i data-lucide="arrow-right" size="16"></i></a>
-                <a href="https://www.instagram.com/raw.vibing.aura/" target="_blank" class="w-full sm:w-auto px-10 py-5 border border-zinc-700 text-zinc-100 text-xs md:text-sm tracking-widest uppercase font-bold hover:bg-zinc-900 active:scale-95 transition-all rounded-full flex items-center justify-center gap-2 bg-white/5 backdrop-blur-sm"><i data-lucide="instagram" size="16"></i> Instagram</a>
+                <a href="#works" class="w-full sm:w-auto px-12 py-5 bg-zinc-100 text-zinc-950 text-xs md:text-sm tracking-widest uppercase font-bold hover:bg-white active:scale-95 transition-all rounded-full flex items-center justify-center gap-2 shadow-lg">Explore Portfolio <i data-lucide="arrow-right" size="16"></i></a>
             </div>
         </div>
     </section>
@@ -160,6 +197,46 @@
                         <h3 class="text-xl md:text-2xl font-light text-white">Identity in Marks</h3>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Logo Section -->
+    <section id="github" class="py-24 md:py-32 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12 reveal text-center md:text-left">
+                <span class="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-4 block">Portfolio Repositories</span>
+                <h2 class="text-3xl md:text-5xl font-light text-zinc-100 tracking-tight">Github Presence</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal delay-200">
+                <!-- Project 1: Wedding-Photo-Album -->
+                <a href="https://ayushnandi718-dev.github.io/Wedding-Photo-Album/" target="_blank" class="github-box group flex flex-col items-center justify-center py-20 bg-zinc-900/10 border border-zinc-800/40 rounded-3xl transition-all">
+                    <!-- Background Image Layer -->
+                    <div class="bg-image" style="background-image: url('https://raw.githubusercontent.com/ayushnandi718-dev/Wedding-Photo-Album/main/hero.jpg.jpg');"></div>
+                    <!-- Content Layer -->
+                    <div class="content-layer text-center">
+                        <div class="text-zinc-200 group-hover:text-white transition-all duration-500 icon-bounce mb-6">
+                            <i data-lucide="external-link" size="56" stroke-width="1"></i>
+                        </div>
+                        <h3 class="text-white text-xl md:text-2xl font-light tracking-widest uppercase mb-2">Wedding-Photo-Album</h3>
+                        <p class="text-zinc-400 text-[10px] tracking-[0.4em] uppercase font-bold">View Live Project</p>
+                    </div>
+                </a>
+
+                <!-- Project 2: SCHOOL-NOSTALGIC -->
+                <a href="https://ayushnandi718-dev.github.io/SCHOOL-NOSTALGIC-/" target="_blank" class="github-box group flex flex-col items-center justify-center py-20 bg-zinc-900/10 border border-zinc-800/40 rounded-3xl transition-all">
+                    <!-- Background Image Layer -->
+                    <div class="bg-image" style="background-image: url('https://raw.githubusercontent.com/ayushnandi718-dev/SCHOOL-NOSTALGIC-/main/1.jpg.jpg');"></div>
+                    <!-- Content Layer -->
+                    <div class="content-layer text-center">
+                        <div class="text-zinc-200 group-hover:text-white transition-all duration-500 icon-bounce mb-6">
+                            <i data-lucide="external-link" size="56" stroke-width="1"></i>
+                        </div>
+                        <h3 class="text-white text-xl md:text-2xl font-light tracking-widest uppercase mb-2">SCHOOL-NOSTALGIC</h3>
+                        <p class="text-zinc-400 text-[10px] tracking-[0.4em] uppercase font-bold">View Live Project</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
