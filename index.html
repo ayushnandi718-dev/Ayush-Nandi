@@ -100,6 +100,16 @@
         .github-box:hover .icon-bounce {
             transform: scale(1.1) rotate(5deg);
         }
+
+        .experience-card {
+            background: linear-gradient(145deg, rgba(24, 24, 27, 0.4), rgba(9, 9, 11, 0.4));
+            backdrop-filter: blur(10px);
+        }
+
+        /* Custom glow for the new logo */
+        .logo-glow {
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+        }
     </style>
 </head>
 <body id="home">
@@ -201,7 +211,7 @@
         </div>
     </section>
 
-    <!-- GitHub Logo Section -->
+    <!-- GitHub Section -->
     <section id="github" class="py-24 md:py-32 bg-zinc-950 border-t border-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
             <div class="mb-12 reveal text-center md:text-left">
@@ -210,7 +220,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal delay-200">
-                <!-- Project 1: Wedding-Photo-Album -->
                 <a href="https://ayushnandi718-dev.github.io/Wedding-Photo-Album/" target="_blank" class="github-box group flex flex-col items-center justify-center py-20 bg-zinc-900/10 border border-zinc-800/40 rounded-3xl transition-all h-full">
                     <div class="bg-image" style="background-image: url('https://raw.githubusercontent.com/ayushnandi718-dev/Wedding-Photo-Album/main/hero.jpg.jpg');"></div>
                     <div class="content-layer text-center px-4">
@@ -222,7 +231,6 @@
                     </div>
                 </a>
 
-                <!-- Project 2: SCHOOL-NOSTALGIC -->
                 <a href="https://ayushnandi718-dev.github.io/SCHOOL-NOSTALGIC-/" target="_blank" class="github-box group flex flex-col items-center justify-center py-20 bg-zinc-900/10 border border-zinc-800/40 rounded-3xl transition-all h-full">
                     <div class="bg-image" style="background-image: url('https://raw.githubusercontent.com/ayushnandi718-dev/SCHOOL-NOSTALGIC-/main/1.jpg.jpg');"></div>
                     <div class="content-layer text-center px-4">
@@ -234,7 +242,6 @@
                     </div>
                 </a>
 
-                <!-- Project 3: Sahil-Singh -->
                 <a href="https://ayushnandi718-dev.github.io/Sahil-Singh-/" target="_blank" class="github-box group flex flex-col items-center justify-center py-20 bg-zinc-900/10 border border-zinc-800/40 rounded-3xl transition-all h-full">
                     <div class="bg-image" style="background-image: url('https://raw.githubusercontent.com/ayushnandi718-dev/Sahil-Singh-/main/images.jpeg');"></div>
                     <div class="content-layer text-center px-4">
@@ -256,12 +263,12 @@
                 <div class="lg:col-span-1 text-center md:text-left reveal">
                     <span class="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-6 block">Professional</span>
                     <h2 class="text-3xl md:text-5xl font-light text-zinc-100 mb-6">Chronicles</h2>
-                    <p class="text-zinc-500 text-sm md:text-lg font-light leading-relaxed">Connect with the projects.</p>
+                    <p class="text-zinc-500 text-sm md:text-lg font-light leading-relaxed">Connecting moments to digital permanence.</p>
                 </div>
                 <div class="lg:col-span-2 space-y-4 md:space-y-6">
                     
                     <!-- 1. RAW VIBING AURA CARD -->
-                    <div class="group relative block p-6 md:p-10 bg-zinc-900/40 border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-100 active:bg-zinc-900/60 hover:border-white/10">
+                    <div class="group relative block p-6 md:p-10 experience-card border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-100 hover:border-white/10">
                         <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="shrink-0">
                                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border border-zinc-800 flex items-center justify-center bg-zinc-950 overflow-hidden shadow-xl">
@@ -278,25 +285,23 @@
                                     <p class="text-zinc-600 text-[10px] tracking-widest uppercase mt-1">Personal Archive</p>
                                 </div>
                                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
-                                    <a href="https://www.instagram.com/raw.vibing.aura/" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all" title="Instagram">
+                                    <a href="https://www.instagram.com/raw.vibing.aura/" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all">
                                         <i data-lucide="instagram" class="text-zinc-300"></i>
                                     </a>
-                                    <a href="https://www.facebook.com/share/174dvmS6aU/" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-500 active:scale-90 transition-all" title="Facebook">
+                                    <a href="https://www.facebook.com/share/174dvmS6aU/" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-500 active:scale-90 transition-all">
                                         <i data-lucide="facebook" class="text-zinc-300"></i>
                                     </a>
-                                    <a href="https://www.linkedin.com/in/ayush-nandi-apdj-india" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-400 active:scale-90 transition-all" title="LinkedIn">
+                                    <a href="https://www.linkedin.com/in/ayush-nandi-apdj-india" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-400 active:scale-90 transition-all">
                                         <i data-lucide="linkedin" class="text-blue-400"></i>
                                     </a>
-                                    <a href="https://github.com/ayushnandi718-dev" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-white active:scale-90 transition-all" title="GitHub">
+                                    <a href="https://github.com/ayushnandi718-dev" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-white active:scale-90 transition-all">
                                         <i data-lucide="github" class="text-zinc-300"></i>
                                     </a>
-                                    <a href="https://x.com/iitwalabanda123" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all" title="Twitter/X">
+                                    <a href="https://x.com/iitwalabanda123" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all">
                                         <i data-lucide="twitter" class="text-zinc-300"></i>
                                     </a>
-                                    <a href="https://discordapp.com/users/1314993050883330119" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-[#5865F2] active:scale-90 transition-all" title="Discord">
-                                        <svg viewBox="0 0 127.14 96.36" class="discord-icon text-zinc-300">
-                                            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.71,32.65-1.82,56.6.31,80.21h0A105.73,105.73,0,0,0,32.47,96.36,77.7,77.7,0,0,0,39.2,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.73,11.1,105.32,105.32,0,0,0,32.19-16.14h0C130.46,50.45,121.91,26.85,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" fill="currentColor"/>
-                                        </svg>
+                                    <a href="https://discordapp.com/users/1314993050883330119" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-[#5865F2] active:scale-90 transition-all">
+                                        <svg viewBox="0 0 127.14 96.36" class="discord-icon text-zinc-300"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.71,32.65-1.82,56.6.31,80.21h0A105.73,105.73,0,0,0,32.47,96.36,77.7,77.7,0,0,0,39.2,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.73,11.1,105.32,105.32,0,0,0,32.19-16.14h0C130.46,50.45,121.91,26.85,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" fill="currentColor"/></svg>
                                     </a>
                                 </div>
                             </div>
@@ -304,7 +309,7 @@
                     </div>
 
                     <!-- 2. EMAUR CARD -->
-                    <div class="group relative block p-6 md:p-10 bg-zinc-900/40 border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-200 active:bg-zinc-900/60 hover:border-white/10">
+                    <div class="group relative block p-6 md:p-10 experience-card border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-200 hover:border-white/10">
                         <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="shrink-0">
                                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border border-zinc-800 flex items-center justify-center bg-zinc-950 overflow-hidden shadow-xl">
@@ -321,19 +326,19 @@
                                     <p class="text-zinc-600 text-[10px] tracking-widest uppercase mt-1">Social Media Management</p>
                                 </div>
                                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
-                                    <a href="https://www.instagram.com/emaur.in/" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all" title="Instagram">
+                                    <a href="https://www.instagram.com/emaur.in/" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all">
                                         <i data-lucide="instagram" class="text-zinc-300"></i>
                                     </a>
-                                    <a href="https://www.facebook.com/emaurr" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-500 active:scale-90 transition-all" title="Facebook">
+                                    <a href="https://www.facebook.com/emaurr" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-500 active:scale-90 transition-all">
                                         <i data-lucide="facebook" class="text-zinc-300"></i>
                                     </a>
-                                    <a href="https://www.linkedin.com/company/em-aur" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-400 active:scale-90 transition-all" title="LinkedIn">
+                                    <a href="https://www.linkedin.com/company/em-aur" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-400 active:scale-90 transition-all">
                                         <i data-lucide="linkedin" class="text-blue-400"></i>
                                     </a>
-                                    <a href="https://x.com/EMAURAAA?s=20" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all" title="Twitter/X">
+                                    <a href="https://x.com/EMAURAAA?s=20" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all">
                                         <i data-lucide="twitter" class="text-zinc-300"></i>
                                     </a>
-                                    <a href="https://emaur.dpdns.org" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all" title="Website">
+                                    <a href="https://emaur.dpdns.org" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all">
                                         <i data-lucide="globe" class="text-zinc-300"></i>
                                     </a>
                                 </div>
@@ -342,7 +347,7 @@
                     </div>
 
                     <!-- 3. FF STUDIO CARD -->
-                    <div class="group relative block p-6 md:p-10 bg-zinc-900/40 border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-300 active:bg-zinc-900/60 hover:border-white/10">
+                    <div class="group relative block p-6 md:p-10 experience-card border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-300 hover:border-white/10">
                         <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="shrink-0">
                                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border border-zinc-800 flex items-center justify-center bg-zinc-950 overflow-hidden shadow-xl">
@@ -359,7 +364,7 @@
                                     <p class="text-zinc-600 text-[10px] tracking-widest uppercase mt-1">Creative Collective</p>
                                 </div>
                                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
-                                    <a href="https://www.instagram.com/ff.studioco/#" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all" title="Instagram">
+                                    <a href="https://www.instagram.com/ff.studioco/#" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all">
                                         <i data-lucide="instagram" class="text-zinc-300"></i>
                                     </a>
                                 </div>
@@ -368,7 +373,7 @@
                     </div>
 
                     <!-- 4. NOVAA SPEED CARD -->
-                    <div class="group relative block p-6 md:p-10 bg-zinc-900/40 border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-500 active:bg-zinc-900/60 hover:border-white/10">
+                    <div class="group relative block p-6 md:p-10 experience-card border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-500 hover:border-white/10">
                         <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="shrink-0">
                                 <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border border-zinc-800 flex items-center justify-center bg-zinc-950 overflow-hidden shadow-xl">
@@ -385,13 +390,13 @@
                                     <p class="text-zinc-600 text-[10px] tracking-widest uppercase mt-1">High-Velocity Digital Execution Firm</p>
                                 </div>
                                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
-                                    <a href="https://www.instagram.com/novaa_speed" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all" title="Instagram">
+                                    <a href="https://www.instagram.com/novaa_speed" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all">
                                         <i data-lucide="instagram" class="text-zinc-300"></i>
                                     </a>
-                                    <a href="https://www.linkedin.com/company/novaa-speed/" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-400 active:scale-90 transition-all" title="LinkedIn">
+                                    <a href="https://www.linkedin.com/company/novaa-speed/" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-blue-400 active:scale-90 transition-all">
                                         <i data-lucide="linkedin" class="text-blue-400"></i>
                                     </a>
-                                    <a href="https://github.com/ayushnandi718-dev" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-white active:scale-90 transition-all" title="Website/GitHub">
+                                    <a href="https://github.com/ayushnandi718-dev" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-white active:scale-90 transition-all">
                                         <i data-lucide="globe" class="text-zinc-300"></i>
                                     </a>
                                 </div>
@@ -400,11 +405,18 @@
                     </div>
 
                     <!-- 5. HKPHOTOGRAPHY2025 CARD -->
-                    <div class="group relative block p-6 md:p-10 bg-zinc-900/40 border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-700 active:bg-zinc-900/60 hover:border-white/10">
+                    <div class="group relative block p-6 md:p-10 experience-card border border-zinc-800/60 rounded-2xl overflow-hidden shadow-sm transition-all reveal delay-700 hover:border-white/10">
+                        <!-- Background Image Layer (Original Photo) -->
+                        <div class="absolute inset-0 z-0 overflow-hidden rounded-2xl">
+                            <img src="https://raw.githubusercontent.com/ayushnandi718-dev/Sahil-Singh-/main/HK.jpg" class="w-full h-full object-cover opacity-10 group-hover:opacity-25 transition-all duration-700 scale-100 group-hover:scale-110" alt="Background">
+                            <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent"></div>
+                        </div>
+                        
                         <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="shrink-0">
-                                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border border-zinc-800 flex items-center justify-center bg-zinc-950 overflow-hidden shadow-xl">
-                                    <img src="https://github.com/ayushnandi718-dev/Sahil-Singh-/blob/main/HK.jpg" class="w-full h-full object-cover" alt="Hkphotography2025">
+                                <!-- Logo Placeholder using the new HK.png -->
+                                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border border-zinc-700 flex items-center justify-center bg-zinc-900 overflow-hidden shadow-2xl ring-2 ring-white/10 logo-glow">
+                                    <img src="https://raw.githubusercontent.com/ayushnandi718-dev/Ayush-Nandi/main/HK.png" class="w-full h-full object-contain p-1" alt="Hkphotography2025 Logo">
                                 </div>
                             </div>
                             <div class="flex-1 w-full text-center md:text-left">
@@ -413,12 +425,12 @@
                                     <span class="text-[10px] tracking-[0.2em] text-zinc-600 uppercase">2025 — Present</span>
                                 </div>
                                 <div class="mb-6">
-                                    <p class="text-zinc-400 text-xs md:text-sm font-medium tracking-wide uppercase">Photography Partner</p>
-                                    <p class="text-zinc-600 text-[10px] tracking-widest uppercase mt-1">Professional Visual Capture Studio</p>
+                                    <p class="text-zinc-300 text-xs md:text-sm font-medium tracking-wide uppercase">Photography Partner</p>
+                                    <p class="text-zinc-500 text-[10px] tracking-widest uppercase mt-1">Professional Visual Capture Studio</p>
                                 </div>
                                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
-                                    <a href="https://www.instagram.com/hkphotography2025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="p-4 bg-zinc-800/50 rounded-xl border border-zinc-800 hover:border-zinc-400 active:scale-90 transition-all" title="Instagram">
-                                        <i data-lucide="instagram" class="text-zinc-300"></i>
+                                    <a href="https://www.instagram.com/hkphotography2025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 hover:border-white/40 active:scale-90 transition-all">
+                                        <i data-lucide="instagram" class="text-zinc-100"></i>
                                     </a>
                                 </div>
                             </div>
@@ -451,14 +463,14 @@
             </div>
             <div class="reveal delay-200">
                 <h2 class="text-3xl md:text-4xl font-light text-zinc-100 mb-8 tracking-tight leading-snug">Blending <span class="italic font-serif text-zinc-300">analog intuition</span> with digital precision.</h2>
-                <p class="text-zinc-400 text-sm md:text-base font-light leading-relaxed mb-4">I’m Ayush Nandi, a creative professional with a strong passion for web design, visual storytelling, and emerging technologies. I enjoy transforming ideas into meaningful digital experiences that are not only visually appealing but also functional and user-focused.</p>
-                <p class="text-zinc-400 text-sm md:text-base font-light leading-relaxed mb-4">With hands-on experience in web designing, photography, video editing, logo design, and creative branding, I approach every project with attention to detail and a commitment to quality.</p>
-                <p class="text-zinc-400 text-sm md:text-base font-light leading-relaxed">My goal is simple: to create digital work that feels authentic, professional, and future-ready. I look for the texture in a brand identity and depth in user interfaces.</p>
+                <p class="text-zinc-400 text-sm md:text-base font-light leading-relaxed mb-4">I’m Ayush Nandi, a creative professional with a strong passion for web design, visual storytelling, and emerging technologies. I approach every project with attention to detail and a commitment to quality.</p>
+                <p class="text-zinc-400 text-sm md:text-base font-light leading-relaxed mb-4">With hands-on experience in web designing, photography, video editing, logo design, and creative branding, I look for the texture in a brand identity and depth in user interfaces.</p>
+                <p class="text-zinc-400 text-sm md:text-base font-light leading-relaxed">My goal is simple: to create digital work that feels authentic, professional, and future-ready.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact Section -->
+    <!-- Footer -->
     <footer id="contact" class="bg-zinc-950 pt-20 pb-10 border-t border-zinc-900 px-6 text-center md:text-left">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
             <div class="max-w-md">
@@ -466,39 +478,21 @@
                 <p class="text-zinc-500 text-sm font-light uppercase tracking-widest">© 2026 AYUSH NANDI. Crafted with intentionality.</p>
             </div>
             <div class="flex gap-8 justify-center items-center">
-                <a href="https://www.instagram.com/raw.vibing.aura/" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
-                    <i data-lucide="instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/ayush-nandi-apdj-india" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://x.com/iitwalabanda123" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
-                    <i data-lucide="twitter"></i>
-                </a>
-                <a href="https://github.com/ayushnandi718-dev" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
-                    <i data-lucide="github"></i>
-                </a>
-                <a href="https://discordapp.com/users/1314993050883330119" target="_blank" class="text-zinc-400 hover:text-[#5865F2] transition-colors cursor-pointer">
-                    <svg viewBox="0 0 127.14 96.36" class="discord-icon">
-                        <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.71,32.65-1.82,56.6.31,80.21h0A105.73,105.73,0,0,0,32.47,96.36,77.7,77.7,0,0,0,39.2,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.73,11.1,105.32,105.32,0,0,0,32.19-16.14h0C130.46,50.45,121.91,26.85,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" fill="currentColor"/>
-                    </svg>
-                </a>
+                <a href="https://www.instagram.com/raw.vibing.aura/" target="_blank" class="text-zinc-400 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ayush-nandi-apdj-india" target="_blank" class="text-zinc-400 hover:text-white transition-colors"><i data-lucide="linkedin"></i></a>
+                <a href="https://github.com/ayushnandi718-dev" target="_blank" class="text-zinc-400 hover:text-white transition-colors"><i data-lucide="github"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
 
             const quotes = [
                 { text: "Design is not just what it looks like and feels like. Design is how it works.", author: "Steve Jobs" },
                 { text: "Creativity is intelligence having fun.", author: "Albert Einstein" },
-                { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
-                { text: "Everything you can imagine is real.", author: "Pablo Picasso" },
-                { text: "The details are not the details. They make the design.", author: "Charles Eames" }
+                { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" }
             ];
 
             let quoteIndex = 0;
@@ -508,15 +502,11 @@
 
             function rotateQuote() {
                 if(!container || !text || !author) return;
-                
                 container.style.opacity = '0';
-                container.style.transform = 'scale(0.95)';
-                
                 setTimeout(() => {
                     text.textContent = quotes[quoteIndex].text;
                     author.textContent = quotes[quoteIndex].author;
                     container.style.opacity = '1';
-                    container.style.transform = 'scale(1)';
                     quoteIndex = (quoteIndex + 1) % quotes.length;
                 }, 700);
             }
@@ -527,32 +517,26 @@
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     navbar.classList.add('glass-nav', 'py-4');
-                    navbar.classList.remove('py-8');
                 } else {
                     navbar.classList.remove('glass-nav', 'py-4');
-                    navbar.classList.add('py-8');
                 }
             });
 
-            const observerOptions = { threshold: 0.1 };
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('active');
                 });
-            }, observerOptions);
+            }, { threshold: 0.1 });
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
 
-        const mobileMenu = document.getElementById('mobile-menu');
         function toggleMobileMenu() {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
             document.body.classList.toggle('no-scroll');
         }
     </script>
 </body>
 </html>
-
