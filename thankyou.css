@@ -64,3 +64,78 @@ p {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* ─────────────────────────────────────────────
+   THANK YOU PAGE – RESPONSIVE FIX
+──────────────────────────────────────────── */
+
+/* Tablets */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+
+  .checkmark {
+    font-size: 50px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .checkmark {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+/* Ultra Small Devices */
+@media (max-width: 320px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .checkmark {
+    font-size: 36px;
+  }
+}
