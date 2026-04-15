@@ -33,7 +33,12 @@ I build **minimal, high-impact visual experiences** that communicate emotion thr
 </p>
 
 </p>
+## 📊 Language Breakdown
 
+```txt
+CSS        ████████████████████████ 59.5%
+HTML       ██████████████           31.1%
+JavaScript ████                     9.4%
 ---
 
 ## 📊 GitHub Stats
