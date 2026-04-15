@@ -677,3 +677,77 @@ html {
         height: 110px;
     }
 }
+/* ─────────────────────────────────────────────
+   NAVBAR SINGLE LINE FIX (NO OVERFLOW)
+──────────────────────────────────────────── */
+
+/* Keep navbar always in one line on desktop/tablet */
+.navbar {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+/* Prevent nav items from breaking */
+.nav-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar (Chrome/Safari) */
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+/* Keep buttons compact */
+.nav-links a,
+.nav-links > li:not(:has(button)) {
+    flex-shrink: 0;
+}
+
+/* Prevent logo from shrinking badly */
+.logo img {
+    flex-shrink: 0;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .navbar {
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a,
+    .nav-links > li:not(:has(button)) {
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+}
+
+/* Mobile: allow scroll instead of breaking */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        width: max-content;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+    .nav-links a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
