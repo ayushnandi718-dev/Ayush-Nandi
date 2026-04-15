@@ -238,3 +238,147 @@
         font-size: 24px;
     }
 }
+/* ─────────────────────────────────────────────
+   PROJECT SECTION – FINAL RESPONSIVE LAYER
+──────────────────────────────────────────── */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        padding: 0 25px 30px;
+        gap: 20px;
+    }
+
+    .filter-container {
+        padding: 0 25px;
+    }
+
+    .project-card {
+        height: 200px;
+    }
+
+    .project-card video,
+    .project-card img {
+        height: 200px;
+    }
+}
+
+/* Small Tablets */
+@media (max-width: 900px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .project-filter {
+        justify-content: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .before-after-container {
+        gap: 20px;
+    }
+
+    .ba-card {
+        min-width: 240px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .filter-container {
+        padding: 0 15px;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .explore-btn {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 16px;
+    }
+
+    .project-card {
+        height: 180px;
+    }
+
+    .project-card video,
+    .project-card img {
+        height: 180px;
+    }
+
+    .project-overlay h3 {
+        font-size: 16px;
+    }
+
+    .project-overlay p {
+        font-size: 12px;
+    }
+
+    .before-after {
+        padding: 30px 15px;
+    }
+
+    .before-after h2 {
+        font-size: 22px;
+    }
+
+    .ba-card {
+        min-width: 100%;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 400px) {
+    .filter-btn {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .project-card {
+        height: 160px;
+    }
+
+    .project-card video,
+    .project-card img {
+        height: 160px;
+    }
+
+    .project-overlay h3 {
+        font-size: 14px;
+    }
+
+    .project-overlay p {
+        font-size: 11px;
+    }
+}
+
+/* Ultra Small Devices */
+@media (max-width: 320px) {
+    .filter-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .projects-grid {
+        padding: 10px;
+    }
+
+    .project-card {
+        height: 150px;
+    }
+}
