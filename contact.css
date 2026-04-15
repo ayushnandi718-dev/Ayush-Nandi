@@ -957,3 +957,162 @@ html {
         font-size: 18px;
     }
 }
+/* ─────────────────────────────────────────────
+   EXTRA RESPONSIVE FIX LAYER (DO NOT EDIT ABOVE)
+──────────────────────────────────────────── */
+
+/* Large Tablets */
+@media (max-width: 1024px) {
+    .hero-content,
+    .hero-row {
+        gap: 30px;
+    }
+
+    .left h1 {
+        font-size: 55px;
+    }
+
+    .hero-image img {
+        width: 280px;
+    }
+
+    .gallery {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        min-width: 45%;
+    }
+
+    .contact-section {
+        padding: 40px 30px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        margin: 20px;
+    }
+
+    .left h1 {
+        font-size: 45px;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .about-left h2,
+    .about-right {
+        max-width: 100%;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hero {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .left h1 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .typing {
+        font-size: 20px;
+    }
+
+    .hero-image img {
+        width: 220px;
+    }
+
+    .startup-logos {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .about {
+        padding: 30px 15px;
+    }
+
+    .about-left h2 {
+        font-size: 28px;
+    }
+
+    .gallery {
+        padding: 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-brands {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .contact-section {
+        padding: 20px 15px;
+    }
+
+    .contact-hero-content h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+    .left h1 {
+        font-size: 28px;
+    }
+
+    .hero-image img {
+        width: 180px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .contact-form {
+        padding: 18px;
+    }
+}
