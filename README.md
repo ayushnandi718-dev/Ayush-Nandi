@@ -22,11 +22,15 @@ I build **minimal, high-impact visual experiences** that communicate emotion thr
 
 <p align="center">
 
-![HTML5](https://img.shields.io/badge/HTML5-000000?style=for-the-badge\&logo=html5\&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-000000?style=for-the-badge\&logo=css3\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge\&logo=javascript\&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-000000?style=for-the-badge\&logo=tailwindcss\&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge\&logo=github\&logoColor=white)
+## 🧠 Languages & Stack
+
+<p align="center">
+
+![CSS](https://img.shields.io/badge/CSS-59.5%25-000000?style=for-the-badge&logo=css3&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-31.1%25-000000?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-9.4%25-000000?style=for-the-badge&logo=javascript&logoColor=white)
+
+</p>
 
 </p>
 
