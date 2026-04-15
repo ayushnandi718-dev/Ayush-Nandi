@@ -273,3 +273,7 @@ html {
         font-size: 12px;
     }
 }
+.nav-links {
+    padding-left: 0;   /* 🔥 removes default gap */
+    margin-left: auto; /* pushes everything right */
+}
