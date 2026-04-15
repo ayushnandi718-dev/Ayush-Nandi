@@ -339,3 +339,140 @@
         font-size: 18px;
     }
 }
+
+/* ─────────────────────────────────────────────
+   SKILLS SECTION – FINAL RESPONSIVE LAYER
+──────────────────────────────────────────── */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .skills {
+        padding: 70px 20px 90px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+}
+
+/* Small Tablets */
+@media (max-width: 900px) {
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .section-subtitle {
+        margin-bottom: 35px;
+    }
+
+    .skill-card {
+        padding: 20px;
+    }
+
+    .skill-meta h3 {
+        font-size: 15px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .skills {
+        padding: 45px 14px 65px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 28px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .skill-card {
+        padding: 18px;
+    }
+
+    .card-header {
+        gap: 10px;
+    }
+
+    .skill-icon-wrap {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .skill-percent {
+        font-size: 16px;
+        min-width: 40px;
+    }
+
+    .progress-track {
+        height: 5px;
+    }
+
+    .card-tags span {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 400px) {
+    .section-title {
+        font-size: 24px;
+    }
+
+    .skill-meta h3 {
+        font-size: 14px;
+    }
+
+    .skill-meta p {
+        font-size: 11px;
+    }
+
+    .skill-card {
+        padding: 16px;
+    }
+
+    .card-header {
+        flex-wrap: wrap;
+    }
+
+    .skill-percent {
+        margin-left: auto;
+    }
+}
+
+/* Ultra Small Devices */
+@media (max-width: 320px) {
+    .section-title {
+        font-size: 22px;
+    }
+
+    .skills-container {
+        gap: 12px;
+    }
+
+    .skill-card {
+        padding: 14px;
+    }
+
+    .skill-icon-wrap {
+        width: 38px;
+        height: 38px;
+    }
+}
