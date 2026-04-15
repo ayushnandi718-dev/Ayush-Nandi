@@ -1,9 +1,5 @@
+⚡ CYBERPUNK GITHUB PROFILE (AYUSH NANDI)
 
-
-# ⚡ CYBERPUNK GITHUB PROFILE (AYUSH NANDI)
-
-````md
-<!-- CYBERPUNK HEADER -->
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=2500&pause=500&color=00F7FF&center=true&vCenter=true&width=800&lines=AYUSH+NANDI;CYBERPUNK+CREATOR;VIDEO+EDITOR+%7C+VISUAL+HACKER;DIGITAL+STORYTELLER" />
 </p>
@@ -18,12 +14,10 @@
 
 ## 🧠 SYSTEM PROFILE
 
-```txt
 NAME: Ayush Nandi
 ROLE: Visual Hacker / Video Editor / Frontend Architect
 MODE: CYBERPUNK ACTIVE
 STATUS: BUILDING DIGITAL REALITIES
-````
 
 ---
 
@@ -37,8 +31,6 @@ STATUS: BUILDING DIGITAL REALITIES
 
 ---
 
-## 🧬 TECH STACK
-
 <p align="center">
 
 ![HTML5](https://img.shields.io/badge/HTML5-0ff?style=for-the-badge\&logo=html5\&logoColor=black)
@@ -50,7 +42,6 @@ STATUS: BUILDING DIGITAL REALITIES
 
 ---
 
-## 📊 SYSTEM METRICS
 
 <p align="center">
 
@@ -62,7 +53,7 @@ STATUS: BUILDING DIGITAL REALITIES
 
 ---
 
-## 📡 LANGUAGE SIGNALS
+
 
 <p align="center">
 
@@ -74,7 +65,7 @@ STATUS: BUILDING DIGITAL REALITIES
 
 ---
 
-## 🌐 NEURAL CONNECTIONS
+
 
 <p align="center">
 
@@ -90,7 +81,7 @@ STATUS: BUILDING DIGITAL REALITIES
 
 ---
 
-## ⚡ ACTIVITY MATRIX
+
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-Nandi&theme=react-dark&hide_border=true" />
@@ -98,7 +89,6 @@ STATUS: BUILDING DIGITAL REALITIES
 
 ---
 
-## 💀 CYBER PHILOSOPHY
 
 * Neon hides nothing — it reveals everything
 * Simplicity is the highest form of intelligence
@@ -107,7 +97,7 @@ STATUS: BUILDING DIGITAL REALITIES
 
 ---
 
-## 🔥 FINAL TRANSMISSION
+
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=22&duration=2000&pause=800&color=FF00FF&center=true&vCenter=true&width=800&lines=SYSTEM+ONLINE;CREATIVITY+UNLOCKED;BUILDING+THE+FUTURE;WELCOME+TO+THE+NEON+ERA" />
@@ -118,5 +108,6 @@ STATUS: BUILDING DIGITAL REALITIES
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff00ff,100:00f7ff&height=120&section=footer"/>
 </p>
-```
+
+---
 
