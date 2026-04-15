@@ -1,118 +1,115 @@
-# Ayush-Nandi
-
-🌑 Ayush Nandi — Digital Portfolio
-
-A minimal, cinematic personal portfolio showcasing visual storytelling, photography, and digital identity.
-Built as a fully responsive static website, optimized for GitHub Pages with zero build complexity.
-
-> Quiet design. Intentional layout. No noise.
 
 
+# 🌑 Ayush Nandi
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Playfair+Display&size=28&duration=3000&pause=1000&color=FFFFFF&center=true&vCenter=true&width=600&lines=Digital+Creator;Video+Editor;Visual+Storyteller;Minimal+Design+Enthusiast" />
+</p>
 
 ---
 
-✨ Features
+## 🖤 About Me
 
-📱 Fully Responsive — works flawlessly on mobile, tablet, and desktop
+I am **Ayush Nandi**, a digital creator focused on cinematic storytelling, visual editing, and clean modern design.
 
-🎨 Minimal & Cinematic UI — dark aesthetic, typography-first design
+I build **minimal, high-impact visual experiences** that communicate emotion through simplicity.
 
-⚡ Zero Build Setup — pure HTML + Tailwind CDN
-
-🌍 GitHub Pages Ready — deploy instantly
-
-🔗 Social Integrations — multiple Instagram profiles supported
-
-🧠 Performance Friendly — no React, no bundlers, no overhead
-
-
+> “Design is not decoration. It is intention.”
 
 ---
 
-🛠 Tech Stack
+## 🚀 Tech Stack
 
-HTML5
+<p align="center">
 
-Tailwind CSS (CDN)
+![HTML5](https://img.shields.io/badge/HTML5-000000?style=for-the-badge\&logo=html5\&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-000000?style=for-the-badge\&logo=css3\&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge\&logo=javascript\&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-000000?style=for-the-badge\&logo=tailwindcss\&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge\&logo=github\&logoColor=white)
 
-Vanilla JavaScript
-
-Google Fonts (Inter & Playfair Display)
-
-
-No frameworks. No dependencies. Old-school reliability with modern polish.
-
+</p>
 
 ---
 
-📂 Project Structure
+## 📊 GitHub Stats
 
-/
-├── index.html
-└── README.md
+<p align="center">
 
-That’s it. Simple by design.
+<img src="https://github-readme-stats.vercel.app/api?username=Ayush-Nandi&show_icons=true&theme=dark&hide_border=true" height="180px"/>
 
-🔗 Social Links
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ayush-Nandi&theme=dark&hide_border=true" height="180px"/>
 
-Instagram (Primary):
-👉 https://www.instagram.com/raw.vibing.aura/
-
-LinkedIn:
-👉 https://www.linkedin.com/in/ayush-nandi-apdj-india
-
-
-(Additional Instagram accounts can be added easily in the footer section of index.html.)
-
+</p>
 
 ---
 
-🎯 Design Philosophy
+## 🎬 Most Used Languages
 
-This project focuses on:
-
-Clarity over clutter
-
-Emotion over excess
-
-Timeless visuals over trends
-
-
-Inspired by editorial layouts, analog photography, and quiet digital spaces.
-
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayush-Nandi&layout=compact&theme=dark&hide_border=true"/>
+</p>
 
 ---
 
-🧩 Customization
+## ✨ What I Do
 
-Want to tweak it?
-
-Change images → update image URLs in index.html
-
-Edit text → simple HTML edits
-
-Add sections → duplicate existing blocks
-
-Add animations → Tailwind utilities or JS
-
-
-No rebuilds. No tooling headaches.
-
+* 🎥 Video Editing (Reels / YouTube / Ads)
+* 🎨 Minimal UI / Web Design
+* 🧠 Branding & Visual Identity
+* 📱 Social Media Content Creation
+* ⚡ Clean, fast, responsive websites
 
 ---
 
-📄 License
+## 🌐 Connect With Me
 
-This project is open for personal use and inspiration.
-If you fork or reuse it, please credit the original creator.
+<p align="center">
 
+<a href="https://instagram.com/rva.creates">
+  <img src="https://img.shields.io/badge/Instagram-000000?style=for-the-badge&logo=instagram&logoColor=white"/>
+</a>
+
+<a href="https://linkedin.com/in/ayush-nandi-apdj-india">
+  <img src="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+</p>
 
 ---
 
-👤 Author
+## 📈 Activity Graph
 
-Ayush Nandi
-Digital Creator & Visual Storyteller
+<p align="center">
 
-> “Design is not decoration. It’s intention.”
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-Nandi&theme=react-dark&hide_border=true"/>
+
+</p>
+
+---
+
+## 🧠 Philosophy
+
+* Simplicity is power
+* Emotion drives design
+* Consistency builds identity
+* Less noise, more meaning
+
+---
+
+## ⚡ GitHub Trophies
+
+<p align="center">
+
+<img src="https://github-profile-trophy.vercel.app/?username=Ayush-Nandi&theme=darkhub&no-frame=true&margin-w=10"/>
+
+</p>
+
+---
+
+## 🌑 Final Line
+
+<p align="center">
+  <b>“I don’t design things to look good. I design them to feel right.”</b>
+</p>
+
