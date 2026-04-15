@@ -1,124 +1,122 @@
 
 
-# 🌑 Ayush Nandi
+# ⚡ CYBERPUNK GITHUB PROFILE (AYUSH NANDI)
 
+````md
+<!-- CYBERPUNK HEADER -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Playfair+Display&size=28&duration=3000&pause=1000&color=FFFFFF&center=true&vCenter=true&width=600&lines=Digital+Creator;Video+Editor;Visual+Storyteller;Minimal+Design+Enthusiast" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=2500&pause=500&color=00F7FF&center=true&vCenter=true&width=800&lines=AYUSH+NANDI;CYBERPUNK+CREATOR;VIDEO+EDITOR+%7C+VISUAL+HACKER;DIGITAL+STORYTELLER" />
 </p>
 
 ---
 
-## 🖤 About Me
-
-I am **Ayush Nandi**, a digital creator focused on cinematic storytelling, visual editing, and clean modern design.
-
-I build **minimal, high-impact visual experiences** that communicate emotion through simplicity.
-
-> “Design is not decoration. It is intention.”
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ff,100:ff00ff&height=180&section=header&text=NEON%20REALM&fontSize=40&fontColor=ffffff" />
+</p>
 
 ---
 
-## 🚀 Tech Stack
-
-<p align="center">
-
-## 🧠 Languages & Stack
-
-<p align="center">
-
-![CSS](https://img.shields.io/badge/CSS-59.5%25-000000?style=for-the-badge&logo=css3&logoColor=white)
-![HTML](https://img.shields.io/badge/HTML-31.1%25-000000?style=for-the-badge&logo=html5&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-9.4%25-000000?style=for-the-badge&logo=javascript&logoColor=white)
-
-</p>
-
-</p>
-## 📊 Language Breakdown
+## 🧠 SYSTEM PROFILE
 
 ```txt
-CSS        ████████████████████████ 59.5%
-HTML       ██████████████           31.1%
-JavaScript ████                     9.4%
+NAME: Ayush Nandi
+ROLE: Visual Hacker / Video Editor / Frontend Architect
+MODE: CYBERPUNK ACTIVE
+STATUS: BUILDING DIGITAL REALITIES
+````
+
 ---
 
-## 📊 GitHub Stats
+## ⚡ CORE ABILITIES
+
+* 🎬 Cinematic Video Editing (Reels / Ads / YouTube)
+* 🎨 Neon UI / Cyberpunk Web Design
+* 🧩 Frontend Development (HTML, CSS, JS)
+* 🧠 Visual Branding & Identity Systems
+* ⚡ Minimal + High Impact Design Systems
+
+---
+
+## 🧬 TECH STACK
 
 <p align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Ayush-Nandi&show_icons=true&theme=dark&hide_border=true" height="180px"/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ayush-Nandi&theme=dark&hide_border=true" height="180px"/>
+![HTML5](https://img.shields.io/badge/HTML5-0ff?style=for-the-badge\&logo=html5\&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-ff00ff?style=for-the-badge\&logo=css3\&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-00f7ff?style=for-the-badge\&logo=javascript\&logoColor=black)
+![GitHub](https://img.shields.io/badge/GitHub-111?style=for-the-badge\&logo=github\&logoColor=white)
 
 </p>
 
 ---
 
-## 🎬 Most Used Languages
+## 📊 SYSTEM METRICS
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ayush-Nandi&layout=compact&theme=dark&hide_border=true"/>
+
+<img src="https://github-readme-stats.vercel.app/api?username=Ayush-Nandi&show_icons=true&theme=radical&hide_border=true" height="180px"/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ayush-Nandi&theme=radical&hide_border=true" height="180px"/>
+
 </p>
 
 ---
 
-## ✨ What I Do
-
-* 🎥 Video Editing (Reels / YouTube / Ads)
-* 🎨 Minimal UI / Web Design
-* 🧠 Branding & Visual Identity
-* 📱 Social Media Content Creation
-* ⚡ Clean, fast, responsive websites
-
----
-
-## 🌐 Connect With Me
+## 📡 LANGUAGE SIGNALS
 
 <p align="center">
 
-<a href="https://instagram.com/rva.creates">
-  <img src="https://img.shields.io/badge/Instagram-000000?style=for-the-badge&logo=instagram&logoColor=white"/>
+![CSS](https://img.shields.io/badge/CSS-59.5%25-ff00ff?style=for-the-badge)
+![HTML](https://img.shields.io/badge/HTML-31.1%25-00f7ff?style=for-the-badge)
+![JS](https://img.shields.io/badge/JS-9.4%25-ffffff?style=for-the-badge)
+
+</p>
+
+---
+
+## 🌐 NEURAL CONNECTIONS
+
+<p align="center">
+
+<a href="https://instagram.com/raw.vibing.aura">
+  <img src="https://img.shields.io/badge/INSTAGRAM-FF00FF?style=for-the-badge&logo=instagram&logoColor=white"/>
 </a>
 
 <a href="https://linkedin.com/in/ayush-nandi-apdj-india">
-  <img src="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  <img src="https://img.shields.io/badge/LINKEDIN-00F7FF?style=for-the-badge&logo=linkedin&logoColor=black"/>
 </a>
 
 </p>
 
 ---
 
-## 📈 Activity Graph
+## ⚡ ACTIVITY MATRIX
 
 <p align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-Nandi&theme=react-dark&hide_border=true"/>
-
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-Nandi&theme=react-dark&hide_border=true" />
 </p>
 
 ---
 
-## 🧠 Philosophy
+## 💀 CYBER PHILOSOPHY
 
-* Simplicity is power
-* Emotion drives design
-* Consistency builds identity
-* Less noise, more meaning
+* Neon hides nothing — it reveals everything
+* Simplicity is the highest form of intelligence
+* Design is emotional hacking
+* Code is visual language
 
 ---
 
-## ⚡ GitHub Trophies
+## 🔥 FINAL TRANSMISSION
 
 <p align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=Ayush-Nandi&theme=darkhub&no-frame=true&margin-w=10"/>
-
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=22&duration=2000&pause=800&color=FF00FF&center=true&vCenter=true&width=800&lines=SYSTEM+ONLINE;CREATIVITY+UNLOCKED;BUILDING+THE+FUTURE;WELCOME+TO+THE+NEON+ERA" />
 </p>
 
 ---
 
-## 🌑 Final Line
-
 <p align="center">
-  <b>“I don’t design things to look good. I design them to feel right.”</b>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff00ff,100:00f7ff&height=120&section=footer"/>
 </p>
+```
 
