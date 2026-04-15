@@ -1,4 +1,3 @@
-⚡ CYBERPUNK GITHUB PROFILE (AYUSH NANDI)
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=2500&pause=500&color=00F7FF&center=true&vCenter=true&width=800&lines=AYUSH+NANDI;CYBERPUNK+CREATOR;VIDEO+EDITOR+%7C+VISUAL+HACKER;DIGITAL+STORYTELLER" />
@@ -112,18 +111,35 @@ STATUS: BUILDING DIGITAL REALITIES
 ---
 
 
+---
+
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ff,100:ff00ff&height=120&section=footer"/>
 </p>
 
 <p align="center">
-  <b>⚡ Built with passion. Designed with intention. Edited in silence. ⚡</b>
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=18&duration=2500&pause=800&color=00F7FF&center=true&vCenter=true&width=700&lines=AYUSH+NANDI;NEON+VISUAL+CREATOR;VIDEO+EDITOR+%7C+DESIGN+ENGINEER" />
+</p>
+
+---
+
+<p align="center">
+  <img src="https://img.shields.io/badge/AYUSH%20NANDI-NEON%20SIGNATURE-000000?style=for-the-badge&labelColor=ff00ff&color=00f7ff&logo=github&logoColor=white" />
+</p>
+
+---
+
+<p align="center">
+  <b style="color:#00f7ff;">✦ Crafted in code. Lit in neon. Delivered in silence. ✦</b>
 </p>
 
 <p align="center">
-  © 2026 Ayush Nandi • All Rights Reserved. Don't use it without giving credits.
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=14&duration=2000&pause=600&color=FF00FF&center=true&vCenter=true&width=600&lines=Design+is+emotion;Code+is+identity;Creativity+never+ends" />
 </p>
 
+---
+
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=16&duration=2000&pause=800&color=00F7FF&center=true&vCenter=true&width=600&lines=Thanks+for+visiting;Stay+creative;Stay+minimal;Stay+cyber" />
+  <b>© 2026 Ayush Nandi • All Rights Reserved • Don't use without giving the credit</b>
+</p>.com?font=Orbitron&size=16&duration=2000&pause=800&color=00F7FF&center=true&vCenter=true&width=600&lines=Thanks+for+visiting;Stay+creative;Stay+minimal;Stay+cyber" />
 </p>
