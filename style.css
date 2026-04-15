@@ -622,3 +622,169 @@ html {
         height: 50px;
     }
 }
+
+/* ─────────────────────────────────────────────
+   FINAL RESPONSIVE LAYER (ALL DEVICES FIX)
+──────────────────────────────────────────── */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .left h1 {
+        font-size: 55px;
+    }
+
+    .hero-image img {
+        width: 280px;
+    }
+
+    .gallery {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        min-width: 45%;
+    }
+
+    .footer-container {
+        gap: 20px;
+    }
+}
+
+/* Small Tablets */
+@media (max-width: 900px) {
+    .hero {
+        margin: 20px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left h1 {
+        font-size: 45px;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .gallery {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .footer-brands {
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .hero {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .left h1 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .typing {
+        font-size: 20px;
+    }
+
+    .hero-image img {
+        width: 220px;
+    }
+
+    .startup-logos {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .about-left h2 {
+        font-size: 28px;
+    }
+
+    .gallery {
+        padding: 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .brand img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 400px) {
+    .left h1 {
+        font-size: 28px;
+    }
+
+    .hero-image img {
+        width: 180px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .startup p {
+        white-space: normal;
+        font-size: 13px;
+    }
+
+    .gallery {
+        padding: 10px;
+    }
+}
+
+/* Ultra Small Devices */
+@media (max-width: 320px) {
+    .left h1 {
+        font-size: 24px;
+    }
+
+    .typing {
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        width: 150px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
