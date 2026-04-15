@@ -141,5 +141,4 @@ STATUS: BUILDING DIGITAL REALITIES
 
 <p align="center">
   <b>© 2026 Ayush Nandi • All Rights Reserved • Don't use without giving the credit</b>
-</p>.com?font=Orbitron&size=16&duration=2000&pause=800&color=00F7FF&center=true&vCenter=true&width=600&lines=Thanks+for+visiting;Stay+creative;Stay+minimal;Stay+cyber" />
 </p>
