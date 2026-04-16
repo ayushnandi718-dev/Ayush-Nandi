@@ -140,5 +140,5 @@ STATUS: BUILDING DIGITAL REALITIES
 ---
 
 <p align="center">
-  <b>© 2026 Ayush Nandi • All Rights Reserved • Don't use without giving the credit</b>
+  <b>© 2026 Ayush Nandi • All Rights Reserved • Don't use without giving the credit • Made in INDIA with ❤</b>
 </p>
