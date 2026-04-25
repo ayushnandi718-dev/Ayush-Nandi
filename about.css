@@ -6,9 +6,9 @@
 }
 
 body {
-
     background: linear-gradient(135deg, #0d0d0d 0%, #0a2a1a 50%, #0d0d0d 100%);
-  color: #fff;
+    color: #fff;
+    overflow-x: hidden;
 }
 
 html {
@@ -20,7 +20,9 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 24px;
     padding: 10px 0;
+    flex-wrap: wrap;
 }
 
 .nav-links {
@@ -28,6 +30,8 @@ html {
     gap: 10px;
     list-style: none;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav-links a,
@@ -145,6 +149,7 @@ html {
 /* ── LOGO ─────────────────────────────────────────────────── */
 .logo img {
     height: 160px;
+    max-width: 100%;
     border-radius: 10px;
     transition: 0.3s;
     filter: drop-shadow(0 0 10px rgba(255, 80, 0, 0.5));
@@ -191,6 +196,7 @@ html {
     max-width: 1100px;
     margin: auto;
     padding: 40px 20px;
+    width: min(100%, 1100px);
 }
 
 .about-container {
@@ -198,6 +204,12 @@ html {
     gap: 40px;
     align-items: center;
     margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.about-left,
+.about-right {
+    flex: 1 1 320px;
 }
 
 /* Profile Card */
@@ -209,6 +221,8 @@ html {
     box-shadow: 0 0 30px rgba(106, 17, 203, 0.3);
     transition: 0.3s ease;
     min-width: 200px;
+    width: 100%;
+    max-width: 340px;
 }
 
 .profile-card:hover {
@@ -216,8 +230,8 @@ html {
 }
 
 .profile-card img {
-    width: 140px;
-    height: 140px;
+    width: min(140px, 40vw);
+    height: min(140px, 40vw);
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
@@ -244,13 +258,14 @@ html {
 }
 
 .about-title {
-    font-size: 70px;
+    font-size: clamp(2.4rem, 7vw, 4.4rem);
     font-weight: 800;
     letter-spacing: -2px;
     line-height: 1.1;
     display: flex;
     gap: 10px;
     align-items: center;
+    flex-wrap: wrap;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
@@ -264,6 +279,7 @@ html {
     margin-bottom: 15px;
     line-height: 1.7;
     color: #ddd;
+    font-size: clamp(0.98rem, 1.8vw, 1.05rem);
 }
 
 .about-text p {
@@ -287,6 +303,7 @@ html {
     margin-bottom: 15px;
     border-radius: 10px;
     transition: 0.3s;
+    overflow-wrap: break-word;
 }
 
 .timeline-item:hover {
@@ -331,6 +348,13 @@ html {
 
 .footer-left p {
     color: #aaa;
+}
+
+.footer-left,
+.footer-links,
+.footer-social,
+.footer-brands {
+    flex: 1 1 220px;
 }
 
 /* Contact Info */
@@ -402,7 +426,7 @@ html {
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 22px;
-    margin: 0 8px;
+    margin: 0;
     transition: 0.3s;
 }
 
@@ -417,7 +441,7 @@ html {
     display: flex;
     gap: 30px;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     max-width: 600px;
     margin: auto;
 }
@@ -432,6 +456,7 @@ html {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     overflow: hidden;
+    min-width: 120px;
 }
 
 .brand::before {
@@ -502,7 +527,15 @@ html {
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 768px) {
     body {
-        padding: 20px;
+        padding: 0 16px;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
     }
 
     .about-container {
@@ -525,6 +558,17 @@ html {
         align-items: center;
     }
 
+    .contact-info p {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-social {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .footer-brands {
         gap: 20px;
     }
@@ -532,5 +576,62 @@ html {
     .brand img {
         width: 50px;
         height: 50px;
+    }
+}
+
+@media (max-width: 560px) {
+    #about {
+        padding: 28px 0;
+    }
+
+    .logo img {
+        height: 110px;
+    }
+
+    .nav-links a,
+    .nav-links > li:not(:has(button)) {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 16px;
+    }
+
+    .nav-links > li {
+        width: 100%;
+    }
+
+    .profile-card {
+        padding: 24px 18px;
+    }
+
+    .about-title {
+        gap: 4px;
+        justify-content: center;
+        letter-spacing: -1px;
+    }
+
+    .timeline h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .timeline-item {
+        padding: 16px;
+    }
+
+    .footer {
+        padding: 40px 16px 20px;
+    }
+
+    .footer-brands {
+        width: 100%;
+    }
+
+
+    .brand {
+        flex: 1 1 100%;
     }
 }
