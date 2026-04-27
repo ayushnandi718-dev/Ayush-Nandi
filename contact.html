@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> CONTACT | AYUSH NANDI</title>
 	<link rel="icon" type="image/png" href="image.png"> 
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -27,9 +27,28 @@
                 <a href="project.html">Projects</a>
                 <a href="contact.html">Contact</a>
 				<a href="skills.html">Skills</a>
-                <li><button class="btn get-touch-btn">Get in touch</button></li>
+              
             </ul>
+			
+			<!-- DESKTOP ACTION (hamburger lives here) -->
+			<div class="desktop-action">
+				<button class="btn get-touch-btn desktop-cta">Get in touch</button>
+				<a href="#" class="hamburger" id="hamburger-btn" aria-label="Open menu">
+					<i class="fa-solid fa-bars"></i>
+				</a>
+			</div>
+		
         </nav>
+		
+		<!-- MOBILE MENU (outside navbar flow, inside hero) -->
+		<ul class="mobile-menu" id="mobile-menu">
+			<li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+			<li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+			<li><a href="project.html"><i class="fa-solid fa-briefcase"></i> Projects</a></li>
+			<li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+			<li><a href="skills.html"><i class="fa-solid fa-star"></i> Skills</a></li>
+			<li><button class="btn get-touch-btn">Get in touch</button></li>
+		</ul>
 
        <div class="hero-row">
     <!-- LEFT TEXT -->
