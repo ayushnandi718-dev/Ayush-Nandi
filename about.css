@@ -15,6 +15,12 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ── HERO / NAV WRAPPER ───────────────────────────────────── */
+.hero {
+    position: relative;
+    padding: 0 20px;
+}
+
 /* ── NAVBAR ───────────────────────────────────────────────── */
 .navbar {
     display: flex;
@@ -25,7 +31,7 @@ html {
     flex-wrap: wrap;
 }
 
-.nav-links {
+.navlist {
     display: flex;
     gap: 10px;
     list-style: none;
@@ -34,8 +40,8 @@ html {
     justify-content: flex-end;
 }
 
-.nav-links a,
-.nav-links > li:not(:has(button)) {
+.navlist a,
+.navlist > li:not(:has(button)) {
     position: relative;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
@@ -50,8 +56,8 @@ html {
 }
 
 /* Animated gradient underline */
-.nav-links a::after,
-.nav-links > li:not(:has(button))::after {
+.navlist a::after,
+.navlist > li:not(:has(button))::after {
     content: "";
     position: absolute;
     bottom: 4px;
@@ -65,36 +71,36 @@ html {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-links a:hover,
-.nav-links > li:not(:has(button)):hover {
+.navlist a:hover,
+.navlist > li:not(:has(button)):hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.07);
     transform: translateY(-2px);
 }
 
-.nav-links a:hover::after,
-.nav-links > li:not(:has(button)):hover::after {
+.navlist a:hover::after,
+.navlist > li:not(:has(button)):hover::after {
     transform: scaleX(1);
 }
 
-.nav-links a:active,
-.nav-links > li:not(:has(button)):active {
+.navlist a:active,
+.navlist > li:not(:has(button)):active {
     transform: translateY(0) scale(0.95);
     background: rgba(255, 106, 0, 0.12);
     color: #ff6a00;
 }
 
-.nav-links a.active {
+.navlist a.active {
     color: #fff;
 }
 
-.nav-links a.active::after {
+.navlist a.active::after {
     transform: scaleX(1);
 }
 
 /* Ripple */
-.nav-links a .ripple,
-.nav-links > li:not(:has(button)) .ripple {
+.navlist a .ripple,
+.navlist > li:not(:has(button)) .ripple {
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.25);
@@ -108,6 +114,85 @@ html {
         transform: scale(4);
         opacity: 0;
     }
+}
+
+/* ── DESKTOP ACTION ───────────────────────────────────────── */
+.desktop-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger {
+    display: none;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── MOBILE MENU ─────────────────────────────────────────── */
+.mobile-menu {
+    display: none; /* hidden by default on all sizes */
+    list-style: none;
+}
+
+/* When JS toggles it open */
+.mobile-menu-active {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    padding: 2rem;
+    background: #1a1a1a;
+    border: 0.1rem solid #ff6a00;
+    border-radius: 2rem;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 8px 8px 8px,
+        rgba(0, 0, 0, 0.15) 8px 8px 8px inset;
+    z-index: 999;
+    transition: all 0.5s ease-in-out;
+}
+
+.mobile-menu-active li {
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-menu-active a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mobile-menu-active a:hover {
+    background: rgba(255, 106, 0, 0.15);
+    color: #ff6a00;
+}
+
+.mobile-menu-active .btn {
+    width: 100%;
 }
 
 /* ── BUTTON ───────────────────────────────────────────────── */
@@ -153,8 +238,6 @@ html {
     border-radius: 10px;
     transition: 0.3s;
     filter: drop-shadow(0 0 10px rgba(255, 80, 0, 0.5));
-    display: flex;
-    align-items: flex-start;
 }
 
 .logo img:hover {
@@ -247,16 +330,6 @@ html {
 }
 
 /* About Right Text */
-.about-right h2 {
-    font-size: 60px;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #ff6a00, #ee0979, #8e2de2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-
 .about-title {
     font-size: clamp(2.4rem, 7vw, 4.4rem);
     font-weight: 800;
@@ -267,6 +340,7 @@ html {
     align-items: center;
     flex-wrap: wrap;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
 }
 
 .about-title:hover .outline-text {
@@ -280,10 +354,6 @@ html {
     line-height: 1.7;
     color: #ddd;
     font-size: clamp(0.98rem, 1.8vw, 1.05rem);
-}
-
-.about-text p {
-    color: #eaeaea;
 }
 
 /* ── TIMELINE ─────────────────────────────────────────────── */
@@ -337,7 +407,6 @@ html {
     gap: 30px;
 }
 
-/* Footer Left */
 .footer-left h3 {
     font-size: 22px;
     margin-bottom: 5px;
@@ -357,7 +426,6 @@ html {
     flex: 1 1 220px;
 }
 
-/* Contact Info */
 .contact-info {
     margin-top: 15px;
     display: flex;
@@ -382,21 +450,12 @@ html {
     font-weight: 600;
 }
 
-.contact-info i {
-    margin-right: 8px;
-    color: #ff6a00;
-}
-
 .contact-info p:hover {
     color: #fff;
     transform: translateX(6px);
     font-weight: 600;
-    text-shadow:
-        0 0 8px rgba(255, 100, 50, 0.5),
-        0 0 15px rgba(142, 45, 226, 0.4);
 }
 
-/* Footer Links */
 .footer-links,
 .footer-social {
     display: flex;
@@ -416,7 +475,6 @@ html {
     transform: translateX(5px);
 }
 
-/* Footer Social */
 .footer-social a {
     display: inline-flex;
     justify-content: center;
@@ -426,7 +484,6 @@ html {
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 22px;
-    margin: 0;
     transition: 0.3s;
 }
 
@@ -436,7 +493,6 @@ html {
     transform: translateY(-5px);
 }
 
-/* Footer Brands */
 .footer-brands {
     display: flex;
     gap: 30px;
@@ -496,25 +552,15 @@ html {
     animation: glowPulse 1.5s infinite alternate;
 }
 
-.brand:hover::before {
-    opacity: 1;
-}
-
-.brand:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.1);
-}
-
-.brand:hover p {
-    color: #fff;
-}
+.brand:hover::before { opacity: 1; }
+.brand:hover img { filter: grayscale(0%); transform: scale(1.1); }
+.brand:hover p { color: #fff; }
 
 @keyframes glowPulse {
     from { box-shadow: 0 0 20px rgba(255, 100, 50, 0.2); }
     to   { box-shadow: 0 0 40px rgba(255, 100, 50, 0.5); }
 }
 
-/* Footer Bottom */
 .footer-bottom {
     text-align: center;
     margin-top: 30px;
@@ -524,34 +570,52 @@ html {
     font-size: 14px;
 }
 
-/* ── RESPONSIVE ───────────────────────────────────────────── */
-@media (max-width: 768px) {
-    body {
-        padding: 0 16px;
+/* ── RESPONSIVE: TABLET (≤ 780px) ────────────────────────── */
+@media screen and (max-width: 780px) {
+
+    /* NAV */
+    .navlist,
+    .desktop-action .btn {
+        display: none;
     }
 
-    .navbar {
-        justify-content: center;
+    .hamburger {
+        display: block;
     }
 
-    .nav-links {
-        justify-content: center;
+    .logo img {
+        height: 100px;
+        display: block;
     }
 
+    /* MOBILE MENU — base positioning when active */
+    .mobile-menu-active {
+        top: 110px; /* just below the logo/nav */
+    }
+
+    /* ABOUT */
     .about-container {
         flex-direction: column;
         text-align: center;
     }
 
     .about-title {
-        font-size: 40px;
+        font-size: 3rem;
         justify-content: center;
+        letter-spacing: -1px;
     }
 
-    .about-right h2 {
-        font-size: 28px;
+    .profile-card {
+        max-width: 100%;
     }
 
+    /* TIMELINE */
+    .timeline h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    /* FOOTER */
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -579,43 +643,37 @@ html {
     }
 }
 
-@media (max-width: 560px) {
+/* ── RESPONSIVE: MOBILE (≤ 560px) ────────────────────────── */
+@media screen and (max-width: 560px) {
+
+    body {
+        padding: 0 16px;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
     #about {
         padding: 28px 0;
     }
 
     .logo img {
-        height: 110px;
-    }
-
-    .nav-links a,
-    .nav-links > li:not(:has(button)) {
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 10px 16px;
-    }
-
-    .nav-links > li {
-        width: 100%;
-    }
-
-    .profile-card {
-        padding: 24px 18px;
+        height: 90px;
     }
 
     .about-title {
+        font-size: 2.4rem;
         gap: 4px;
         justify-content: center;
-        letter-spacing: -1px;
+    }
+
+    .about-right p {
+        font-size: 0.95rem;
     }
 
     .timeline h2 {
         font-size: 26px;
-        text-align: center;
     }
 
     .timeline-item {
@@ -630,8 +688,11 @@ html {
         width: 100%;
     }
 
-
     .brand {
         flex: 1 1 100%;
+    }
+
+    .btn {
+        padding: 10px 16px;
     }
 }
