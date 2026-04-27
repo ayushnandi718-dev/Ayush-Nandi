@@ -361,7 +361,17 @@ html {
     transition: opacity 0.4s ease;
     border-radius: 20px;
 }
+/*Startup*/
+.startup-logos a {
+    text-decoration: none;   /* removes underline */
+    color: #aaa;             /* normal text color */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
 
+.startup-logos a:hover {
+    color: #a855f7;          /* purple hover (matches your theme) */
+}
 /* ── HOVER ────────────────────────────────────────────────── */
 .card:hover {
     transform: translateY(-8px) scale(1.02);
