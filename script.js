@@ -83,15 +83,55 @@ function addRipple(e) {
 function setActiveNavLink() {
   const current = location.pathname.split("/").pop() || "index.html";
 
-  document.querySelectorAll(".nav-links a").forEach(link => {
+  document.querySelectorAll(".nav-links a, .mobile-menu a").forEach(link => {
     if (link.getAttribute("href") === current) {
       link.classList.add("active");
     }
 
-    // ✅ Guard: attach ripple only once
     if (!link.dataset.rippleAttached) {
       link.addEventListener("click", addRipple);
       link.dataset.rippleAttached = "true";
+    }
+  });
+}
+
+// ================= HAMBURGER MENU =================
+function initHamburger() {
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const mobileMenu   = document.getElementById("mobile-menu");
+
+  if (!hamburgerBtn || !mobileMenu) return;
+
+  hamburgerBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isOpen = mobileMenu.classList.toggle("mobile-menu-active");
+
+    // Swap icon: bars ↔ xmark
+    const icon = hamburgerBtn.querySelector("i");
+    if (icon) {
+      icon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+    }
+  });
+
+  // Close menu when a link inside is clicked
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("mobile-menu-active");
+      const icon = hamburgerBtn.querySelector("i");
+      if (icon) icon.className = "fa-solid fa-bars";
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      mobileMenu.classList.contains("mobile-menu-active") &&
+      !mobileMenu.contains(e.target) &&
+      !hamburgerBtn.contains(e.target)
+    ) {
+      mobileMenu.classList.remove("mobile-menu-active");
+      const icon = hamburgerBtn.querySelector("i");
+      if (icon) icon.className = "fa-solid fa-bars";
     }
   });
 }
@@ -167,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll();
   setActiveNavLink();
   initMap();
+  initHamburger();
 
   document.querySelectorAll(".reveal").forEach((el, i) => {
     setTimeout(() => el.classList.add("active"), i * 120);
@@ -179,4 +220,122 @@ document.querySelectorAll(".get-touch-btn").forEach(btn => {
     const message = encodeURIComponent("Hi Ayush, I want to work with you!");
     window.open(`https://wa.me/919563316500?text=${message}`, "_blank");
   });
+});
+
+//==================Project============================
+// ================= FILTER + VIDEO HOVER =================
+document.addEventListener("DOMContentLoaded", () => {
+
+    // ── FILTER BUTTONS ──
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards   = document.querySelectorAll(".project-card");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filter = btn.dataset.filter;
+            cards.forEach(card => {
+                card.style.display =
+                    (filter === "all" || filter === card.dataset.category)
+                    ? "block"
+                    : "none";
+            });
+        });
+    });
+
+    // ── VIDEO HOVER PLAY ──
+    document.querySelectorAll(".project-card video").forEach(video => {
+        video.addEventListener("mouseenter", () => video.play());
+        video.addEventListener("mouseleave", () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    });
+
+    // ── EXPLORE LINK (filter-aware) ──
+    const exploreLink = document.getElementById("exploreLink");
+    const links = {
+        all:     "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
+        reels:   "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
+        youtube: "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
+        ads:     "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
+    };
+
+    if (exploreLink) {
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                exploreLink.href = links[btn.dataset.filter] || links.all;
+            });
+        });
+    }
+
+});
+
+
+/* ── SKILL CARDS: 3D TILT + PROGRESS COUNTER ── */
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ── Intersection Observer: trigger when cards enter viewport ── */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const card = entry.target;
+            const idx  = parseInt(card.dataset.index);
+            const fill = card.querySelector(".progress-fill");
+            const pct  = card.querySelector(".skill-percent");
+            const target = parseInt(pct.dataset.target);
+
+            /* staggered entrance */
+            setTimeout(() => {
+                card.classList.add("in-view");
+
+                /* animate progress bar */
+                setTimeout(() => {
+                    fill.style.width = fill.dataset.width;
+
+                    /* count-up number */
+                    let count = 0;
+                    const step = Math.ceil(target / 60);
+                    const timer = setInterval(() => {
+                        count = Math.min(count + step, target);
+                        pct.textContent = count + "%";
+                        if (count >= target) clearInterval(timer);
+                    }, 25);
+                }, 400);
+
+            }, idx * 130);
+
+            observer.unobserve(card);
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".skill-card").forEach(c => observer.observe(c));
+
+    /* ── 3D Magnetic Tilt ── */
+    document.querySelectorAll(".skill-card").forEach(card => {
+        card.addEventListener("mousemove", e => {
+            const rect = card.getBoundingClientRect();
+            const cx   = rect.left + rect.width  / 2;
+            const cy   = rect.top  + rect.height / 2;
+            const dx   = (e.clientX - cx) / (rect.width  / 2);
+            const dy   = (e.clientY - cy) / (rect.height / 2);
+
+            const rotX = (-dy * 12).toFixed(2);
+            const rotY = ( dx * 12).toFixed(2);
+            const gX   = (50 + dx * 30).toFixed(1);
+            const gY   = (50 + dy * 30).toFixed(1);
+
+            card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.04,1.04,1.04)`;
+            card.querySelector(".card-glow").style.background =
+                `radial-gradient(circle at ${gX}% ${gY}%, rgba(255,106,0,0.22), transparent 65%)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+            card.querySelector(".card-glow").style.background = "";
+        });
+    });
 });
