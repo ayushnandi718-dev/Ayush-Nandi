@@ -1,0 +1,445 @@
+/* ─────────────────────────────────────────────
+   WEB PROJECTS PAGE  –  webprojects.css
+   Same design DNA as skills.css
+   Extra: iframe live preview + particle scatter
+───────────────────────────────────────────── */
+
+:root {
+    --orange:   #ff6a00;
+    --pink:     #ee0979;
+    --purple:   #8e2de2;
+    --grad:     linear-gradient(135deg, var(--orange), var(--pink), var(--purple));
+    --card-bg:  rgba(14, 10, 24, 0.72);
+    --border:   rgba(142, 45, 226, 0.18);
+    --text-dim: rgba(200, 190, 220, 0.55);
+}
+
+/* ── SECTION WRAPPER ───────────────────── */
+
+.web-projects {
+    padding: 80px 24px 100px;
+    max-width: 1120px;
+    margin: 0 auto;
+    font-family: 'DM Sans', sans-serif;
+    position: relative;
+}
+
+/* ── FLOATING ORBS ──────────────────────── */
+
+.web-projects::before,
+.web-projects::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(90px);
+    opacity: 0.18;
+}
+
+.web-projects::before {
+    width: 380px;
+    height: 380px;
+    background: var(--purple);
+    top: -80px;
+    right: -100px;
+    animation: orb-float 8s ease-in-out infinite alternate;
+}
+
+.web-projects::after {
+    width: 280px;
+    height: 280px;
+    background: var(--orange);
+    bottom: 40px;
+    left: -60px;
+    animation: orb-float 10s ease-in-out infinite alternate-reverse;
+}
+
+/* ── GRID ──────────────────────────────── */
+
+.wp-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── CARD ──────────────────────────────── */
+
+.wp-card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    overflow: hidden;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    transition:
+        opacity   0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.wp-card.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ── ANIMATED GRADIENT BORDER ────────── */
+
+.wp-card-border-anim {
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    z-index: 0;
+    background: conic-gradient(
+        from var(--wp-border-angle, 0deg),
+        transparent 60%,
+        var(--orange),
+        var(--pink),
+        var(--purple),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    padding: 2px;
+}
+
+@property --wp-border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin-wp-border {
+    to { --wp-border-angle: 360deg; }
+}
+
+.wp-card:hover .wp-card-border-anim {
+    opacity: 1;
+    animation: spin-wp-border 3s linear infinite;
+}
+
+/* ── RADIAL GLOW ──────────────────────── */
+
+.wp-card-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 106, 0, 0.12), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wp-card:hover .wp-card-glow {
+    opacity: 1;
+}
+
+/* ── IFRAME PREVIEW ─────────────────── */
+
+.wp-preview {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    z-index: 2;
+    background: #0a0a14;
+    flex-shrink: 0;
+}
+
+.wp-preview iframe {
+    width: 160%;
+    height: 160%;
+    border: none;
+    transform: scale(0.625);
+    transform-origin: top left;
+    pointer-events: none;
+    filter: brightness(0.92);
+    transition: filter 0.4s ease;
+}
+
+/* Hover overlay */
+.wp-preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 30%,
+        rgba(14, 10, 24, 0.88) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 16px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    cursor: pointer;
+}
+
+.wp-preview-overlay span {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(255,106,0,0.85), rgba(238,9,121,0.85));
+    padding: 8px 18px;
+    border-radius: 99px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    box-shadow: 0 4px 20px rgba(255, 106, 0, 0.4);
+    transform: translateY(6px);
+    transition: transform 0.3s ease;
+}
+
+.wp-card:hover .wp-preview-overlay {
+    opacity: 1;
+}
+
+.wp-card:hover .wp-preview-overlay span {
+    transform: translateY(0);
+}
+
+.wp-card:hover .wp-preview iframe {
+    filter: brightness(1);
+}
+
+/* ── CARD BODY ──────────────────────── */
+
+.wp-card-body {
+    padding: 22px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+/* ── HEADER ROW ─────────────────────── */
+
+.wp-card-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 12px;
+}
+
+.wp-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, rgba(255, 106, 0, 0.18), rgba(142, 45, 226, 0.22));
+    border: 1px solid rgba(255, 106, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    color: #ff8c40;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.wp-card:hover .wp-icon-wrap {
+    box-shadow: 0 0 20px rgba(255, 106, 0, 0.45);
+    transform: scale(1.08) rotate(-4deg);
+}
+
+.wp-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.wp-meta h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f0eaf8;
+    margin: 0 0 3px;
+    letter-spacing: 0.01em;
+}
+
+.wp-meta p {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin: 0;
+    letter-spacing: 0.05em;
+    font-family: 'DM Sans', monospace;
+}
+
+/* Live badge */
+.wp-live-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: #6dffb0;
+    background: rgba(109, 255, 176, 0.1);
+    border: 1px solid rgba(109, 255, 176, 0.25);
+    border-radius: 99px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.wp-live-badge i {
+    font-size: 7px;
+    animation: pulse-live 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse-live {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* ── DESCRIPTION ─────────────────────── */
+
+.wp-description {
+    font-size: 13px;
+    color: rgba(200, 190, 220, 0.62);
+    line-height: 1.68;
+    margin-bottom: 14px;
+    flex: 1;
+}
+
+/* ── TAGS ───────────────────────────── */
+
+.wp-tags {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.wp-tags span {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: rgba(200, 175, 240, 0.7);
+    background: rgba(142, 45, 226, 0.1);
+    border: 1px solid rgba(142, 45, 226, 0.2);
+    border-radius: 99px;
+    padding: 3px 10px;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.wp-card:hover .wp-tags span {
+    background: rgba(255, 106, 0, 0.12);
+    border-color: rgba(255, 106, 0, 0.28);
+    color: rgba(255, 200, 160, 0.9);
+}
+
+/* ── ACTION BUTTONS ─────────────────── */
+
+.wp-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.wp-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 14px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: all 0.28s ease;
+    cursor: pointer;
+}
+
+.wp-btn-live {
+    background: var(--grad);
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 0px rgba(255,106,0,0);
+}
+
+.wp-btn-live:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(255, 106, 0, 0.5), 0 6px 20px rgba(0,0,0,0.3);
+    filter: brightness(1.1);
+}
+
+.wp-btn-gh {
+    background: rgba(255,255,255,0.05);
+    color: rgba(200,175,240,0.85);
+    border: 1px solid rgba(142, 45, 226, 0.25);
+}
+
+.wp-btn-gh:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(142,45,226,0.5);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 16px rgba(142,45,226,0.3);
+}
+
+/* ── PARTICLE SCATTER CANVAS ────────── */
+
+#scatter-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+}
+
+/* ── RESPONSIVE ─────────────────────── */
+
+@media (max-width: 1024px) {
+    .web-projects { padding: 70px 20px 90px; }
+    .wp-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+}
+
+@media (max-width: 900px) {
+    .wp-container { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    .web-projects { padding: 45px 14px 65px; }
+    .wp-container { grid-template-columns: 1fr; gap: 18px; }
+    .wp-preview { height: 190px; }
+    .wp-card-body { padding: 18px 18px 18px; }
+    .wp-meta h3 { font-size: 15px; }
+    .wp-icon-wrap { width: 40px; height: 40px; font-size: 16px; }
+}
+
+@media (max-width: 400px) {
+    .wp-preview { height: 170px; }
+    .wp-meta h3 { font-size: 14px; }
+    .wp-card-body { padding: 15px; }
+    .wp-btn { font-size: 11px; padding: 8px 10px; }
+}
+
+@media (max-width: 320px) {
+    .wp-preview { height: 150px; }
+    .wp-actions { flex-direction: column; }
+}
