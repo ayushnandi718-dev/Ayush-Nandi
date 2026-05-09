@@ -1,0 +1,162 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #050816, #0b0c2a);
+    color:white;
+}
+
+/* Main Container */
+
+.space{
+    position:relative;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Animated Stars */
+
+.stars{
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:url('star.png');
+    background-size:contain;
+    opacity:0.6;
+
+    animation: moveStars 120s linear infinite;
+}
+
+@keyframes moveStars{
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(-1000px,-1000px);
+    }
+}
+
+/* Astronaut */
+
+.astronaut{
+    position:relative;
+    z-index:2;
+}
+
+.astronaut img{
+    width:220px;
+
+    animation: float 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 25px rgba(255,255,255,0.25));
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-20px) rotate(2deg);
+    }
+}
+
+/* Message Box */
+
+.message{
+    position:relative;
+    z-index:2;
+
+    margin-top:30px;
+    text-align:center;
+
+    padding:30px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:24px;
+
+    box-shadow:0 0 30px rgba(0,0,0,0.4);
+}
+
+.message h1{
+    font-size:120px;
+    line-height:1;
+
+    background:linear-gradient(90deg,#00d9ff,#7c4dff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.message p{
+    margin-top:15px;
+    font-size:20px;
+    color:#d0d0d0;
+}
+
+/* Button */
+
+.home-btn{
+    display:inline-block;
+
+    margin-top:25px;
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+    color:white;
+
+    background:linear-gradient(90deg,#00bcd4,#7c4dff);
+
+    font-weight:600;
+    letter-spacing:0.5px;
+
+    transition:0.3s ease;
+}
+
+.home-btn:hover{
+    transform:translateY(-3px) scale(1.05);
+
+    box-shadow:
+    0 0 15px rgba(0,188,212,0.5),
+    0 0 30px rgba(124,77,255,0.4);
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+    .astronaut img{
+        width:160px;
+    }
+
+    .message{
+        width:90%;
+        padding:24px;
+    }
+
+    .message h1{
+        font-size:80px;
+    }
+
+    .message p{
+        font-size:16px;
+    }
+}
