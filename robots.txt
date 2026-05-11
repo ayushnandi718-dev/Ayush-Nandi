@@ -1,0 +1,12 @@
+# robots.txt for https://ayushapd.dpdns.org
+# Generated for Ayush Nandi Portfolio
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Block access to any sensitive files
+Disallow: /google6b9ce8f5b6740c1a.html
+
+# Sitemap location
+Sitemap: https://ayushapd.dpdns.org/sitemap.xml
