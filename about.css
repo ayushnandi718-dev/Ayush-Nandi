@@ -569,7 +569,14 @@ html {
     color: #777;
     font-size: 14px;
 }
+.timeline-item a {
+    text-decoration: none;
+    color: #ff6a00;
+}
 
+.timeline-item a:hover {
+    color: #fff;
+}
 /* ── RESPONSIVE: TABLET (≤ 780px) ────────────────────────── */
 @media screen and (max-width: 780px) {
 
