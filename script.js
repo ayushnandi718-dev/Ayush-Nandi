@@ -20,7 +20,7 @@ function typeEffect() {
     } else {
       typingEl.dataset.done = "true";
     }
-  }
+  }ld
   type();
 }
 
