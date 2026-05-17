@@ -1937,9 +1937,9 @@ html {
 
     /* ── REVIEW BUTTON — FIXED (no overlap with chatbot) ── */
     .fb-float-btn {
-        bottom: 90px;   /* above chatbot widget */
+       
         left: auto;
-        right: 16px;
+       
         font-size: 11px;
         padding: 10px 14px;
     }
@@ -2031,8 +2031,6 @@ html {
     }
 
     .fb-float-btn {
-        bottom: 85px;
-        right: 12px;
         font-size: 10px;
         padding: 9px 12px;
     }
