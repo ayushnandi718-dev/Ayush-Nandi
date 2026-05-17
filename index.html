@@ -93,7 +93,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<link rel="stylesheet" href="style.css">
-	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 	<style>
 		body { font-family: 'Roboto', sans-serif; }
 	</style>
@@ -203,110 +203,171 @@
 		</div>
 	</section>
 
-	<!-- ✅ GALLERY / PORTFOLIO -->
-	<section class="gallery" id="portfolio" aria-label="Portfolio gallery – Sample edits and visual work">
-		<div class="card reveal delay-1">
-			<img src="3d.png" alt="3D motion design edit by Ayush Nandi" width="400" height="400" loading="lazy">
-		</div>
-		<div class="card reveal-2">
-			<img src="hanuman.png" alt="Devotional creative edit – Hanuman artwork by Ayush Nandi" width="400" height="400" loading="lazy">
-		</div>
-		<div class="card reveal-3">
-			<img src="me.png" alt="Portrait photo of Ayush Nandi – Digital Creator" width="400" height="400" loading="lazy">
-		</div>
-	</section>
-
 	<script src="script.js"></script>
 </main>
-
-<!-- =============================================
-     FEEDBACK BUTTON — replaces old .feedback-float-btn
-     Place this just before </body>
-============================================= -->
-<button class="fb-float-btn" id="openFeedback" aria-label="Leave a review">
+<!-- REVIEW BUTTON -->
+<button
+  class="fb-float-btn"
+  id="openFeedback"
+  type="button"
+  aria-label="Leave a review"
+>
   ✦ Leave a Review
 </button>
 
 
-<!-- =============================================
-     FEEDBACK MODAL — replaces old .feedback-modal block
-============================================= -->
-<div class="fb-modal-overlay" id="feedbackModal" role="dialog" aria-modal="true" aria-labelledby="fbModalTitle">
+<!-- REVIEW MODAL -->
+<div
+  class="fb-modal-overlay"
+  id="feedbackModal"
+  role="dialog"
+  aria-modal="true"
+>
+
   <div class="fb-modal-box">
 
-    <button class="fb-close-btn" id="closeFeedback" aria-label="Close feedback">✕</button>
+    <button
+      class="fb-close-btn"
+      id="closeFeedback"
+      type="button"
+      aria-label="Close feedback"
+    >
+      ✕
+    </button>
 
-    <!-- Header -->
+
     <div class="fb-modal-head">
       <span class="fb-modal-badge">✦ Share your experience</span>
-      <h2 id="fbModalTitle">How was working with me?</h2>
-      <p>Your honest review helps me grow and helps others decide.</p>
+      <h2>How was working with me?</h2>
+      <p>Your review helps me improve and grow.</p>
     </div>
 
-    <!-- Star Rating -->
-    <div class="fb-star-row" id="starRow" role="group" aria-label="Rating out of 5"></div>
 
-    <!-- Name + Role -->
-    <div class="fb-two-col">
+    <form id="feedbackForm">
+
+      <div class="fb-star-row" id="starRow"></div>
+
+
+      <div class="fb-two-col">
+
+        <div class="fb-field">
+          <label for="fb-name">Your Name</label>
+
+          <input
+            type="text"
+            id="fb-name"
+            name="fb-name"
+            placeholder="Ayush Nandi"
+            maxlength="50"
+            required
+          >
+        </div>
+
+
+        <div class="fb-field">
+          <label for="fb-role">Role / Company</label>
+
+          <input
+            type="text"
+            id="fb-role"
+            name="fb-role"
+            placeholder="Founder, rva.creates"
+            maxlength="60"
+          >
+        </div>
+
+      </div>
+
+
+      <!-- TAGS -->
       <div class="fb-field">
-        <label for="fb-name">Your name</label>
-        <input id="fb-name" placeholder="Ayush Nandi" maxlength="50" required>
+
+        <label>What did I help you with?</label>
+
+        <div class="fb-tag-row">
+
+          <button type="button" class="fb-tag" data-tag="Video Editing">
+            Video Editing
+          </button>
+
+          <button type="button" class="fb-tag" data-tag="Reels / Shorts">
+            Reels / Shorts
+          </button>
+
+          <button type="button" class="fb-tag" data-tag="Web Design">
+            Web Design
+          </button>
+
+          <button type="button" class="fb-tag" data-tag="Brand Content">
+            Brand Content
+          </button>
+
+        </div>
+
       </div>
+
+
+      <!-- MESSAGE -->
       <div class="fb-field">
-        <label for="fb-role">Role / Company</label>
-        <input id="fb-role" placeholder="Founder, rva.creates" maxlength="60">
+
+        <label for="fb-message">Your Review</label>
+
+        <textarea
+          id="fb-message"
+          name="fb-message"
+          placeholder="Tell others what made your experience great..."
+          required
+        ></textarea>
+
       </div>
-    </div>
 
-    <!-- Category Tags -->
-    <div class="fb-field">
-      <label>What did I help you with?</label>
-      <div class="fb-tag-row" id="tagRow">
-        <button class="fb-tag" data-tag="Video Editing">Video Editing</button>
-        <button class="fb-tag" data-tag="Reels / Shorts">Reels / Shorts</button>
-        <button class="fb-tag" data-tag="Web Design">Web Design</button>
-        <button class="fb-tag" data-tag="Brand Content">Brand Content</button>
-        <button class="fb-tag" data-tag="Thumbnail">Thumbnail</button>
-        <button class="fb-tag" data-tag="Other">Other</button>
+
+      <button
+        class="fb-submit-btn"
+        id="fbSubmit"
+        type="submit"
+      >
+        Send Review ✦
+      </button>
+
+
+      <div class="fb-success-msg" id="successMessage">
+        ✓ Review submitted successfully!
       </div>
-    </div>
 
-    <!-- Message -->
-    <div class="fb-field">
-      <label for="fb-message">Your review</label>
-      <textarea id="fb-message" placeholder="Tell others what made your experience great…" required></textarea>
-    </div>
-
-    <button class="fb-submit-btn" id="fbSubmit" type="button">Send Review ✦</button>
-
-    <div class="fb-success-msg" id="successMessage">
-      ✓ Review submitted — thank you!
-    </div>
+    </form>
 
   </div>
+
 </div>
 
 
-<!-- =============================================
-     REVIEWS SHOWCASE SECTION
-     Place this anywhere on your page, e.g. after .about or before footer
-============================================= -->
-<section class="reviews-showcase" id="reviews" aria-label="Client reviews">
+<!-- REVIEWS SECTION -->
+<section class="reviews-showcase" id="reviews">
 
   <div class="reviews-top">
+
     <div class="reviews-top-left">
       <p class="small-title">Client Reviews</p>
       <h2>What people say.</h2>
     </div>
+
+
     <div class="reviews-summary">
       <div class="reviews-avg-score" id="avgScore">—</div>
       <div class="reviews-avg-stars" id="avgStars">☆☆☆☆☆</div>
       <div class="reviews-avg-label" id="revCount">0 reviews</div>
     </div>
+
   </div>
 
+
   <div class="reviews-grid" id="reviewsGrid">
-    <div class="reviews-empty">No reviews yet — be the first to share your experience!</div>
+
+    <div class="reviews-empty">
+      No reviews yet — be the first one ✨
+    </div>
+
   </div>
 
 </section>
