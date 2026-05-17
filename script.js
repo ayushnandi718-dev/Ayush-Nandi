@@ -272,7 +272,258 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+ // ==============================================
+//   FEEDBACK SYSTEM — REDESIGNED
+//   Blank until first real submission.
+// ==============================================
 
+const FEEDBACK_KEY = "ayush_portfolio_feedback_v2";
+
+const AVATAR_COLORS = [
+  "#7c3aed", "#0891b2", "#be185d",
+  "#b45309", "#15803d", "#c2410c",
+  "#0e7490", "#7e22ce"
+];
+
+// ── Storage helpers ──────────────────────────
+
+function feedbackLoadAll() {
+  try {
+    const raw = localStorage.getItem(FEEDBACK_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function feedbackSaveAll(entries) {
+  try {
+    localStorage.setItem(FEEDBACK_KEY, JSON.stringify(entries));
+  } catch (e) {
+    console.warn("Feedback storage error:", e);
+  }
+}
+
+function feedbackAddEntry(entry) {
+  const all = feedbackLoadAll();
+  all.unshift(entry);
+  feedbackSaveAll(all);
+}
+
+// ── Utilities ────────────────────────────────
+
+function getInitials(name) {
+  return name.split(" ").map(w => w[0]).join("").toUpperCase().slice(0, 2);
+}
+
+function getAvatarColor(name) {
+  let hash = 0;
+  for (const ch of name) hash = (hash * 31 + ch.charCodeAt(0)) & 0xffffffff;
+  return AVATAR_COLORS[Math.abs(hash) % AVATAR_COLORS.length];
+}
+
+function starString(n) {
+  return n > 0 ? "★".repeat(n) + "☆".repeat(5 - n) : "☆☆☆☆☆";
+}
+
+function escapeHtml(str) {
+  const d = document.createElement("div");
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+// ── Stars builder ─────────────────────────────
+
+let currentRating = 0;
+
+function buildModalStars() {
+  const row = document.getElementById("starRow");
+  if (!row) return;
+  row.innerHTML = "";
+
+  const labels = ["Terrible", "Poor", "Okay", "Good", "Excellent"];
+
+  for (let i = 1; i <= 5; i++) {
+    const btn = document.createElement("button");
+    btn.className = "fb-star" + (i <= currentRating ? " lit" : "");
+    btn.textContent = "★";
+    btn.type = "button";
+    btn.setAttribute("aria-label", `${i} star – ${labels[i - 1]}`);
+
+    btn.addEventListener("click", () => {
+      currentRating = i;
+      buildModalStars();
+    });
+
+    btn.addEventListener("mouseenter", () => {
+      row.querySelectorAll(".fb-star").forEach((s, j) => {
+        s.classList.toggle("lit", j < i);
+      });
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      row.querySelectorAll(".fb-star").forEach((s, j) => {
+        s.classList.toggle("lit", j < currentRating);
+      });
+    });
+
+    row.appendChild(btn);
+  }
+}
+
+// ── Tag selection ─────────────────────────────
+
+let selectedTag = "";
+
+function initTagButtons() {
+  document.querySelectorAll(".fb-tag").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tag = btn.dataset.tag;
+      selectedTag = tag === selectedTag ? "" : tag;
+      document.querySelectorAll(".fb-tag").forEach(b => {
+        b.classList.toggle("active", b.dataset.tag === selectedTag);
+      });
+    });
+  });
+}
+
+// ── Modal open / close ────────────────────────
+
+function openFeedbackModal() {
+  const modal = document.getElementById("feedbackModal");
+  if (modal) modal.classList.add("active");
+}
+
+function closeFeedbackModal() {
+  const modal = document.getElementById("feedbackModal");
+  if (modal) modal.classList.remove("active");
+}
+
+// ── Submit handler ────────────────────────────
+
+function handleFeedbackSubmit() {
+  const name    = (document.getElementById("fb-name")?.value || "").trim();
+  const role    = (document.getElementById("fb-role")?.value || "").trim();
+  const message = (document.getElementById("fb-message")?.value || "").trim();
+
+  if (!name || !message) {
+    if (!name) document.getElementById("fb-name")?.focus();
+    else document.getElementById("fb-message")?.focus();
+    return;
+  }
+
+  const entry = {
+    id:     Date.now(),
+    name,
+    role,
+    rating: currentRating,
+    tag:    selectedTag,
+    msg:    message,
+    time:   new Date().toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
+  };
+
+  feedbackAddEntry(entry);
+
+  // Reset form
+  if (document.getElementById("fb-name"))    document.getElementById("fb-name").value = "";
+  if (document.getElementById("fb-role"))    document.getElementById("fb-role").value = "";
+  if (document.getElementById("fb-message")) document.getElementById("fb-message").value = "";
+  currentRating = 0;
+  selectedTag   = "";
+  buildModalStars();
+  document.querySelectorAll(".fb-tag").forEach(b => b.classList.remove("active"));
+
+  // Show success message then close
+  const success = document.getElementById("successMessage");
+  if (success) {
+    success.classList.add("show");
+    setTimeout(() => {
+      success.classList.remove("show");
+      closeFeedbackModal();
+      renderReviewsSection();
+    }, 2000);
+  }
+}
+
+// ── Reviews section renderer ──────────────────
+
+function renderReviewsSection() {
+  const section = document.getElementById("reviews");
+  const grid    = document.getElementById("reviewsGrid");
+  const avgEl   = document.getElementById("avgScore");
+  const starsEl = document.getElementById("avgStars");
+  const countEl = document.getElementById("revCount");
+
+  const all   = feedbackLoadAll();
+  const rated = all.filter(f => f.rating > 0);
+
+  // Hide the entire section until at least one real review exists
+  if (section) {
+    section.style.display = all.length ? "block" : "none";
+  }
+
+  if (!grid) return;
+
+  if (!all.length) {
+    if (avgEl)   avgEl.textContent   = "—";
+    if (starsEl) starsEl.textContent = "☆☆☆☆☆";
+    if (countEl) countEl.textContent = "0 reviews";
+    grid.innerHTML = "";
+    return;
+  }
+
+  // Summary stats
+  const avg = rated.length
+    ? rated.reduce((s, f) => s + f.rating, 0) / rated.length
+    : 0;
+
+  if (avgEl)   avgEl.textContent   = avg ? avg.toFixed(1) : "—";
+  if (starsEl) starsEl.textContent = avg ? starString(Math.round(avg)) : "☆☆☆☆☆";
+  if (countEl) countEl.textContent = `${all.length} review${all.length !== 1 ? "s" : ""}`;
+
+  // Render up to 6 most recent
+  grid.innerHTML = all.slice(0, 6).map(item => `
+    <div class="review-item">
+      <div class="review-item-top">
+        <div class="review-avatar" style="background:${getAvatarColor(item.name)}">
+          ${escapeHtml(getInitials(item.name))}
+        </div>
+        <div>
+          <div class="review-name">${escapeHtml(item.name)}</div>
+          <div class="review-role">${escapeHtml(item.role || "")}</div>
+        </div>
+      </div>
+      <div class="review-stars">${starString(item.rating)}</div>
+      <div class="review-text">${escapeHtml(item.msg)}</div>
+      ${item.tag ? `<span class="review-category">${escapeHtml(item.tag)}</span>` : ""}
+      <div class="review-time">${escapeHtml(item.time || "")}</div>
+    </div>
+  `).join("");
+}
+
+// ── Boot ──────────────────────────────────────
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const openBtn   = document.getElementById("openFeedback");
+  const closeBtn  = document.getElementById("closeFeedback");
+  const overlay   = document.getElementById("feedbackModal");
+  const submitBtn = document.getElementById("fbSubmit");
+
+  if (openBtn)   openBtn.addEventListener("click", openFeedbackModal);
+  if (closeBtn)  closeBtn.addEventListener("click", closeFeedbackModal);
+  if (submitBtn) submitBtn.addEventListener("click", handleFeedbackSubmit);
+
+  if (overlay) {
+    overlay.addEventListener("click", e => {
+      if (e.target === overlay) closeFeedbackModal();
+    });
+  }
+
+  buildModalStars();
+  initTagButtons();
+  renderReviewsSection(); // hides section if no reviews yet
+});
 
 /* ── SKILL CARDS: 3D TILT + PROGRESS COUNTER ── */
 document.addEventListener("DOMContentLoaded", () => {
