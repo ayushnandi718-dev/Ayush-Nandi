@@ -34,15 +34,16 @@
 	<!-- ✅ FAVICON -->
 	<link rel="icon" type="image/png" href="image.png">
 	<link rel="apple-touch-icon" href="image.png">
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-73SL4VM026"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-73SL4VM026');
-</script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-73SL4VM026"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-73SL4VM026');
+	</script>
+
 	<!-- ✅ STRUCTURED DATA – Person + Website (JSON-LD) -->
 	<script type="application/ld+json">
 	{
@@ -73,7 +74,7 @@
 	}
 	</script>
 
-	<!-- ✅ STRUCTURED DATA – WebSite (Sitelinks Searchbox eligible) -->
+	<!-- ✅ STRUCTURED DATA – WebSite -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -88,6 +89,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+	<!-- ✅ SUPABASE JS — must load before script.js -->
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 	<!-- ✅ FONTS & ICONS -->
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -114,13 +118,13 @@
 
 			<!-- DESKTOP NAV LINKS -->
 			<ul class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="project.html">Edits</a>
-    <a href="contact.html">Contact</a>
-    <a href="skills.html">Skills</a>
-    <a href="webprojects.html">GitHub</a>
-</ul>
+				<a href="index.html">Home</a>
+				<a href="about.html">About</a>
+				<a href="project.html">Edits</a>
+				<a href="contact.html">Contact</a>
+				<a href="skills.html">Skills</a>
+				<a href="webprojects.html">GitHub</a>
+			</ul>
 
 			<!-- DESKTOP ACTION -->
 			<div class="desktop-action">
@@ -203,9 +207,9 @@
 		</div>
 	</section>
 
-	<script src="script.js"></script>
 </main>
-<!-- REVIEW BUTTON -->
+
+<!-- ✅ REVIEW BUTTON -->
 <button
   class="fb-float-btn"
   id="openFeedback"
@@ -216,14 +220,13 @@
 </button>
 
 
-<!-- REVIEW MODAL -->
+<!-- ✅ REVIEW MODAL -->
 <div
   class="fb-modal-overlay"
   id="feedbackModal"
   role="dialog"
   aria-modal="true"
 >
-
   <div class="fb-modal-box">
 
     <button
@@ -235,24 +238,19 @@
       ✕
     </button>
 
-
     <div class="fb-modal-head">
       <span class="fb-modal-badge">✦ Share your experience</span>
       <h2>How was working with me?</h2>
       <p>Your review helps me improve and grow.</p>
     </div>
 
-
     <form id="feedbackForm">
 
       <div class="fb-star-row" id="starRow"></div>
 
-
       <div class="fb-two-col">
-
         <div class="fb-field">
           <label for="fb-name">Your Name</label>
-
           <input
             type="text"
             id="fb-name"
@@ -263,10 +261,8 @@
           >
         </div>
 
-
         <div class="fb-field">
           <label for="fb-role">Role / Company</label>
-
           <input
             type="text"
             id="fb-role"
@@ -275,52 +271,29 @@
             maxlength="60"
           >
         </div>
-
       </div>
-
 
       <!-- TAGS -->
       <div class="fb-field">
-
         <label>What did I help you with?</label>
-
         <div class="fb-tag-row">
-
-          <button type="button" class="fb-tag" data-tag="Video Editing">
-            Video Editing
-          </button>
-
-          <button type="button" class="fb-tag" data-tag="Reels / Shorts">
-            Reels / Shorts
-          </button>
-
-          <button type="button" class="fb-tag" data-tag="Web Design">
-            Web Design
-          </button>
-
-          <button type="button" class="fb-tag" data-tag="Brand Content">
-            Brand Content
-          </button>
-
+          <button type="button" class="fb-tag" data-tag="Video Editing">Video Editing</button>
+          <button type="button" class="fb-tag" data-tag="Reels / Shorts">Reels / Shorts</button>
+          <button type="button" class="fb-tag" data-tag="Web Design">Web Design</button>
+          <button type="button" class="fb-tag" data-tag="Brand Content">Brand Content</button>
         </div>
-
       </div>
-
 
       <!-- MESSAGE -->
       <div class="fb-field">
-
         <label for="fb-message">Your Review</label>
-
         <textarea
           id="fb-message"
           name="fb-message"
           placeholder="Tell others what made your experience great..."
           required
         ></textarea>
-
       </div>
-
 
       <button
         class="fb-submit-btn"
@@ -330,7 +303,6 @@
         Send Review ✦
       </button>
 
-
       <div class="fb-success-msg" id="successMessage">
         ✓ Review submitted successfully!
       </div>
@@ -338,39 +310,34 @@
     </form>
 
   </div>
-
 </div>
 
 
-<!-- REVIEWS SECTION -->
+<!-- ✅ REVIEWS SECTION -->
 <section class="reviews-showcase" id="reviews">
 
   <div class="reviews-top">
-
     <div class="reviews-top-left">
       <p class="small-title">Client Reviews</p>
       <h2>What people say.</h2>
     </div>
-
 
     <div class="reviews-summary">
       <div class="reviews-avg-score" id="avgScore">—</div>
       <div class="reviews-avg-stars" id="avgStars">☆☆☆☆☆</div>
       <div class="reviews-avg-label" id="revCount">0 reviews</div>
     </div>
-
   </div>
 
-
   <div class="reviews-grid" id="reviewsGrid">
-
     <div class="reviews-empty">
       No reviews yet — be the first one ✨
     </div>
-
   </div>
 
 </section>
+
+
 <!-- ✅ FOOTER -->
 <footer class="footer" role="contentinfo" aria-label="Site footer">
 	<div class="footer-container">
@@ -426,17 +393,14 @@
 		<!-- TOOLS -->
 		<div class="footer-brands" aria-label="Tools Ayush Nandi uses for editing">
 			<h3>Tools That I Use</h3>
-
 			<div class="brand">
 				<img src="capcut.png" alt="CapCut video editing software logo" width="48" height="48" loading="lazy">
 				<p>CapCut</p>
 			</div>
-
 			<div class="brand">
 				<img src="alightmotion.png" alt="Alight Motion app logo" width="48" height="48" loading="lazy">
 				<p>Alight Motion</p>
 			</div>
-
 			<div class="brand">
 				<img src="lightroom.png" alt="Adobe Lightroom logo" width="48" height="48" loading="lazy">
 				<p>Lightroom</p>
@@ -459,6 +423,9 @@
   window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+
+<!-- ✅ MAIN SCRIPT — loaded last so all DOM elements exist -->
+<script src="script.js"></script>
 
 </body>
 </html>
