@@ -1,3 +1,11 @@
+// ================= SUPABASE INIT =================
+const { createClient } = supabase;
+
+const SUPABASE_URL = "https://imrwnoyinickrmoonkts.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imltcndub3lpbmlja3Jtb29ua3RzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5NjYwMzYsImV4cCI6MjA5NDU0MjAzNn0.Y7PcGBRvOI3UrTo7uSeMnI8z9SV6r5R2TVhgJAsx6n8";
+
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+
 // ================= HERO TYPING =================
 const text = "AYUSH NANDI";
 const afterText = ", a video editor";
@@ -20,7 +28,7 @@ function typeEffect() {
     } else {
       typingEl.dataset.done = "true";
     }
-  }ld
+  }
   type();
 }
 
@@ -106,14 +114,12 @@ function initHamburger() {
     e.preventDefault();
     const isOpen = mobileMenu.classList.toggle("mobile-menu-active");
 
-    // Swap icon: bars ↔ xmark
     const icon = hamburgerBtn.querySelector("i");
     if (icon) {
       icon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
     }
   });
 
-  // Close menu when a link inside is clicked
   mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       mobileMenu.classList.remove("mobile-menu-active");
@@ -122,7 +128,6 @@ function initHamburger() {
     });
   });
 
-  // Close menu when clicking outside
   document.addEventListener("click", (e) => {
     if (
       mobileMenu.classList.contains("mobile-menu-active") &&
@@ -222,67 +227,58 @@ document.querySelectorAll(".get-touch-btn").forEach(btn => {
   });
 });
 
-//==================Project============================
-// ================= FILTER + VIDEO HOVER =================
+// =================== PROJECT FILTER + VIDEO HOVER ===================
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ── FILTER BUTTONS ──
-    const buttons = document.querySelectorAll(".filter-btn");
-    const cards   = document.querySelectorAll(".project-card");
+  // ── FILTER BUTTONS ──
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards   = document.querySelectorAll(".project-card");
 
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        card.style.display =
+          (filter === "all" || filter === card.dataset.category)
+          ? "block"
+          : "none";
+      });
+    });
+  });
+
+  // ── VIDEO HOVER PLAY ──
+  document.querySelectorAll(".project-card video").forEach(video => {
+    video.addEventListener("mouseenter", () => video.play());
+    video.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+
+  // ── EXPLORE LINK ──
+  const exploreLink = document.getElementById("exploreLink");
+  const links = {
+    all:     "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
+    reels:   "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
+    youtube: "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
+    ads:     "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
+  };
+
+  if (exploreLink) {
     buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            buttons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            const filter = btn.dataset.filter;
-            cards.forEach(card => {
-                card.style.display =
-                    (filter === "all" || filter === card.dataset.category)
-                    ? "block"
-                    : "none";
-            });
-        });
+      btn.addEventListener("click", () => {
+        exploreLink.href = links[btn.dataset.filter] || links.all;
+      });
     });
-
-    // ── VIDEO HOVER PLAY ──
-    document.querySelectorAll(".project-card video").forEach(video => {
-        video.addEventListener("mouseenter", () => video.play());
-        video.addEventListener("mouseleave", () => {
-            video.pause();
-            video.currentTime = 0;
-        });
-    });
-
-    // ── EXPLORE LINK (filter-aware) ──
-    const exploreLink = document.getElementById("exploreLink");
-    const links = {
-        all:     "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
-        reels:   "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
-        youtube: "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
-        ads:     "https://drive.google.com/drive/folders/1URT6phaLJU0rGzLwVT2z7jC5vx2NTwCe?usp=sharing",
-    };
-
-    if (exploreLink) {
-        buttons.forEach(btn => {
-            btn.addEventListener("click", () => {
-                exploreLink.href = links[btn.dataset.filter] || links.all;
-            });
-        });
-    }
-
+  }
 });
-  // ==============================================
+
+// ==============================================
 //   FEEDBACK SYSTEM — SUPABASE VERSION
 // ==============================================
-
-const SUPABASE_URL = "https://imrwnoyinickrmoonkts.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imltcndub3lpbmlja3Jtb29ua3RzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5NjYwMzYsImV4cCI6MjA5NDU0MjAzNn0.Y7PcGBRvOI3UrTo7uSeMnI8z9SV6r5R2TVhgJAsx6n8";
-
-const supabaseClient = supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
 
 const AVATAR_COLORS = [
   "#7c3aed", "#0891b2", "#be185d",
@@ -293,26 +289,38 @@ const AVATAR_COLORS = [
 // ── DATABASE HELPERS ──────────────────────────
 
 async function feedbackLoadAll() {
-  const { data, error } = await supabaseClient
-    .from("reviews")
-    .select("*")
-    .order("id", { ascending: false });
+  try {
+    const { data, error } = await supabaseClient
+      .from("reviews")
+      .select("*")
+      .order("id", { ascending: false });
 
-  if (error) {
-    console.error("Load error:", error);
+    if (error) {
+      console.error("Load error:", error.message);
+      return [];
+    }
+    return data || [];
+  } catch (err) {
+    console.error("Unexpected load error:", err);
     return [];
   }
-
-  return data || [];
 }
 
 async function feedbackAddEntry(entry) {
-  const { error } = await supabaseClient
-    .from("reviews")
-    .insert([entry]);
+  try {
+    const { data, error } = await supabaseClient
+      .from("reviews")
+      .insert([entry])
+      .select(); // return inserted row so we can confirm
 
-  if (error) {
-    console.error("Insert error:", error);
+    if (error) {
+      console.error("Insert error:", error.message);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error("Unexpected insert error:", err);
+    return false;
   }
 }
 
@@ -329,11 +337,9 @@ function getInitials(name) {
 
 function getAvatarColor(name) {
   let hash = 0;
-
   for (const ch of name) {
     hash = (hash * 31 + ch.charCodeAt(0)) & 0xffffffff;
   }
-
   return AVATAR_COLORS[Math.abs(hash) % AVATAR_COLORS.length];
 }
 
@@ -354,36 +360,19 @@ function escapeHtml(str) {
 let currentRating = 0;
 
 function buildModalStars() {
-
   const row = document.getElementById("starRow");
-
   if (!row) return;
 
   row.innerHTML = "";
 
-  const labels = [
-    "Terrible",
-    "Poor",
-    "Okay",
-    "Good",
-    "Excellent"
-  ];
+  const labels = ["Terrible", "Poor", "Okay", "Good", "Excellent"];
 
   for (let i = 1; i <= 5; i++) {
-
     const btn = document.createElement("button");
-
-    btn.className =
-      "fb-star" + (i <= currentRating ? " lit" : "");
-
+    btn.className = "fb-star" + (i <= currentRating ? " lit" : "");
     btn.textContent = "★";
-
     btn.type = "button";
-
-    btn.setAttribute(
-      "aria-label",
-      `${i} star – ${labels[i - 1]}`
-    );
+    btn.setAttribute("aria-label", `${i} star – ${labels[i - 1]}`);
 
     btn.addEventListener("click", () => {
       currentRating = i;
@@ -391,19 +380,15 @@ function buildModalStars() {
     });
 
     btn.addEventListener("mouseenter", () => {
-
       row.querySelectorAll(".fb-star").forEach((s, j) => {
         s.classList.toggle("lit", j < i);
       });
-
     });
 
     btn.addEventListener("mouseleave", () => {
-
       row.querySelectorAll(".fb-star").forEach((s, j) => {
         s.classList.toggle("lit", j < currentRating);
       });
-
     });
 
     row.appendChild(btn);
@@ -415,396 +400,243 @@ function buildModalStars() {
 let selectedTag = "";
 
 function initTagButtons() {
-
   document.querySelectorAll(".fb-tag").forEach(btn => {
-
     btn.addEventListener("click", () => {
-
       const tag = btn.dataset.tag;
-
-      selectedTag = tag === selectedTag
-        ? ""
-        : tag;
-
+      selectedTag = tag === selectedTag ? "" : tag;
       document.querySelectorAll(".fb-tag").forEach(b => {
-
-        b.classList.toggle(
-          "active",
-          b.dataset.tag === selectedTag
-        );
-
+        b.classList.toggle("active", b.dataset.tag === selectedTag);
       });
-
     });
-
   });
-
 }
 
 // ── Modal open / close ────────────────────────
 
 function openFeedbackModal() {
-
-  const modal =
-    document.getElementById("feedbackModal");
-
-  if (modal) {
-    modal.classList.add("active");
-  }
-
+  const modal = document.getElementById("feedbackModal");
+  if (modal) modal.classList.add("active");
 }
 
 function closeFeedbackModal() {
-
-  const modal =
-    document.getElementById("feedbackModal");
-
-  if (modal) {
-    modal.classList.remove("active");
-  }
-
+  const modal = document.getElementById("feedbackModal");
+  if (modal) modal.classList.remove("active");
 }
 
 // ── Submit handler ────────────────────────────
 
 async function handleFeedbackSubmit() {
-
-  const name =
-    (document.getElementById("fb-name")?.value || "")
-    .trim();
-
-  const role =
-    (document.getElementById("fb-role")?.value || "")
-    .trim();
-
-  const message =
-    (document.getElementById("fb-message")?.value || "")
-    .trim();
+  const name    = (document.getElementById("fb-name")?.value    || "").trim();
+  const role    = (document.getElementById("fb-role")?.value    || "").trim();
+  const message = (document.getElementById("fb-message")?.value || "").trim();
 
   if (!name || !message) {
-
-    if (!name) {
-      document.getElementById("fb-name")?.focus();
-    } else {
-      document.getElementById("fb-message")?.focus();
-    }
-
+    if (!name) document.getElementById("fb-name")?.focus();
+    else       document.getElementById("fb-message")?.focus();
     return;
   }
 
-  const entry = {
+  // Disable button while saving
+  const submitBtn = document.getElementById("fbSubmit");
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+  }
 
+  const entry = {
     name,
     role,
-
     rating: currentRating,
-
     tag: selectedTag,
-
     msg: message,
-
-    time: new Date().toLocaleDateString(
-      "en-IN",
-      {
-        day: "numeric",
-        month: "short",
-        year: "numeric"
-      }
-    )
-
+    time: new Date().toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "short",
+      year: "numeric"
+    })
   };
 
-  await feedbackAddEntry(entry);
+  const ok = await feedbackAddEntry(entry);
+
+  // Re-enable button
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Review ✦";
+  }
+
+  if (!ok) {
+    alert("Something went wrong. Please try again.");
+    return;
+  }
 
   // Reset form
-
-  if (document.getElementById("fb-name")) {
-    document.getElementById("fb-name").value = "";
-  }
-
-  if (document.getElementById("fb-role")) {
-    document.getElementById("fb-role").value = "";
-  }
-
-  if (document.getElementById("fb-message")) {
-    document.getElementById("fb-message").value = "";
-  }
-
+  document.getElementById("fb-name").value    = "";
+  document.getElementById("fb-role").value    = "";
+  document.getElementById("fb-message").value = "";
   currentRating = 0;
-
-  selectedTag = "";
-
+  selectedTag   = "";
   buildModalStars();
+  document.querySelectorAll(".fb-tag").forEach(b => b.classList.remove("active"));
 
-  document.querySelectorAll(".fb-tag")
-    .forEach(b => b.classList.remove("active"));
-
-  const success =
-    document.getElementById("successMessage");
-
+  // Show success message, then close and refresh
+  const success = document.getElementById("successMessage");
   if (success) {
-
     success.classList.add("show");
-
     setTimeout(async () => {
-
       success.classList.remove("show");
-
       closeFeedbackModal();
-
       await renderReviewsSection();
-
     }, 2000);
-
   }
-
 }
 
 // ── Reviews section renderer ──────────────────
 
 async function renderReviewsSection() {
-
-  const section =
-    document.getElementById("reviews");
-
-  const grid =
-    document.getElementById("reviewsGrid");
-
-  const avgEl =
-    document.getElementById("avgScore");
-
-  const starsEl =
-    document.getElementById("avgStars");
-
-  const countEl =
-    document.getElementById("revCount");
-
-  const all = await feedbackLoadAll();
-
-  const rated =
-    all.filter(f => f.rating > 0);
-
-  if (section) {
-    section.style.display =
-      all.length ? "block" : "none";
-  }
+  const grid    = document.getElementById("reviewsGrid");
+  const avgEl   = document.getElementById("avgScore");
+  const starsEl = document.getElementById("avgStars");
+  const countEl = document.getElementById("revCount");
+  const section = document.getElementById("reviews");
 
   if (!grid) return;
 
+  // Show loading state
+  grid.innerHTML = `<div class="reviews-empty">Loading reviews…</div>`;
+
+  const all = await feedbackLoadAll();
+
+  // Always keep section visible
+  if (section) section.style.display = "block";
+
   if (!all.length) {
-
-    if (avgEl) {
-      avgEl.textContent = "—";
-    }
-
-    if (starsEl) {
-      starsEl.textContent = "☆☆☆☆☆";
-    }
-
-    if (countEl) {
-      countEl.textContent = "0 reviews";
-    }
-
-    grid.innerHTML = "";
-
+    if (avgEl)   avgEl.textContent   = "—";
+    if (starsEl) starsEl.textContent = "☆☆☆☆☆";
+    if (countEl) countEl.textContent = "0 reviews";
+    grid.innerHTML = `<div class="reviews-empty">No reviews yet — be the first one ✨</div>`;
     return;
   }
 
-  const avg = rated.length
-    ? rated.reduce((s, f) => s + f.rating, 0)
-        / rated.length
+  // Compute average
+  const rated = all.filter(f => f.rating > 0);
+  const avg   = rated.length
+    ? rated.reduce((s, f) => s + f.rating, 0) / rated.length
     : 0;
 
-  if (avgEl) {
-    avgEl.textContent =
-      avg ? avg.toFixed(1) : "—";
-  }
+  if (avgEl)   avgEl.textContent   = avg ? avg.toFixed(1) : "—";
+  if (starsEl) starsEl.textContent = avg ? starString(Math.round(avg)) : "☆☆☆☆☆";
+  if (countEl) countEl.textContent = `${all.length} review${all.length !== 1 ? "s" : ""}`;
 
-  if (starsEl) {
-    starsEl.textContent =
-      avg
-        ? starString(Math.round(avg))
-        : "☆☆☆☆☆";
-  }
-
-  if (countEl) {
-    countEl.textContent =
-      `${all.length} review${all.length !== 1 ? "s" : ""}`;
-  }
-
-  grid.innerHTML =
-    all.slice(0, 6).map(item => `
-
+  // Render cards
+  grid.innerHTML = all.slice(0, 6).map(item => `
     <div class="review-item">
-
       <div class="review-item-top">
-
-        <div
-          class="review-avatar"
-          style="background:${getAvatarColor(item.name)}"
-        >
+        <div class="review-avatar" style="background:${getAvatarColor(item.name)}">
           ${escapeHtml(getInitials(item.name))}
         </div>
-
         <div>
-
-          <div class="review-name">
-            ${escapeHtml(item.name)}
-          </div>
-
-          <div class="review-role">
-            ${escapeHtml(item.role || "")}
-          </div>
-
+          <div class="review-name">${escapeHtml(item.name)}</div>
+          <div class="review-role">${escapeHtml(item.role || "")}</div>
         </div>
-
       </div>
-
-      <div class="review-stars">
-        ${starString(item.rating)}
-      </div>
-
-      <div class="review-text">
-        ${escapeHtml(item.msg)}
-      </div>
-
-      ${item.tag
-        ? `<span class="review-category">
-            ${escapeHtml(item.tag)}
-          </span>`
-        : ""
-      }
-
-      <div class="review-time">
-        ${escapeHtml(item.time || "")}
-      </div>
-
+      <div class="review-stars">${starString(item.rating)}</div>
+      <div class="review-text">${escapeHtml(item.msg)}</div>
+      ${item.tag ? `<span class="review-category">${escapeHtml(item.tag)}</span>` : ""}
+      <div class="review-time">${escapeHtml(item.time || "")}</div>
     </div>
-
   `).join("");
-
 }
 
 // ── Boot ──────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
+  const openBtn   = document.getElementById("openFeedback");
+  const closeBtn  = document.getElementById("closeFeedback");
+  const overlay   = document.getElementById("feedbackModal");
+  const submitBtn = document.getElementById("fbSubmit");
 
-  const openBtn =
-    document.getElementById("openFeedback");
-
-  const closeBtn =
-    document.getElementById("closeFeedback");
-
-  const overlay =
-    document.getElementById("feedbackModal");
-
-  const submitBtn =
-    document.getElementById("fbSubmit");
-
-  if (openBtn) {
-    openBtn.addEventListener(
-      "click",
-      openFeedbackModal
-    );
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener(
-      "click",
-      closeFeedbackModal
-    );
-  }
+  if (openBtn)   openBtn.addEventListener("click", openFeedbackModal);
+  if (closeBtn)  closeBtn.addEventListener("click", closeFeedbackModal);
 
   if (submitBtn) {
-    submitBtn.addEventListener(
-      "click",
-      handleFeedbackSubmit
-    );
+    // Prevent default form submission, use our async handler
+    submitBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      handleFeedbackSubmit();
+    });
   }
 
   if (overlay) {
-
     overlay.addEventListener("click", e => {
-
-      if (e.target === overlay) {
-        closeFeedbackModal();
-      }
-
+      if (e.target === overlay) closeFeedbackModal();
     });
-
   }
 
   buildModalStars();
-
   initTagButtons();
-
   renderReviewsSection();
-
 });
 
-/* ── SKILL CARDS: 3D TILT + PROGRESS COUNTER ── */
+// ── SKILL CARDS: 3D TILT + PROGRESS COUNTER ──
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ── Intersection Observer: trigger when cards enter viewport ── */
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
 
-            const card = entry.target;
-            const idx  = parseInt(card.dataset.index);
-            const fill = card.querySelector(".progress-fill");
-            const pct  = card.querySelector(".skill-percent");
-            const target = parseInt(pct.dataset.target);
+      const card   = entry.target;
+      const idx    = parseInt(card.dataset.index);
+      const fill   = card.querySelector(".progress-fill");
+      const pct    = card.querySelector(".skill-percent");
+      const target = parseInt(pct?.dataset.target || "0");
 
-            /* staggered entrance */
-            setTimeout(() => {
-                card.classList.add("in-view");
+      setTimeout(() => {
+        card.classList.add("in-view");
 
-                /* animate progress bar */
-                setTimeout(() => {
-                    fill.style.width = fill.dataset.width;
+        setTimeout(() => {
+          if (fill) fill.style.width = fill.dataset.width;
 
-                    /* count-up number */
-                    let count = 0;
-                    const step = Math.ceil(target / 60);
-                    const timer = setInterval(() => {
-                        count = Math.min(count + step, target);
-                        pct.textContent = count + "%";
-                        if (count >= target) clearInterval(timer);
-                    }, 25);
-                }, 400);
+          let count = 0;
+          const step = Math.ceil(target / 60);
+          const timer = setInterval(() => {
+            count = Math.min(count + step, target);
+            if (pct) pct.textContent = count + "%";
+            if (count >= target) clearInterval(timer);
+          }, 25);
+        }, 400);
 
-            }, idx * 130);
+      }, idx * 130);
 
-            observer.unobserve(card);
-        });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll(".skill-card").forEach(c => observer.observe(c));
-
-
-    /* ── 3D Magnetic Tilt ── */
-    document.querySelectorAll(".skill-card").forEach(card => {
-        card.addEventListener("mousemove", e => {
-            const rect = card.getBoundingClientRect();
-            const cx   = rect.left + rect.width  / 2;
-            const cy   = rect.top  + rect.height / 2;
-            const dx   = (e.clientX - cx) / (rect.width  / 2);
-            const dy   = (e.clientY - cy) / (rect.height / 2);
-
-            const rotX = (-dy * 12).toFixed(2);
-            const rotY = ( dx * 12).toFixed(2);
-            const gX   = (50 + dx * 30).toFixed(1);
-            const gY   = (50 + dy * 30).toFixed(1);
-
-            card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.04,1.04,1.04)`;
-            card.querySelector(".card-glow").style.background =
-                `radial-gradient(circle at ${gX}% ${gY}%, rgba(255,106,0,0.22), transparent 65%)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "";
-            card.querySelector(".card-glow").style.background = "";
-        });
+      observer.unobserve(card);
     });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".skill-card").forEach(c => observer.observe(c));
+
+  // ── 3D Magnetic Tilt ──
+  document.querySelectorAll(".skill-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const cx   = rect.left + rect.width  / 2;
+      const cy   = rect.top  + rect.height / 2;
+      const dx   = (e.clientX - cx) / (rect.width  / 2);
+      const dy   = (e.clientY - cy) / (rect.height / 2);
+
+      const rotX = (-dy * 12).toFixed(2);
+      const rotY = ( dx * 12).toFixed(2);
+      const gX   = (50 + dx * 30).toFixed(1);
+      const gY   = (50 + dy * 30).toFixed(1);
+
+      card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.04,1.04,1.04)`;
+      const glow = card.querySelector(".card-glow");
+      if (glow) glow.style.background =
+        `radial-gradient(circle at ${gX}% ${gY}%, rgba(255,106,0,0.22), transparent 65%)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+      const glow = card.querySelector(".card-glow");
+      if (glow) glow.style.background = "";
+    });
+  });
 });
