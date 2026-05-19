@@ -194,6 +194,391 @@ html {
 .mobile-menu-active .btn {
     width: 100%;
 }
+	 ```css id="md2u7v"
+/* =========================
+   CERTIFICATIONS SECTION
+========================= */
+
+.certificates-section{
+    padding: 90px 7%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BACKGROUND GLOW */
+
+.certificates-section::before{
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.08),
+        transparent 70%
+    );
+
+    top: -200px;
+    right: -150px;
+
+    filter: blur(80px);
+
+    z-index: 0;
+
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove{
+    from{
+        transform: translateY(0px) translateX(0px);
+    }
+
+    to{
+        transform: translateY(40px) translateX(-40px);
+    }
+}
+
+.certificates-hero{
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    margin-bottom: 60px;
+
+    animation: fadeUp 1s ease;
+}
+
+.certificates-hero .small-title{
+    color: #8f8f8f;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.certificates-hero h1{
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    line-height: 1;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.certificates-hero p{
+    max-width: 650px;
+    margin: auto;
+    color: #a0a0a0;
+    line-height: 1.9;
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.certificates-grid{
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 25px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.certificate-card{
+    position: relative;
+    overflow: hidden;
+
+    padding: 30px;
+    border-radius: 24px;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(18px);
+
+    transition:
+    transform 0.6s cubic-bezier(.22,1,.36,1),
+    box-shadow 0.6s ease,
+    border-color 0.6s ease;
+
+    animation: cardAppear 1s ease;
+}
+
+.certificate-card::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.07),
+        transparent
+    );
+
+    pointer-events: none;
+}
+
+/* SHIMMER EFFECT */
+
+.certificate-card::after{
+    content: "";
+
+    position: absolute;
+
+    top: -150%;
+    left: -50%;
+
+    width: 200%;
+    height: 300%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.06),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    transition: 1s ease;
+}
+
+.certificate-card:hover::after{
+    left: 100%;
+}
+
+.certificate-card:hover{
+    transform:
+    translateY(-15px)
+    scale(1.02);
+
+    border-color: rgba(255,255,255,0.15);
+
+    box-shadow:
+    0 25px 80px rgba(255,255,255,0.06);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.certificate-icon{
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    margin-bottom: 22px;
+
+    position: relative;
+
+    transition: 0.5s ease;
+}
+
+.certificate-icon::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.certificate-card:hover .certificate-icon{
+    transform:
+    rotate(-6deg)
+    scale(1.08);
+}
+
+.certificate-card:hover .certificate-icon::before{
+    opacity: 1;
+}
+
+.certificate-icon i{
+    font-size: 1.4rem;
+    color: white;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.certificate-provider{
+    color: #8d8d8d;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+}
+
+.certificate-card h2{
+    font-size: 2rem;
+    margin: 14px 0;
+    line-height: 1.25;
+
+    transition: 0.4s ease;
+}
+
+.certificate-card:hover h2{
+    transform: translateX(6px);
+}
+
+.certificate-card p{
+    color: #a5a5a5;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.certificate-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 11px 18px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: 0.4s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-btn::before{
+    content: "";
+
+    position: absolute;
+
+    width: 0%;
+    height: 100%;
+
+    background: white;
+
+    left: 0;
+    top: 0;
+
+    z-index: -1;
+
+    transition: 0.4s ease;
+}
+
+.certificate-btn:hover::before{
+    width: 100%;
+}
+
+.certificate-btn:hover{
+    color: black;
+
+    transform:
+    translateY(-3px)
+    scale(1.03);
+}
+
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity: 0;
+        transform:
+        translateY(60px)
+        scale(0.95);
+    }
+
+    to{
+        opacity: 1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .certificates-section{
+        padding: 90px 6%;
+    }
+
+    .certificates-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-card{
+        padding: 32px;
+    }
+
+    .certificate-card h2{
+        font-size: 1.6rem;
+    }
+
+}
+```
 
 /* ── BUTTON ───────────────────────────────────────────────── */
 .btn {
