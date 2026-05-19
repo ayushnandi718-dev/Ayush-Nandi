@@ -470,7 +470,7 @@ html {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
+	cursor: pointer;
     padding: 11px 18px;
 
     border-radius: 999px;
@@ -499,7 +499,7 @@ html {
 
     left: 0;
     top: 0;
-
+	 pointer-events: none; 
     z-index: -1;
 
     transition: 0.4s ease;
