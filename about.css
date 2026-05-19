@@ -462,60 +462,6 @@ html {
 }
 
 
-/* =========================
-   BUTTON
-========================= */
-
-.certificate-btn{
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-	cursor: pointer;
-    padding: 11px 18px;
-
-    border-radius: 999px;
-
-    text-decoration: none;
-
-    color: white;
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    transition: 0.4s ease;
-
-    position: relative;
-    overflow: hidden;
-}
-
-.certificate-btn::before{
-    content: "";
-
-    position: absolute;
-
-    width: 0%;
-    height: 100%;
-
-    background: white;
-
-    left: 0;
-    top: 0;
-	 pointer-events: none; 
-    z-index: -1;
-
-    transition: 0.4s ease;
-}
-
-.certificate-btn:hover::before{
-    width: 100%;
-}
-
-.certificate-btn:hover{
-    color: black;
-
-    transform:
-    translateY(-3px)
-    scale(1.03);
-}
 
 
 /* =========================
