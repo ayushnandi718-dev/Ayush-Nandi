@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelectorAll(".get-touch-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const message = encodeURIComponent("Hi Ayush, I want to work with you!");
-    window.open(`https://wa.me/919563316500?text=${message}`, "_blank");
+    window.open(`https://wa.me/91-xxxxxxxxxxxxxxxx?text=${message}`, "_blank");
   });
 });
 
