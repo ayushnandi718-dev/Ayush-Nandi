@@ -1,144 +1,129 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&customColorList=6,11,20,29&text=Ayush%20Nandi&fontSize=48&fontColor=fff&animation=twinkling&fontAlignY=35&desc=%F0%9F%9A%80%20Full%20Stack%20Developer%20%7C%20AI%20Enthusiast%20%7C%20Builder&descSize=18&descAlignY=55&textBg=false"/>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=2500&pause=500&color=00F7FF&center=true&vCenter=true&width=800&lines=AYUSH+NANDI;CYBERPUNK+CREATOR;VIDEO+EDITOR+%7C+VISUAL+HACKER;DIGITAL+STORYTELLER" />
-</p>
-
----
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ff,100:ff00ff&height=180&section=header&text=NEON%20REALM&fontSize=40&fontColor=ffffff" />
-</p>
-
----
-
-## 🧠 SYSTEM PROFILE
-
-NAME: Ayush Nandi
-ROLE: Visual Hacker / Video Editor / Frontend Architect
-MODE: CYBERPUNK ACTIVE
-STATUS: BUILDING DIGITAL REALITIES
-
----
-
-## ⚡ CORE ABILITIES
-
-* 🎬 Cinematic Video Editing (Reels / Ads / YouTube)
-* 🎨 Neon UI / Cyberpunk Web Design
-* 🧩 Frontend Development (HTML, CSS, JS)
-* 🧠 Visual Branding & Identity Systems
-* ⚡ Minimal + High Impact Design Systems
-
----
-
-<p align="center">
-
-![HTML5](https://img.shields.io/badge/HTML5-0ff?style=for-the-badge\&logo=html5\&logoColor=black)
-![CSS3](https://img.shields.io/badge/CSS3-ff00ff?style=for-the-badge\&logo=css3\&logoColor=black)
-![JavaScript](https://img.shields.io/badge/JavaScript-00f7ff?style=for-the-badge\&logo=javascript\&logoColor=black)
-![GitHub](https://img.shields.io/badge/GitHub-111?style=for-the-badge\&logo=github\&logoColor=white)
-
-</p>
-
----
-
-
-<p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=Ayush-Nandi&show_icons=true&theme=radical&hide_border=true" height="180px"/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ayush-Nandi&theme=radical&hide_border=true" height="180px"/>
-
-</p>
-
----
-
-
-
-<p align="center">
-
-![CSS](https://img.shields.io/badge/CSS-59.5%25-ff00ff?style=for-the-badge)
-![HTML](https://img.shields.io/badge/HTML-31.1%25-00f7ff?style=for-the-badge)
-![JS](https://img.shields.io/badge/JS-9.4%25-ffffff?style=for-the-badge)
-
-</p>
-
----
-
-
-
-<p align="center">
-
-<a href="https://instagram.com/rva.creates">
-  <img src="https://img.shields.io/badge/INSTAGRAM-FF00FF?style=for-the-badge&logo=instagram&logoColor=white"/>
-</a>
-
-<a href="https://linkedin.com/in/ayush-nandi-apdj-india">
-  <img src="https://img.shields.io/badge/LINKEDIN-00F7FF?style=for-the-badge&logo=linkedin&logoColor=black"/>
-</a>
-
-</p>
-
----
-
-
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayush-Nandi&theme=react-dark&hide_border=true" />
-</p>
-
----
-
-
-* Neon hides nothing — it reveals everything
-* Simplicity is the highest form of intelligence
-* Design is emotional hacking
-* Code is visual language
-
----
-
-
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=22&duration=2000&pause=800&color=FF00FF&center=true&vCenter=true&width=800&lines=SYSTEM+ONLINE;CREATIVITY+UNLOCKED;BUILDING+THE+FUTURE;WELCOME+TO+THE+NEON+ERA" />
-</p>
-
----
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff00ff,100:00f7ff&height=120&section=footer"/>
-</p>
-
----
-
-
----
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ff,100:ff00ff&height=120&section=footer"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=4000&pause=1000&color=00FF41&center=true&vCenter=true&width=650&lines=%3E%20%22Learn.%20Build.%20Improve.%20Repeat.%22" alt="Typing introduction" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=18&duration=2500&pause=800&color=00F7FF&center=true&vCenter=true&width=700&lines=AYUSH+NANDI;NEON+VISUAL+CREATOR;VIDEO+EDITOR+%7C+DESIGN+ENGINEER" />
+  <a href="https://komarev.com/ghpvc/?username=ayushnandi718-dev">
+    <img src="https://komarev.com/ghpvc/?username=ayushnandi718-dev&label=Profile%20views&color=00FFFF&style=flat-square" alt="ayushnandi718-dev's profile views" />
+  </a>
 </p>
 
----
+<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" alt="Banner" width="100%" />
+
+## 📌 About Me
+- 🚀Full Stack Developer passionate about building modern web applications
+- 💻 Skilled in React, JavaScript, TypeScript, Node.js, and Next.js
+- 🎨 Interested in UI/UX design and creative frontend experiences
+- 🤖 Exploring AI, Generative AI, and automation tools
+- 🛠️ Building projects that solve real-world problems
+- 🌱 Currently learning advanced web development and AI integrations
+- 📚 Always curious to learn new technologies
+- 🤝 Open to collaborations and exciting projects
+- ⚡ Fun fact: I love turning ideas into interactive digital experiences
+
+
+## 🧠 My Focus Areas
+- 🌐 Full Stack Web Development
+- ⚛️ Modern Frontend Development with React & Next.js
+- 🎨 UI/UX Design and Interactive Experiences
+- 🤖 Artificial Intelligence & Generative AI Applications
+- 🧩 Building AI-powered Web Solutions
+- 🚀 Scalable and Performance-focused Applications
+- 🔧 API Development and Backend Systems
+- ☁️ Cloud Deployment and DevOps Practices
+- 🛠️ Open Source Projects & Developer Tools
+- 📚 Continuous Learning and Exploring New Technologies
+
+
+## 📊 GitHub Stats & Trophies
+<p align="center">
+  <a href="https://github.com/ayushnandi718-dev">
+    <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=ayushnandi718-dev&cache_seconds=7200&layout=compact&theme=synthwave&border_radius=10" alt="ayushnandi718-dev's GitHub Stats" />
+  </a>
+  <img src="https://streak-stats.demolab.com/?user=ayushnandi718-dev&theme=synthwave&hide_border=true&cache_seconds=86400" alt="ayushnandi718-dev's GitHub Streak" width="49%" />
+</p>
+<p align="center">
+  <img src="https://trophy.ryglcloud.net/?username=ayushnandi718-dev&theme=synthwave&no-frame=true&no-bg=true&margin-w=4&cache_seconds=86400" alt="Ayush Nandi's GitHub Trophies" />
+</p>
+<p align="center">
+  <img height="280em" src="https://github-readme-activity-graph.vercel.app/graph?username=ayushnandi718-dev&theme=synthwave&radius=10" alt="ayushnandi718-dev's Activity Graph" />
+</p>
+
+
+## 🛠️ Languages & Tools
+
+<h3 align="center">Programming Languages</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" />
+
+</p>
+
+<h3 align="center">Frontend</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="40" />
+  <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="Next.js" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="40" />
+  <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" width="40" />
+
+</p>
+
+<h3 align="center">Backend</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" />
+
+</p>
+
+<h3 align="center">Database</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" />
+
+</p>
+
+<h3 align="center">Tools</h3>
+<p align="center">
+  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="40" />
+  <img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-icon.svg" alt="VS Code" width="40" />
+  <img src="https://www.vectorlogo.zone/logos/vitejsdev/vitejsdev-icon.svg" alt="Vite" width="40" />
+
+</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AYUSH%20NANDI-NEON%20SIGNATURE-000000?style=for-the-badge&labelColor=ff00ff&color=00f7ff&logo=github&logoColor=white" />
+  <a href="https://github.com/ayushnandi718-dev">
+    <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=ayushnandi718-dev&langs_count=8&layout=compact&theme=synthwave&border_radius=10" alt="Top Languages" />
+  </a>
 </p>
 
----
+![Top language](https://stats.pphat.top/languages?username=ayushnandi718-dev)
+<br/>
+
+## 🔗 Connect with Me
+<p align="center">
+  <a href="https://www.linkedin.com/in/ayush-nandi-apdj-india">
+    <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/Color/LinkedIN.svg" alt="LinkedIn" width="40" />
+  </a>&nbsp;&nbsp;
+  <a href="https://wa.me/9832376881">
+    <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/Color/WhatsApp.svg" alt="WhatsApp" width="40" />
+  </a>&nbsp;&nbsp;
+  <a href="mailto:ayushnandi718@gmail.com">
+    <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/Color/Gmail.svg" alt="Gmail" width="40" />
+  </a>&nbsp;&nbsp;
+  <a href="https://ayushapd.dpdns.org">
+    <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/Color/WWW.svg" alt="Website" width="40" />
+  </a>
+</p>
 
 <p align="center">
-  <b style="color:#00f7ff;">✦ Crafted in code. Lit in neon. Delivered in silence. ✦</b>
+  <img src="https://raw.githubusercontent.com/czl9707/gh-space-shooter/main/example.gif" alt="Space shooter contribution graph" />
 </p>
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=14&duration=2000&pause=600&color=FF00FF&center=true&vCenter=true&width=600&lines=Design+is+emotion;Code+is+identity;Creativity+never+ends" />
-</p>
+<p align="center"><a href="https://www.buymeacoffee.com/ayushnandi" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a></p>
 
----
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212744287-14f66c13-5458-40dc-9244-8ff533fc8f4a.gif" alt="Bottom Line" width="100%" />
+</div>
 
-<p align="center">
-  <b>© 2026 Ayush Nandi • All Rights Reserved • Don't use without giving the credit • Made in INDIA with ❤</b>
-</p>
