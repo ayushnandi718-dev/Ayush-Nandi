@@ -426,6 +426,15 @@ function closeFeedbackModal() {
 // ── Submit handler ────────────────────────────
 
 async function handleFeedbackSubmit() {
+  // Honeypot check: real visitors never see or fill this field.
+  // If it's filled, silently pretend to succeed so bots don't adapt.
+  const honeypot = document.getElementById("fb-website")?.value || "";
+  if (honeypot.trim() !== "") {
+    document.getElementById("feedbackForm")?.reset();
+    closeFeedbackModal();
+    return;
+  }
+
   const name    = (document.getElementById("fb-name")?.value    || "").trim();
   const role    = (document.getElementById("fb-role")?.value    || "").trim();
   const message = (document.getElementById("fb-message")?.value || "").trim();
@@ -550,17 +559,18 @@ async function renderReviewsSection() {
 // ── Boot ──────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
-  const openBtn   = document.getElementById("openFeedback");
-  const closeBtn  = document.getElementById("closeFeedback");
-  const overlay   = document.getElementById("feedbackModal");
-  const submitBtn = document.getElementById("fbSubmit");
+  const openBtn  = document.getElementById("openFeedback");
+  const closeBtn = document.getElementById("closeFeedback");
+  const overlay  = document.getElementById("feedbackModal");
+  const form     = document.getElementById("feedbackForm");
 
-  if (openBtn)   openBtn.addEventListener("click", openFeedbackModal);
-  if (closeBtn)  closeBtn.addEventListener("click", closeFeedbackModal);
+  if (openBtn)  openBtn.addEventListener("click", openFeedbackModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeFeedbackModal);
 
-  if (submitBtn) {
-    // Prevent default form submission, use our async handler
-    submitBtn.addEventListener("click", (e) => {
+  if (form) {
+    // Listen on the form's submit event (not just the button's click) so
+    // pressing Enter in any field is handled the same way as clicking Send.
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       handleFeedbackSubmit();
     });
