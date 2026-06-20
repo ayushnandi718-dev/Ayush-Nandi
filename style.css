@@ -420,6 +420,16 @@ html {
     line-height: 1.6;
 }
 
+/* ── HONEYPOT (hidden from humans, left open for bots) ── */
+.fb-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* ── STARS ────────────────────────────────────── */
 .fb-star-row {
     display: flex;
