@@ -247,6 +247,9 @@
 
     <form id="feedbackForm">
 
+      <!-- Honeypot: hidden from real visitors, bots tend to fill every field -->
+      <input type="text" id="fb-website" name="website" class="fb-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
       <div class="fb-star-row" id="starRow"></div>
 
       <div class="fb-two-col">
