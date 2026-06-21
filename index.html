@@ -295,8 +295,10 @@
           id="fb-message"
           name="fb-message"
           placeholder="Tell others what made your experience great..."
+          maxlength="500"
           required
         ></textarea>
+        <div class="fb-char-count" id="charCount">0 / 500</div>
       </div>
 
       <button
@@ -309,6 +311,10 @@
 
       <div class="fb-success-msg" id="successMessage">
         ✓ Review submitted successfully!
+      </div>
+
+      <div class="fb-error-msg" id="errorMessage">
+        ⚠ Something went wrong. Please try again.
       </div>
 
     </form>
@@ -337,6 +343,12 @@
     <div class="reviews-empty">
       No reviews yet — be the first one ✨
     </div>
+  </div>
+
+  <div class="reviews-more-wrap">
+    <button class="btn reviews-more-btn" id="showMoreReviews" type="button" style="display:none;">
+      Show more
+    </button>
   </div>
 
 </section>
