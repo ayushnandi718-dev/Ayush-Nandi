@@ -506,6 +506,18 @@ html {
     min-height: 80px;
 }
 
+.fb-char-count {
+    text-align: right;
+    font-size: 11px;
+    color: rgba(255, 255, 255, .25);
+    margin-top: 4px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.fb-char-count.fb-char-warn {
+    color: #fbbf24;
+}
+
 /* ── TAGS ─────────────────────────────────────── */
 .fb-tag-row {
     display: flex;
@@ -582,6 +594,24 @@ html {
 }
 
 .fb-success-msg.show {
+    display: block;
+}
+
+/* ── ERROR ────────────────────────────────────── */
+.fb-error-msg {
+    display: none;
+    text-align: center;
+    padding: 14px;
+    background: rgba(220, 38, 38, .12);
+    border: 1px solid rgba(220, 38, 38, .35);
+    border-radius: 12px;
+    color: #f87171;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.fb-error-msg.show {
     display: block;
 }
 
@@ -743,6 +773,17 @@ html {
     font-size: 14px;
     border: 1px dashed rgba(255, 255, 255, .08);
     border-radius: 20px;
+}
+
+.reviews-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+.reviews-more-btn {
+    font-size: 13px;
+    padding: 10px 28px;
 }
 
 /* ── HERO CONTENT ─────────────────────────────────────────── */
