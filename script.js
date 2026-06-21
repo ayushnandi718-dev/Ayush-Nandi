@@ -395,6 +395,20 @@ function buildModalStars() {
   }
 }
 
+// ── Character counter ─────────────────────────
+
+function updateCharCount() {
+  const textarea = document.getElementById("fb-message");
+  const counter  = document.getElementById("charCount");
+  if (!textarea || !counter) return;
+
+  const max = textarea.maxLength > 0 ? textarea.maxLength : 500;
+  const len = textarea.value.length;
+
+  counter.textContent = `${len} / ${max}`;
+  counter.classList.toggle("fb-char-warn", len >= max * 0.9);
+}
+
 // ── Tag selection ─────────────────────────────
 
 let selectedTag = "";
@@ -474,7 +488,11 @@ async function handleFeedbackSubmit() {
   }
 
   if (!ok) {
-    alert("Something went wrong. Please try again.");
+    const errorEl = document.getElementById("errorMessage");
+    if (errorEl) {
+      errorEl.classList.add("show");
+      setTimeout(() => errorEl.classList.remove("show"), 3500);
+    }
     return;
   }
 
@@ -486,6 +504,8 @@ async function handleFeedbackSubmit() {
   selectedTag   = "";
   buildModalStars();
   document.querySelectorAll(".fb-tag").forEach(b => b.classList.remove("active"));
+  document.getElementById("errorMessage")?.classList.remove("show");
+  updateCharCount();
 
   // Show success message, then close and refresh
   const success = document.getElementById("successMessage");
@@ -501,19 +521,66 @@ async function handleFeedbackSubmit() {
 
 // ── Reviews section renderer ──────────────────
 
+let allReviews          = [];
+const REVIEWS_PAGE_SIZE = 6;
+let reviewsVisibleCount  = REVIEWS_PAGE_SIZE;
+
+function reviewCardHtml(item) {
+  return `
+    <div class="review-item">
+      <div class="review-item-top">
+        <div class="review-avatar" style="background:${getAvatarColor(item.name)}">
+          ${escapeHtml(getInitials(item.name))}
+        </div>
+        <div>
+          <div class="review-name">${escapeHtml(item.name)}</div>
+          <div class="review-role">${escapeHtml(item.role || "")}</div>
+        </div>
+      </div>
+      <div class="review-stars">${starString(item.rating)}</div>
+      <div class="review-text">${escapeHtml(item.msg)}</div>
+      ${item.tag ? `<span class="review-category">${escapeHtml(item.tag)}</span>` : ""}
+      <div class="review-time">${escapeHtml(item.time || "")}</div>
+    </div>
+  `;
+}
+
+function renderVisibleReviewCards() {
+  const grid    = document.getElementById("reviewsGrid");
+  const moreBtn = document.getElementById("showMoreReviews");
+  if (!grid) return;
+
+  const visible = allReviews.slice(0, reviewsVisibleCount);
+  grid.innerHTML = visible.map(reviewCardHtml).join("");
+
+  if (moreBtn) {
+    const remaining = allReviews.length - reviewsVisibleCount;
+    if (remaining > 0) {
+      moreBtn.style.display = "inline-flex";
+      moreBtn.textContent   = `Show more (${remaining} more)`;
+    } else {
+      moreBtn.style.display = "none";
+    }
+  }
+}
+
 async function renderReviewsSection() {
   const grid    = document.getElementById("reviewsGrid");
   const avgEl   = document.getElementById("avgScore");
   const starsEl = document.getElementById("avgStars");
   const countEl = document.getElementById("revCount");
   const section = document.getElementById("reviews");
+  const moreBtn = document.getElementById("showMoreReviews");
 
   if (!grid) return;
 
   // Show loading state
   grid.innerHTML = `<div class="reviews-empty">Loading reviews…</div>`;
+  if (moreBtn) moreBtn.style.display = "none";
 
   const all = await feedbackLoadAll();
+  allReviews          = all;
+  reviewsVisibleCount  = REVIEWS_PAGE_SIZE;
 
   // Always keep section visible
   if (section) section.style.display = "block";
@@ -536,33 +603,19 @@ async function renderReviewsSection() {
   if (starsEl) starsEl.textContent = avg ? starString(Math.round(avg)) : "☆☆☆☆☆";
   if (countEl) countEl.textContent = `${all.length} review${all.length !== 1 ? "s" : ""}`;
 
-  // Render cards
-  grid.innerHTML = all.slice(0, 6).map(item => `
-    <div class="review-item">
-      <div class="review-item-top">
-        <div class="review-avatar" style="background:${getAvatarColor(item.name)}">
-          ${escapeHtml(getInitials(item.name))}
-        </div>
-        <div>
-          <div class="review-name">${escapeHtml(item.name)}</div>
-          <div class="review-role">${escapeHtml(item.role || "")}</div>
-        </div>
-      </div>
-      <div class="review-stars">${starString(item.rating)}</div>
-      <div class="review-text">${escapeHtml(item.msg)}</div>
-      ${item.tag ? `<span class="review-category">${escapeHtml(item.tag)}</span>` : ""}
-      <div class="review-time">${escapeHtml(item.time || "")}</div>
-    </div>
-  `).join("");
+  // Render cards (first page)
+  renderVisibleReviewCards();
 }
 
 // ── Boot ──────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
-  const openBtn  = document.getElementById("openFeedback");
-  const closeBtn = document.getElementById("closeFeedback");
-  const overlay  = document.getElementById("feedbackModal");
-  const form     = document.getElementById("feedbackForm");
+  const openBtn   = document.getElementById("openFeedback");
+  const closeBtn  = document.getElementById("closeFeedback");
+  const overlay   = document.getElementById("feedbackModal");
+  const form      = document.getElementById("feedbackForm");
+  const messageEl = document.getElementById("fb-message");
+  const moreBtn   = document.getElementById("showMoreReviews");
 
   if (openBtn)  openBtn.addEventListener("click", openFeedbackModal);
   if (closeBtn) closeBtn.addEventListener("click", closeFeedbackModal);
@@ -576,12 +629,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (messageEl) messageEl.addEventListener("input", updateCharCount);
+
+  if (moreBtn) {
+    moreBtn.addEventListener("click", () => {
+      reviewsVisibleCount += REVIEWS_PAGE_SIZE;
+      renderVisibleReviewCards();
+    });
+  }
+
   if (overlay) {
     overlay.addEventListener("click", e => {
       if (e.target === overlay) closeFeedbackModal();
     });
   }
 
+  updateCharCount();
   buildModalStars();
   initTagButtons();
   renderReviewsSection();
