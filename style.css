@@ -339,9 +339,26 @@ html {
     border-radius: 24px;
     padding: 32px 28px;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Caps height to the viewport so the form never gets cut off on short
+       screens (small phones, landscape mobile) -- 40px accounts for the
+       20px padding the overlay applies on each side. dvh is layered on
+       top for browsers that support it, so the on-screen keyboard doesn't
+       throw the sizing off on mobile. */
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(142, 45, 226, .5) transparent;
     animation: fb-popup .3s cubic-bezier(.34, 1.56, .64, 1);
     box-shadow: 0 0 60px rgba(106, 17, 203, 0.25);
+}
+
+.fb-modal-box::-webkit-scrollbar { width: 6px; }
+.fb-modal-box::-webkit-scrollbar-track { background: transparent; }
+.fb-modal-box::-webkit-scrollbar-thumb {
+    background: rgba(142, 45, 226, .5);
+    border-radius: 99px;
 }
 
 .fb-modal-box::before {
@@ -1913,6 +1930,10 @@ html {
     .filter-container { padding: 0 25px; }
     .project-card { height: 200px; }
     .project-card video, .project-card img { height: 200px; }
+
+    /* ── REVIEWS: predictable 2-column layout on tablet widths ── */
+    .reviews-showcase { padding: 50px 25px; }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -1986,11 +2007,14 @@ html {
         box-shadow: 0 0 40px rgba(106, 17, 203, 0.6), 0 0 80px rgba(255, 106, 0, 0.2);
     }
 
-    /* ── REVIEW BUTTON — FIXED (no overlap with chatbot) ── */
+    /* ── REVIEW BUTTON — stays bottom-left (matches desktop position,
+       which already clears the chatbot bubble in the opposite corner).
+       Previously "left: auto" had no matching "right" value here, so on
+       every phone width above 320px the button fell back to an undefined
+       static position instead of staying fixed to the corner. ── */
     .fb-float-btn {
-       
-        left: auto;
-       
+        bottom: 20px;
+        left: 16px;
         font-size: 11px;
         padding: 10px 14px;
     }
@@ -2013,6 +2037,12 @@ html {
     .reviews-summary { text-align: left; }
     .reviews-top-left h2 { font-size: 28px; }
     .reviews-grid { grid-template-columns: 1fr; }
+
+    /* ── FEEDBACK MODAL: comfortable tap targets on touch screens ── */
+    .fb-modal-box { padding: 28px 20px 24px; }
+    .fb-close-btn { width: 38px; height: 38px; font-size: 16px; }
+    .fb-star { font-size: 30px; padding: 4px; }
+    .fb-tag { padding: 9px 14px; }
 
     /* ── FOOTER ── */
     .footer-container { flex-direction: column; text-align: center; align-items: center; }
@@ -2102,6 +2132,11 @@ html {
     .skill-card { padding: 16px; }
     .card-header { flex-wrap: wrap; }
     .skill-percent { margin-left: auto; }
+
+    /* ── REVIEWS: tighter card padding so text isn't cramped edge-to-edge ── */
+    .review-item { padding: 18px 16px; }
+    .reviews-grid { gap: 12px; }
+    .reviews-more-btn { font-size: 12px; padding: 10px 20px; }
 }
 
 /* ── ULTRA SMALL (≤ 320px) ── */
@@ -2114,9 +2149,14 @@ html {
         height: 140px;
     }
 
+    /* Same bottom-left anchor as the 780px rule, just a touch smaller and
+       lifted to clear the page-bottom edge on very narrow phones. Previously
+       this set "right: 10px" while a "left" value was still active from the
+       780px rule above, which fights to stretch the button's box instead of
+       just repositioning it. */
     .fb-float-btn {
-        bottom: 80px;
-        right: 10px;
+        bottom: 70px;
+        left: 12px;
         font-size: 10px;
         padding: 8px 10px;
     }
