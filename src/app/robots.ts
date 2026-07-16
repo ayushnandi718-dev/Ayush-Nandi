@@ -1,15 +1,13 @@
-import type { MetadataRoute } from "next";
-import { config } from "@/data/config";
+# Optimized robots.txt for https://dpdns.org
+User-agent: *
+Allow: /
 
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/admin/"],
-      },
-    ],
-    sitemap: `${config.site}/sitemap.xml`,
-  };
-}
+# Block sensitive or unnecessary directories
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /backup/
+
+# Sitemap reference (important for SEO)
+Sitemap: https://dpdns.org/sitemap.xml
