@@ -1,5 +1,13 @@
 {
   "framework": "nextjs",
   "buildCommand": "rm -rf .next && next build",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "www.ayushapd.dpdns.org" }],
+      "destination": "https://ayushapd.dpdns.org/:path",
+      "permanent": true
+    }
+  ]
 }

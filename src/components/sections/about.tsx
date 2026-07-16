@@ -19,6 +19,25 @@ const skills = [
   "Full-Stack Developer",
 ];
 
+const services = [
+  {
+    title: "Full-Stack Web Development",
+    desc: "I build modern, responsive websites and web applications using React, Next.js, TypeScript, and Tailwind CSS. From landing pages to complex SaaS dashboards, I deliver fast, scalable, and accessible products.",
+  },
+  {
+    title: "AI-Powered Applications",
+    desc: "I integrate AI and machine learning capabilities into web apps, building intelligent features like chatbots, content generators, and data-driven dashboards using modern AI APIs and frameworks.",
+  },
+  {
+    title: "Motion Design & Video Editing",
+    desc: "I create engaging motion graphics, animated logos, explainer videos, and social media reels using After Effects and Premiere Pro. Visual storytelling is at the core of every project I take on.",
+  },
+  {
+    title: "Creative Branding & UI/UX",
+    desc: "I design brand identities, logos, and user interfaces that stand out. My approach combines clean aesthetics with intuitive user experience to create memorable digital products.",
+  },
+];
+
 const AboutSection = () => {
   return (
     <SectionWrapper
@@ -43,12 +62,22 @@ const AboutSection = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl md:text-3xl font-light leading-relaxed text-foreground">
-              I am a{" "}
+              Hi, I am{" "}
               <motion.span
                 className="font-semibold text-foreground"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Ayush Nandi
+              </motion.span>
+              , a{" "}
+              <motion.span
+                className="font-semibold text-foreground"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
                 viewport={{ once: true }}
               >
                 Full-Stack Developer
@@ -58,17 +87,17 @@ const AboutSection = () => {
                 className="font-semibold text-foreground"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
                 viewport={{ once: true }}
               >
                 Digital Creator
               </motion.span>{" "}
-              based in Alipurduar, West Bengal, designing and developing{" "}
+              based in Alipurduar, West Bengal, India, designing and developing{" "}
               <motion.span
                 className="font-semibold text-foreground"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
                 viewport={{ once: true }}
               >
                 high-performance digital experiences
@@ -79,30 +108,58 @@ const AboutSection = () => {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              transition={{ delay: 0.65, duration: 0.5 }}
               viewport={{ once: true }}
               className="text-muted-foreground leading-relaxed"
             >
               My work blends modern web technologies like React, Next.js, and TypeScript with
               professional Motion Design to build fast, immersive web applications and AI-powered
-              products built with attention to every detail.
+              products built with attention to every detail. I specialize in creating responsive
+              frontends, RESTful APIs, and full-stack solutions that perform at scale.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.5 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-muted-foreground leading-relaxed"
+            >
+              As a freelance web developer, I have delivered projects for startups, local
+              businesses, and personal brands. Whether it is a restaurant website, a gym
+              landing page, an AI platform, or a school album app, I approach every project
+              with the same commitment to quality, performance, and visual polish.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.75, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-muted-foreground leading-relaxed"
+            >
+              Beyond web development, I am also a creative video editor and motion graphics
+              artist. I produce reels, explainer videos, and branded content for social media
+              platforms. My dual expertise in code and creative production allows me to
+              deliver end-to-end digital solutions under one roof.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
               viewport={{ once: true }}
               className="text-muted-foreground leading-relaxed"
             >
               Looking for a remote Full-Stack Developer or Freelance Video Editor? Let's
-              collaborate on your next digital project.
+              collaborate on your next digital project. I am always open to exciting
+              opportunities and creative partnerships.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              transition={{ delay: 0.85, duration: 0.5 }}
               viewport={{ once: true }}
               className="flex flex-wrap gap-4 pt-2"
             >
@@ -143,6 +200,44 @@ const AboutSection = () => {
               </motion.span>
             ))}
           </motion.div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+              What I Do
+            </h2>
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+              Services I offer as a Full-Stack Developer, Video Editor, and Digital Creator
+              based in Alipurduar, West Bengal, India.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-xl border border-border/40 bg-secondary/20 backdrop-blur-sm hover:border-primary/20 transition-colors"
+              >
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {service.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </SectionWrapper>
