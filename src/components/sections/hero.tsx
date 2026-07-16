@@ -51,9 +51,12 @@ const HeroSection = () => {
                           "cursor-default text-edge-outline font-display "
                         )}
                       >
-                        {config.author.split(" ")[0]}
-                        <br className="md:block hiidden" />
-                        {config.author.split(" ")[1]}
+                        <span className="sr-only">{config.author} — Digital Creator and Web Developer</span>
+                        <span aria-hidden="true">
+                          {config.author.split(" ")[0]}
+                          <br className="md:block hiidden" />
+                          {config.author.split(" ")[1]}
+                        </span>
                       </h1>
                     </TooltipTrigger>
                     <TooltipContent

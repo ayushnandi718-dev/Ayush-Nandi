@@ -1,9 +1,9 @@
 const config = {
   title: "Ayush Nandi | Digital Creator & Web Developer",
   description: {
-    long: "Explore the portfolio of Ayush Nandi, a digital creator and web developer from Alipurduar, West Bengal. Specializing in modern web design, motion graphics, and creative branding. Discover my latest projects, including CarbonMind AI, Royal Cravings, Galaxy Gym Website, and more.",
+    long: "Portfolio of Ayush Nandi — digital creator and web developer building modern web apps with React, Next.js, and Tailwind CSS.",
     short:
-      "Discover the portfolio of Ayush Nandi, a digital creator and web developer building modern, creative web experiences.",
+      "Digital creator and web developer building modern, creative web experiences with React and Next.js.",
   },
   keywords: [
     "Ayush Nandi",

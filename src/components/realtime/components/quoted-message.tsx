@@ -25,7 +25,7 @@ export const QuotedMessage = ({ username, content, color, avatar, onClickQuote }
       {avatar && (
         <img
           src={getAvatarUrl(avatar)}
-          alt=""
+          alt={`${username}'s avatar`}
           className="w-4 h-4 rounded-full shrink-0"
           style={{ backgroundColor: color || '#60a5fa' }}
         />

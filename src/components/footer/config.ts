@@ -7,6 +7,14 @@ const footer: { title: string; href: string }[] = [
     title: "Instagram",
     href: "https://instagram.com/rva.creates/",
   },
+  {
+    title: "Blog",
+    href: "/blogs",
+  },
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/in/ayush-nandi-apdj-india/",
+  },
 ];
 
 export { footer };

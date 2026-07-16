@@ -165,7 +165,7 @@ const RemoteCursors = () => {
             >
               <img
                 src={getAvatarUrl(followedUser.avatar)}
-                alt=""
+                alt={`${followedUser.name}'s avatar`}
                 className="w-6 h-6 rounded-full ring-2 ring-white/40 flex-shrink-0"
               />
               <span className="whitespace-nowrap">
@@ -309,7 +309,7 @@ const Cursor = ({
         {/* Avatar image */}
         <img
           src={getAvatarUrl(avatar)}
-          alt=""
+          alt="Remote user avatar"
           className="w-10 h-10 rounded-full flex-shrink-0"
         />
 

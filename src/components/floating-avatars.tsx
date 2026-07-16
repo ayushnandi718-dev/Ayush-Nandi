@@ -44,7 +44,7 @@ const FloatingAvatars = () => {
         >
           <img
             src={getAvatarUrl(avatar.seed)}
-            alt=""
+            alt="Community member avatar"
             className="w-10 h-10 rounded-full flex-shrink-0"
           />
         </motion.div>
