@@ -53,8 +53,8 @@ export const metadata: Metadata = {
     title: config.title,
     description: config.description.short,
     images: [config.ogImg],
-    creator: "@rva_creates",
-    site: "@rva_creates",
+    creator: "@iitwalabanda123",
+    site: "@iitwalabanda123",
   },
   robots: {
     index: true,

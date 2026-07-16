@@ -32,7 +32,7 @@ const config = {
     return this.site + "/assets/seo/og_preview.png";
   },
   social: {
-    twitter: "https://x.com/rva_creates",
+    twitter: "https://x.com/iitwalabanda123",
     linkedin: "https://www.linkedin.com/in/ayush-nandi-apdj-india/",
     instagram: "https://instagram.com/rva.creates/",
     facebook: "https://www.facebook.com/1rva.creates/",
