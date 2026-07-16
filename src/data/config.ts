@@ -26,7 +26,7 @@ const config = {
   site: "https://ayushapd.dpdns.org",
 
   githubUsername: "ayushnandi718-dev",
-  githubRepo: "3d-portfolio",
+  githubRepo: "Ayush-Nandi",
 
   get ogImg() {
     return this.site + "/assets/seo/og_preview.png";
