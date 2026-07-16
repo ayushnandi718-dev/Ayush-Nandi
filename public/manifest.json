@@ -1,0 +1,16 @@
+{
+  "name": "Ayush Nandi | Digital Creator & Web Developer",
+  "short_name": "Ayush Nandi",
+  "description": "Portfolio of Ayush Nandi - Digital Creator & Web Developer specializing in modern web design, motion graphics, and creative branding.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

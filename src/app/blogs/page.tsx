@@ -1,10 +1,16 @@
+import type { Metadata } from "next";
 import React from "react";
 import { getBlogPosts } from "@/lib/mdx";
 import BlogListClient from "./blog-list-client";
 
-export const metadata = {
-  title: "Blog | Portfolio",
-  description: "Thoughts, tutorials, and updates.",
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Thoughts, tutorials, and updates on web development, React, Next.js, and creative coding by Ayush Nandi.",
+  openGraph: {
+    title: "Blog | Ayush Nandi",
+    description: "Thoughts, tutorials, and updates on web development, React, Next.js, and creative coding.",
+    type: "website",
+  },
 };
 
 export default function BlogPage() {

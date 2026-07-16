@@ -18,8 +18,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getBlogPost(slug);
   return {
-    title: `${post.metadata.title} | Portfolio`,
+    title: post.metadata.title,
     description: post.metadata.summary,
+    openGraph: {
+      title: post.metadata.title,
+      description: post.metadata.summary,
+      type: "article",
+      publishedTime: post.metadata.publishedAt,
+      authors: [post.metadata.author || "Ayush Nandi"],
+      tags: post.metadata.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metadata.title,
+      description: post.metadata.summary,
+    },
   };
 }
 
