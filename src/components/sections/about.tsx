@@ -11,8 +11,12 @@ const skills = [
   "Next.js",
   "TypeScript",
   "Tailwind CSS",
+  "Node.js",
   "Motion Design",
   "Creative Branding",
+  "Video Editing",
+  "AI Apps",
+  "Full-Stack Developer",
 ];
 
 const AboutSection = () => {
@@ -39,7 +43,7 @@ const AboutSection = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl md:text-3xl font-light leading-relaxed text-foreground">
-              I design and develop{" "}
+              I am a{" "}
               <motion.span
                 className="font-semibold text-foreground"
                 initial={{ opacity: 0 }}
@@ -47,9 +51,19 @@ const AboutSection = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                digital experiences
+                Full-Stack Developer
               </motion.span>{" "}
-              where{" "}
+              and{" "}
+              <motion.span
+                className="font-semibold text-foreground"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Digital Creator
+              </motion.span>{" "}
+              based in Alipurduar, West Bengal, designing and developing{" "}
               <motion.span
                 className="font-semibold text-foreground"
                 initial={{ opacity: 0 }}
@@ -57,7 +71,7 @@ const AboutSection = () => {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                aesthetics meet performance
+                high-performance digital experiences
               </motion.span>
               .
             </h3>
@@ -69,9 +83,20 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="text-muted-foreground leading-relaxed"
             >
-              My work blends modern web technologies, motion, and thoughtful design
-              to create products that are fast, immersive, and built with attention
-              to every detail.
+              My work blends modern web technologies like React, Next.js, and TypeScript with
+              professional Motion Design to build fast, immersive web applications and AI-powered
+              products built with attention to every detail.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.65, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-muted-foreground leading-relaxed"
+            >
+              Looking for a remote Full-Stack Developer or Freelance Video Editor? Let's
+              collaborate on your next digital project.
             </motion.p>
 
             <motion.div
@@ -83,7 +108,7 @@ const AboutSection = () => {
             >
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4" />
-                <span>Alipurduar, West Bengal</span>
+                <span>Alipurduar, West Bengal, India</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
