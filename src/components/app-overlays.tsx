@@ -1,6 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import Particles from "@/components/Particles";
 import RemoteCursors from "@/components/realtime/remote-cursors";
 import EasterEggs from "@/components/easter-eggs";
@@ -13,7 +15,13 @@ import { usePerfProfile } from "@/hooks/use-perf-profile";
 
 export default function AppOverlays() {
   const pathname = usePathname();
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const isHome = pathname === "/";
+
+  useEffect(() => setMounted(true), []);
+
+  const isDark = mounted && (resolvedTheme === "dark" || theme === "dark");
 
   const { particleCount, maxDpr, disableDecorative } = usePerfProfile();
 
@@ -26,7 +34,7 @@ export default function AppOverlays() {
           maxDpr={maxDpr}
         />
       )}
-      {isHome && <Astronaut3D />}
+      {isHome && isDark && <Astronaut3D />}
       {isHome && <RemoteCursors />}
       {isHome && <FloatingAvatars />}
       <EasterEggs />
