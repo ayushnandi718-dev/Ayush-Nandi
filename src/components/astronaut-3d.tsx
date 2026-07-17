@@ -113,7 +113,7 @@ export default function Astronaut3D() {
     <Astronaut3DErrorBoundary>
       <div
         className="fixed top-0 left-0 w-full h-full pointer-events-none"
-        style={{ zIndex: 0 }}
+        style={{ zIndex: -1 }}
       >
         <Canvas
           gl={{ alpha: true, antialias: true, localClippingEnabled: false }}
