@@ -77,10 +77,37 @@ function Scene() {
   );
 }
 
-export default function Astronaut3D() {
-  const { disable3D, ready } = usePerfProfile();
+interface Astronaut3DState {
+  hasError: boolean;
+}
 
-  if (!ready || disable3D) return null;
+class Astronaut3DErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  Astronaut3DState
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(): Astronaut3DState {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error) {
+    console.warn("Astronaut3D failed to render:", error.message);
+  }
+
+  render() {
+    if (this.state.hasError) return null;
+    return this.props.children;
+  }
+}
+
+function AstronautCanvas() {
+  const { disable3D } = usePerfProfile();
+
+  if (disable3D) return null;
 
   return (
     <div
@@ -92,11 +119,26 @@ export default function Astronaut3D() {
         camera={{ position: [0, 0, 5], fov: 45 }}
         style={{ background: "transparent", overflow: "visible", pointerEvents: "none" }}
         dpr={[1, 2]}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0);
+        }}
       >
         <Suspense fallback={null}>
           <Scene />
         </Suspense>
       </Canvas>
     </div>
+  );
+}
+
+export default function Astronaut3D() {
+  const { ready } = usePerfProfile();
+
+  if (!ready) return null;
+
+  return (
+    <Astronaut3DErrorBoundary>
+      <AstronautCanvas />
+    </Astronaut3DErrorBoundary>
   );
 }
