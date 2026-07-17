@@ -12,10 +12,12 @@ import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import { config } from "@/data/config";
+import { useLenis } from "@/lib/lenis";
 
 import SectionWrapper from "../ui/section-wrapper";
 
 const HeroSection = () => {
+  const lenis = useLenis();
   return (
     <SectionWrapper id="hero" className={cn("relative w-full h-screen")}>
       <div className="grid md:grid-cols-2">
@@ -95,14 +97,17 @@ const HeroSection = () => {
                 <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
-                      <Link href={"#contact"}>
+                      <button
+                        onClick={() => lenis?.scrollTo("#contact")}
+                        className="block w-full overflow-hidden"
+                      >
                         <Button
                           variant={"outline"}
-                          className="block w-full overflow-hidden"
+                          className="w-full"
                         >
                           Hire Me
                         </Button>
-                      </Link>
+                      </button>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
                       <p>pls 🥹 🙏</p>
