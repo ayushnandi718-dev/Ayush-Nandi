@@ -6,6 +6,7 @@ import { config } from "@/data/config";
 import SiteFrame from "@/components/site-frame";
 import { Providers } from "@/components/providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import DevToolsBlocker from "@/components/devtools-blocker";
 
 const spaceGroteskSans = Space_Grotesk({
   subsets: ["latin"],
@@ -118,6 +119,7 @@ export default function RootLayout({
         <Providers>
           <SiteFrame>{children}</SiteFrame>
         </Providers>
+        <DevToolsBlocker />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
