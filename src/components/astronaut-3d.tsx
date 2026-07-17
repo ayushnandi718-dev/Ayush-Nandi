@@ -24,8 +24,8 @@ function AstronautModel() {
     group.current.scale.setScalar(scale);
 
     group.current.position.set(
-      -width * 0.42,
-      -height * 0.35,
+      width * 0.38,
+      height * 0.30,
       1.5
     );
     positioned.current = true;
@@ -113,7 +113,7 @@ export default function Astronaut3D() {
     <Astronaut3DErrorBoundary>
       <div
         className="fixed top-0 left-0 w-full h-full pointer-events-none"
-        style={{ zIndex: 1 }}
+        style={{ zIndex: 0 }}
       >
         <Canvas
           gl={{ alpha: true, antialias: true, localClippingEnabled: false }}
