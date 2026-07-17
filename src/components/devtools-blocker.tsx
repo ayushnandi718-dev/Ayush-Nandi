@@ -1,83 +1,73 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-
-const BLOCKED_KEYS = new Set([
-  "F12",
-  "I",
-  "J",
-  "U",
-  "S",
-]);
-
-function isModified(e: KeyboardEvent): boolean {
-  return e.ctrlKey || e.metaKey || e.altKey;
-}
+import { useRouter, usePathname } from "next/navigation";
 
 export default function DevToolsBlocker() {
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    const isBlockedPage = pathname === "/devtools-blocked";
+
     const onKeyDown = (e: KeyboardEvent) => {
-      if (isModified(e) && e.shiftKey && (e.key === "I" || e.key === "i" || e.key === "J" || e.key === "j")) {
-        e.preventDefault();
-        return;
-      }
-
-      if (isModified(e) && e.key === "U") {
-        e.preventDefault();
-        return;
-      }
-
-      if (e.key === "F12") {
-        e.preventDefault();
-        return;
-      }
-
-      if (isModified(e) && e.key === "Shift") {
-        e.preventDefault();
-        return;
-      }
+      if (e.key === "F12") { e.preventDefault(); return; }
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && ["I","i","J","j","C","c"].includes(e.key)) { e.preventDefault(); return; }
+      if ((e.ctrlKey || e.metaKey) && e.key.toUpperCase() === "U") { e.preventDefault(); return; }
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey) { e.preventDefault(); return; }
     };
 
     const onContextMenu = (e: MouseEvent) => {
       e.preventDefault();
     };
 
-    let devToolsOpen = false;
-    let interval: ReturnType<typeof setInterval>;
+    let blocked = false;
+    let checkCount = 0;
 
     const detectDevTools = () => {
-      const threshold = 160;
-      const widthCheck = window.outerWidth - window.innerWidth > threshold;
-      const heightCheck = window.outerHeight - window.innerHeight > threshold;
+      const threshold = 100;
+      const width差 = window.outerWidth - window.innerWidth;
+      const height差 = window.outerHeight - window.innerHeight;
 
-      if ((widthCheck || heightCheck) && !devToolsOpen) {
-        devToolsOpen = true;
-        router.replace("/devtools-blocked");
+      const isOpen = width差 > threshold || height差 > threshold;
+
+      if (isOpen) {
+        if (!isBlockedPage && !blocked) {
+          blocked = true;
+          window.location.replace("/devtools-blocked");
+        }
+        return;
+      }
+
+      if (isBlockedPage && !isOpen && checkCount > 2) {
+        window.location.replace("/");
+      }
+
+      checkCount++;
+    };
+
+    const onKeyDownGlobal = (e: KeyboardEvent) => {
+      if (e.key === "F12" || e.key === "F11") {
+        setTimeout(detectDevTools, 50);
       }
     };
 
-    const onResize = () => {
-      detectDevTools();
-    };
-
     window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keydown", onKeyDownGlobal);
     window.addEventListener("contextmenu", onContextMenu);
-    window.addEventListener("resize", onResize);
 
-    interval = setInterval(detectDevTools, 1000);
+    detectDevTools();
+    const interval = setInterval(detectDevTools, 300);
 
     return () => {
       window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("keydown", onKeyDownGlobal);
       window.removeEventListener("contextmenu", onContextMenu);
-      window.removeEventListener("resize", onResize);
       clearInterval(interval);
     };
-  }, [router]);
+  }, [router, pathname]);
 
   return null;
 }
