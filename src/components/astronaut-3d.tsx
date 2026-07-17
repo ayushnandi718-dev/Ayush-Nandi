@@ -24,8 +24,8 @@ function AstronautModel() {
     group.current.scale.setScalar(scale);
 
     group.current.position.set(
-      width * 0.40,
-      height * 0.30,
+      -width * 0.35,
+      -height * 0.25,
       1.5
     );
     positioned.current = true;
