@@ -20,23 +20,16 @@ function AstronautModel() {
   useLayoutEffect(() => {
     if (!group.current) return;
 
-    group.current.updateWorldMatrix(true, true);
+    const scale = isMobile ? 0.9 : 1.35;
+    group.current.scale.setScalar(scale);
 
-    const box = new THREE.Box3().setFromObject(group.current);
-    const size = box.getSize(new THREE.Vector3());
-
-    if (size.y === 0) return;
-
-    const targetHeight = height * (isMobile ? 0.15 : 0.25);
-    const scaleFactor = targetHeight / size.y;
-    group.current.scale.setScalar(scaleFactor);
-
-    const x = width * 0.32;
-    const y = height * 0.28;
-
-    group.current.position.set(x, y, 1.5);
+    group.current.position.set(
+      width * 0.40,
+      height * 0.30,
+      1.5
+    );
     positioned.current = true;
-  }, [scene, width, height, isMobile]);
+  }, [width, height, isMobile]);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
