@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useLayoutEffect, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import * as THREE from "three";
@@ -10,27 +10,33 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 function AstronautModel() {
   const group = useRef<THREE.Group>(null);
   const mouse = useRef({ x: 0, y: 0 });
+  const positioned = useRef(false);
   const { scene, animations } = useGLTF("/models/tenhun_falling_spaceman_fanart.glb");
   const { actions } = useAnimations(animations, group);
   const { viewport } = useThree();
+  const { width, height } = viewport;
   const isMobile = useMediaQuery("(max-width: 767px)");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!group.current) return;
+
+    group.current.updateWorldMatrix(true, true);
+
     const box = new THREE.Box3().setFromObject(group.current);
     const size = box.getSize(new THREE.Vector3());
 
-    const targetHeight = viewport.height * (isMobile ? 0.15 : 0.25);
+    if (size.y === 0) return;
+
+    const targetHeight = height * (isMobile ? 0.15 : 0.25);
     const scaleFactor = targetHeight / size.y;
     group.current.scale.setScalar(scaleFactor);
 
-    const scaledBox = new THREE.Box3().setFromObject(group.current);
-    const scaledSize = scaledBox.getSize(new THREE.Vector3());
+    const x = width * 0.32;
+    const y = height * 0.28;
 
-    group.current.position.y = viewport.height / 2 - scaledSize.y / 2;
-    group.current.position.x = viewport.width / 2 - scaledSize.x / 2 - 0.5;
-    group.current.position.z = 1.5;
-  }, [scene, viewport, isMobile]);
+    group.current.position.set(x, y, 1.5);
+    positioned.current = true;
+  }, [scene, width, height, isMobile]);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
@@ -41,8 +47,18 @@ function AstronautModel() {
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
+  useEffect(() => {
+    if (!positioned.current || !actions) return;
+    const animNames = Object.keys(actions);
+    if (animNames.length === 0) return;
+    animNames.forEach((name) => {
+      actions[name]?.reset().play();
+    });
+  }, [actions]);
+
   useFrame((_, delta) => {
     if (!group.current) return;
+    group.current.updateMatrixWorld();
     group.current.rotation.y += delta * 0.2;
 
     const targetRotX = mouse.current.y * 0.15;
@@ -51,16 +67,11 @@ function AstronautModel() {
     group.current.rotation.z += (targetRotZ - group.current.rotation.z) * 0.05;
   });
 
-  useEffect(() => {
-    if (!actions) return;
-    const animNames = Object.keys(actions);
-    if (animNames.length === 0) return;
-    animNames.forEach((name) => {
-      actions[name]?.reset().play();
-    });
-  }, [actions]);
-
-  return <primitive ref={group} object={scene} />;
+  return (
+    <group ref={group}>
+      <primitive object={scene} />
+    </group>
+  );
 }
 
 function Scene() {
@@ -102,8 +113,8 @@ class Astronaut3DErrorBoundary extends React.Component<
 }
 
 export default function Astronaut3D() {
-  const { ready } = usePerfProfile();
-  if (!ready) return null;
+  const { ready, disable3D } = usePerfProfile();
+  if (!ready || disable3D) return null;
 
   return (
     <Astronaut3DErrorBoundary>
@@ -113,7 +124,12 @@ export default function Astronaut3D() {
       >
         <Canvas
           gl={{ alpha: true, antialias: true, localClippingEnabled: false }}
-          camera={{ position: [0, 0, 5], fov: 45 }}
+          camera={{
+            position: [0, 0, 5],
+            fov: 45,
+            near: 0.1,
+            far: 100,
+          }}
           style={{ background: "transparent", overflow: "visible", pointerEvents: "none" }}
           dpr={[1, 2]}
         >
