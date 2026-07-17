@@ -20,7 +20,7 @@ function AstronautModel() {
   useLayoutEffect(() => {
     if (!group.current) return;
 
-    const scale = isMobile ? 0.9 : 1.35;
+    const scale = isMobile ? 1.4 : 2.2;
     group.current.scale.setScalar(scale);
 
     group.current.position.set(
