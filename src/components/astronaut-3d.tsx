@@ -26,7 +26,6 @@ function AstronautModel() {
 
     const scaledBox = new THREE.Box3().setFromObject(group.current);
     const scaledSize = scaledBox.getSize(new THREE.Vector3());
-    const center = scaledBox.getCenter(new THREE.Vector3());
 
     group.current.position.y = viewport.height / 2 - scaledSize.y / 2;
     group.current.position.x = viewport.width / 2 - scaledSize.x / 2 - 0.5;
@@ -46,7 +45,6 @@ function AstronautModel() {
     if (!group.current) return;
     group.current.rotation.y += delta * 0.2;
 
-    // Mouse parallax
     const targetRotX = mouse.current.y * 0.15;
     const targetRotZ = -mouse.current.x * 0.1 + (-0.15);
     group.current.rotation.x += (targetRotX - group.current.rotation.x) * 0.05;
@@ -57,7 +55,6 @@ function AstronautModel() {
     if (!actions) return;
     const animNames = Object.keys(actions);
     if (animNames.length === 0) return;
-    // play all animations (idle), looped
     animNames.forEach((name) => {
       actions[name]?.reset().play();
     });
@@ -104,41 +101,27 @@ class Astronaut3DErrorBoundary extends React.Component<
   }
 }
 
-function AstronautCanvas() {
-  const { disable3D } = usePerfProfile();
-
-  if (disable3D) return null;
-
-  return (
-    <div
-      className="fixed top-0 left-0 w-full h-full pointer-events-none"
-      style={{ zIndex: 1 }}
-    >
-      <Canvas
-        gl={{ alpha: true, antialias: true, localClippingEnabled: false }}
-        camera={{ position: [0, 0, 5], fov: 45 }}
-        style={{ background: "transparent", overflow: "visible", pointerEvents: "none" }}
-        dpr={[1, 2]}
-        onCreated={({ gl }) => {
-          gl.setClearColor(0x000000, 0);
-        }}
-      >
-        <Suspense fallback={null}>
-          <Scene />
-        </Suspense>
-      </Canvas>
-    </div>
-  );
-}
-
 export default function Astronaut3D() {
   const { ready } = usePerfProfile();
-
   if (!ready) return null;
 
   return (
     <Astronaut3DErrorBoundary>
-      <AstronautCanvas />
+      <div
+        className="fixed top-0 left-0 w-full h-full pointer-events-none"
+        style={{ zIndex: 1 }}
+      >
+        <Canvas
+          gl={{ alpha: true, antialias: true, localClippingEnabled: false }}
+          camera={{ position: [0, 0, 5], fov: 45 }}
+          style={{ background: "transparent", overflow: "visible", pointerEvents: "none" }}
+          dpr={[1, 2]}
+        >
+          <Suspense fallback={null}>
+            <Scene />
+          </Suspense>
+        </Canvas>
+      </div>
     </Astronaut3DErrorBoundary>
   );
 }

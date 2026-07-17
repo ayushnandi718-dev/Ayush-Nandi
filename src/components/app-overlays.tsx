@@ -25,10 +25,6 @@ export default function AppOverlays() {
 
   const { particleCount, maxDpr, disableDecorative } = usePerfProfile();
 
-  const themeReady =
-    (resolvedTheme === "dark" || theme === "dark") &&
-    (resolvedTheme !== undefined || theme !== undefined);
-
   return (
     <>
       {particleCount > 0 && (
@@ -38,7 +34,7 @@ export default function AppOverlays() {
           maxDpr={maxDpr}
         />
       )}
-      {isHome && (mounted ? isDark : themeReady) && <Astronaut3D />}
+      {isHome && isDark && <Astronaut3D />}
       {isHome && <RemoteCursors />}
       {isHome && <FloatingAvatars />}
       <EasterEggs />
