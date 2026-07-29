@@ -69,6 +69,42 @@ export type Project = {
 
 const projects: Project[] = [
   {
+    id: "orbitdine",
+    category: "SaaS Platform",
+    title: "OrbitDine",
+    src: `${BASE_PATH}/orbitdine/landing.png`,
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.nextjs,
+      ],
+      backend: [],
+    },
+    live: "https://orbitdine-red.vercel.app/",
+    github: "https://github.com/ayushnandi718-dev/OrbitDine",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            A multi-tenant restaurant management SaaS with digital QR ordering, kitchen display, and analytics.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            OrbitDine is a full-featured restaurant management platform where multiple restaurant owners can manage their menus, staff, orders, and operations. Customers can browse restaurants by city/cuisine and place orders directly — all without a third-party aggregator.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            Restaurant owner dashboard with menu management, staff management, order tracking, and analytics. Customer portal with digital menus, cart, order history, and profile management. Built with Next.js, Supabase, Firebase Auth, and Cloudinary for media management.
+          </p>
+        </div>
+      );
+    },
+  },
+
+  {
     id: "carbonmind",
     category: "AI Platform",
     title: "CarbonMind AI",
