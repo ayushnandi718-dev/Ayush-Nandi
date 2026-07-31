@@ -4,7 +4,7 @@ import { TypographyH3, TypographyP } from "@/components/ui/typography";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVite, SiGreensock } from "react-icons/si";
 
 const BASE_PATH = "/assets/projects-screenshots";
 
@@ -30,6 +30,8 @@ const PROJECT_SKILLS = {
   nextjs: brand("Next.js", <SiNextdotjs />),
   ts: brand("TypeScript", <SiTypescript />),
   tailwind: brand("Tailwind", <SiTailwindcss />),
+  vite: brand("Vite", <SiVite />),
+  gsap: brand("GSAP", <SiGreensock />),
 };
 
 const ProjectsLinks = ({ live, repo }: { live?: string; repo?: string }) => {
@@ -283,13 +285,15 @@ const projects: Project[] = [
     screenshots: ["landing.png"],
     skills: {
       frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.vite,
+        PROJECT_SKILLS.gsap,
         PROJECT_SKILLS.js,
+        PROJECT_SKILLS.css,
       ],
       backend: [],
     },
-    live: "https://ayushnandi718-dev.github.io/SCHOOL-NOSTALGIC-/",
+    live: "https://school-nostalgic.vercel.app",
     github: "https://github.com/ayushnandi718-dev/SCHOOL-NOSTALGIC-",
     get content() {
       return (
@@ -303,7 +307,7 @@ const projects: Project[] = [
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 mt-8">Sentimental Design</TypographyH3>
           <p className="font-mono mb-2">
-            Built with love and HTML, CSS, JavaScript. A heartfelt tribute to school memories with photo galleries, captions, and a warm nostalgic feel throughout.
+            Built with React and Vite, animated with GSAP, and featuring an interactive 3D dome gallery, an auto-scrolling circular timeline, and a cinematic autoplay soundtrack. A heartfelt tribute to school memories with a warm nostalgic feel throughout.
           </p>
         </div>
       );
