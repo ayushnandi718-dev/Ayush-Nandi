@@ -97,17 +97,13 @@ const HeroSection = () => {
                 <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
-                      <button
+                      <Button
+                        variant={"outline"}
+                        className="w-full"
                         onClick={() => lenis?.scrollTo("#contact")}
-                        className="block w-full overflow-hidden"
                       >
-                        <Button
-                          variant={"outline"}
-                          className="w-full"
-                        >
-                          Hire Me
-                        </Button>
-                      </button>
+                        Hire Me
+                      </Button>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
                       <p>pls 🥹 🙏</p>

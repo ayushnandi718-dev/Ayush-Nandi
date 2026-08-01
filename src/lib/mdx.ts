@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 
 type Metadata = {
+  id?: string;
   title: string;
   publishedAt: string;
   summary: string;

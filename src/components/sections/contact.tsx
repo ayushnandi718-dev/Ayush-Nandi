@@ -13,7 +13,10 @@ import { SectionHeader } from "./section-header";
 import SectionWrapper from "../ui/section-wrapper";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { MessageCircle, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, MessageCircle, Mail, MapPin } from "lucide-react";
+import QRCode from "react-qr-code";
+
+const LINKTREE_URL = "https://tr.ee/hlSnMu";
 
 const ContactSection = () => {
   return (
@@ -104,6 +107,24 @@ const ContactSection = () => {
             <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
               <MessageCircle className="mr-2 h-4 w-4" />
               Message on WhatsApp
+            </Button>
+          </Link>
+
+          {/* QR code */}
+          <div className="flex flex-col items-center gap-2 p-4 rounded-xl border border-border">
+            <div className="rounded-2xl bg-white p-3 shadow-lg">
+              <QRCode value={LINKTREE_URL} size={140} level="M" fgColor="#0f172a" />
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Scan to open my Linktree
+            </p>
+          </div>
+
+          {/* Linktree button */}
+          <Link href={LINKTREE_URL} target="_blank" rel="noopener noreferrer">
+            <Button className="group w-full gap-2">
+              Open my Linktree
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Button>
           </Link>
         </div>
