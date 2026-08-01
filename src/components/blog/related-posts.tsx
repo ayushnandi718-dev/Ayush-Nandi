@@ -6,6 +6,7 @@ import { Cover } from "./cover";
 type Post = {
   slug: string;
   metadata: {
+    id?: string;
     title: string;
     publishedAt: string;
     summary: string;
@@ -47,7 +48,7 @@ export function RelatedPosts({ slug, posts }: { slug: string; posts: Post[] }) {
         {related.map((post) => (
           <Link
             key={post.slug}
-            href={`/blogs/${post.slug}`}
+            href={`/blogs/${post.metadata.id || post.slug}`}
             className="group block border border-border/50 rounded-xl overflow-hidden hover:border-[hsl(20,100%,70%)]/30 transition-all bg-card/20 backdrop-blur-sm"
           >
             <Cover slug={post.slug} compact />

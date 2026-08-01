@@ -47,3 +47,9 @@ export function getBlogPost(slug: string) {
     content,
   };
 }
+
+export function getBlogPostById(id: string) {
+  return (
+    getBlogPosts().find((post) => post.metadata.id === id) || null
+  );
+}

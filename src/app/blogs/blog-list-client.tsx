@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 type Post = {
   slug: string;
   metadata: {
+    id?: string;
     title: string;
     publishedAt: string;
     summary: string;
@@ -144,7 +145,7 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="mb-16"
           >
-            <Link href={`/blogs/${featured.slug}`} className="group block">
+            <Link href={`/blogs/${featured.metadata.id || featured.slug}`} className="group block">
               <div className="relative border border-border/50 rounded-2xl overflow-hidden transition-colors hover:border-[hsl(20,100%,70%)]/30 bg-card/30 backdrop-blur-sm">
                 <Cover slug={featured.slug} compact />
 
@@ -224,7 +225,7 @@ export default function BlogListClient({ posts }: { posts: Post[] }) {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <Link href={`/blogs/${post.slug}`} className="group block h-full">
+                <Link href={`/blogs/${post.metadata.id || post.slug}`} className="group block h-full">
                   <div className="h-full border border-border/50 rounded-xl overflow-hidden transition-all duration-300 hover:border-[hsl(20,100%,70%)]/30 hover:bg-card/40 bg-card/20 backdrop-blur-sm flex flex-col">
                     <Cover slug={post.slug} compact className="rounded-none border-0" />
                     <div className="p-6 md:p-8 flex flex-col flex-1">

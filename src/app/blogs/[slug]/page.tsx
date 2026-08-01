@@ -1,7 +1,8 @@
 import React from "react";
-import { getBlogPost, getBlogPosts } from "@/lib/mdx";
+import { getBlogPost, getBlogPostById, getBlogPosts } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
+import { redirect } from "next/navigation";
 import ScrollProgress from "@/components/ui/scroll-progress";
 import Link from "next/link";
 import { ArrowLeft, CalendarDays, Clock, User } from "lucide-react";
@@ -19,13 +20,13 @@ import { estimateReadTime, getToc, slugify, childrenToText } from "@/lib/blog-ut
 export async function generateStaticParams() {
   const posts = getBlogPosts();
   return posts.map((post) => ({
-    slug: post.slug,
+    slug: post.metadata.id || post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = getBlogPostById(slug) || getBlogPost(slug);
   return {
     title: post.metadata.title,
     description: post.metadata.summary,
@@ -132,7 +133,12 @@ const components = {
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = getBlogPostById(slug) || getBlogPost(slug);
+
+  if (post.metadata.id && slug !== post.metadata.id) {
+    redirect(`/blogs/${post.metadata.id}`);
+  }
+
   const readTime = estimateReadTime(post.content);
   const toc = getToc(post.content);
 
