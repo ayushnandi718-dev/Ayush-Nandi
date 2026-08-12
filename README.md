@@ -14,6 +14,7 @@
 
 ## 📌 About Me
 - 🚀Full Stack Developer passionate about building modern web applications
+- 🧩 Building browser extensions (Manifest V3) for Chrome, Edge, and Firefox
 - 💻 Skilled in React, JavaScript, TypeScript, Node.js, and Next.js
 - 🎨 Interested in UI/UX design and creative frontend experiences
 - 🤖 Exploring AI, Generative AI, and automation tools
@@ -34,6 +35,7 @@
 - 🔧 API Development and Backend Systems
 - ☁️ Cloud Deployment and DevOps Practices
 - 🛠️ Open Source Projects & Developer Tools
+- 🧩 Browser Extensions & Web Automation
 - 📚 Continuous Learning and Exploring New Technologies
 
 

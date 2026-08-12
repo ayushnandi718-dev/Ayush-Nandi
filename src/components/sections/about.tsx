@@ -17,12 +17,17 @@ const skills = [
   "Video Editing",
   "AI Apps",
   "Full-Stack Developer",
+  "Browser Extensions",
 ];
 
 const services = [
   {
     title: "Full-Stack Web Development",
     desc: "I build modern, responsive websites and web applications using React, Next.js, TypeScript, and Tailwind CSS. From landing pages to complex SaaS dashboards, I deliver fast, scalable, and accessible products.",
+  },
+  {
+    title: "Browser Extensions & Automation",
+    desc: "I build Manifest V3 browser extensions that supercharge Chrome, Edge, and Firefox — productivity tools, YouTube helpers, and web automation — powered by the browser extension APIs and vanilla JavaScript.",
   },
   {
     title: "AI-Powered Applications",
@@ -214,7 +219,7 @@ const AboutSection = () => {
               What I Do
             </h2>
             <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-              Services I offer as a Full-Stack Developer, Video Editor, and Digital Creator
+              Services I offer as a Full-Stack Developer, Browser Extension Developer, Video Editor, and Digital Creator
               based in Alipurduar, West Bengal, India.
             </p>
           </motion.div>
