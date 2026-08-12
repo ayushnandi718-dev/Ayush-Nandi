@@ -47,14 +47,13 @@ const AboutSection = () => {
   return (
     <SectionWrapper
       id="about"
-      className="flex flex-col items-center justify-center min-h-screen py-20"
+      className="min-h-screen py-20"
     >
       <div className="w-full max-w-5xl px-4 md:px-8 mx-auto">
         <SectionHeader
           id="about"
           title="About Me"
           desc=""
-          className="mb-12 md:mb-20 mt-0"
         />
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
