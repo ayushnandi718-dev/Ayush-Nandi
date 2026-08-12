@@ -4,7 +4,7 @@ import { TypographyH3, TypographyP } from "@/components/ui/typography";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVite, SiGreensock } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVite, SiGreensock, SiGooglechrome } from "react-icons/si";
 
 const BASE_PATH = "/assets/projects-screenshots";
 
@@ -32,6 +32,7 @@ const PROJECT_SKILLS = {
   tailwind: brand("Tailwind", <SiTailwindcss />),
   vite: brand("Vite", <SiVite />),
   gsap: brand("GSAP", <SiGreensock />),
+  chrome: brand("Chrome", <SiGooglechrome />),
 };
 
 const ProjectsLinks = ({ live, repo }: { live?: string; repo?: string }) => {
@@ -308,6 +309,41 @@ const projects: Project[] = [
           <TypographyH3 className="my-4 mt-8">Sentimental Design</TypographyH3>
           <p className="font-mono mb-2">
             Built with React and Vite, animated with GSAP, and featuring an interactive 3D dome gallery, an auto-scrolling circular timeline, and a cinematic autoplay soundtrack. A heartfelt tribute to school memories with a warm nostalgic feel throughout.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "youtube-bookmarker",
+    category: "Browser Extension",
+    title: "YouTube Bookmarker",
+    src: `${BASE_PATH}/youtube-bookmarker/landing.png`,
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.html,
+        PROJECT_SKILLS.css,
+        PROJECT_SKILLS.chrome,
+      ],
+      backend: [],
+    },
+    live: "#",
+    github: "https://github.com/ayushnandi718-dev/youtube-bookmarker",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Bookmark, edit, and instantly jump between your favorite timestamps on any YouTube video.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            A cross-browser Chrome extension (Manifest V3) that adds a bookmark button to the YouTube player, saves the current timestamp, and lets you manage every bookmark from a clean dark-mode popup.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            One-click timestamp bookmarking with a centered confirmation popup, edit and rename bookmarks, click-to-seek navigation, keyboard shortcut (Ctrl+Shift+B), video title and thumbnail preview, and JSON export/import. Built with Manifest V3 for Chrome, Edge, Brave, Opera, and Firefox.
           </p>
         </div>
       );
