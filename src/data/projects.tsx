@@ -349,6 +349,41 @@ const projects: Project[] = [
       );
     },
   },
+  {
+    id: "study-buddy",
+    category: "Browser Extension",
+    title: "Study Buddy",
+    src: `${BASE_PATH}/study-buddy/landing.png`,
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.html,
+        PROJECT_SKILLS.css,
+        PROJECT_SKILLS.chrome,
+      ],
+      backend: [],
+    },
+    live: "#",
+    github: "https://github.com/ayushnandi718-dev/study-buddy",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            A research workspace for students — citations, flashcards, highlights and tab management in one local-first extension.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Study Buddy turns any page into a research hub. Right-click any website to save it as a source, cite it in MLA/APA/BibTeX, highlight key text, and turn notes into spaced-repetition flashcards — all stored privately on-device.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <p className="font-mono mb-2">
+            One-click citation generation, context-menu saving, spaced-repetition review sessions, project-based organization, full-text search, reading list with due tracking, JSON export/import backup, and keyboard shortcuts. Built with Manifest V3 for Chrome, Edge, Brave, Opera, and Firefox — fully local-first, nothing leaves the browser.
+          </p>
+        </div>
+      );
+    },
+  },
 ];
 
 export default projects;
