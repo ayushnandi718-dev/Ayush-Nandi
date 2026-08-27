@@ -7,6 +7,7 @@ import SiteFrame from "@/components/site-frame";
 import { Providers } from "@/components/providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import DevToolsBlocker from "@/components/devtools-blocker";
+import CookieConsentBanner from "@/components/ads/cookie-consent-banner";
 
 const spaceGroteskSans = Space_Grotesk({
   subsets: ["latin"],
@@ -114,12 +115,18 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${config.ads.publisherId}`}
+          crossOrigin="anonymous"
+        />
       </head>
       <body>
         <Providers>
           <SiteFrame>{children}</SiteFrame>
         </Providers>
         <DevToolsBlocker />
+        <CookieConsentBanner />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}

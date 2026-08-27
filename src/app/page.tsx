@@ -10,6 +10,7 @@ import ExperienceSection from "@/components/sections/experience";
 import ProjectsSection from "@/components/sections/projects";
 import ContactSection from "@/components/sections/contact";
 import HeroSection from "@/components/sections/hero";
+import AdSlot from "@/components/ads/ad-slot";
 
 function MainPage() {
   return (
@@ -21,6 +22,9 @@ function MainPage() {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
+        <div className="mx-auto max-w-7xl px-6 py-4">
+          <AdSlot />
+        </div>
         <ContactSection />
       </main>
     </SmoothScroll>

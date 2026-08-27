@@ -34,6 +34,25 @@ const config = {
   githubUsername: "ayushnandi718-dev",
   githubRepo: "Ayush-Nandi",
 
+  // GitHub repositories page — destination for the Projects section "See More" link.
+  githubReposUrl: "https://github.com/ayushnandi718-dev?tab=repositories",
+
+  // Google AdSense — monetization.
+  // `enabled` gates whether ad units render at all. Keep it false until your
+  // account is approved and you've decided where ads should appear. The
+  // publisher ID is public (it ships in the ad script served to every visitor).
+  ads: {
+    // Granted by Google when your site is approved for AdSense.
+    publisherId: "ca-pub-8902731613673487",
+    // Master switch: turn this on only after AdSense approval.
+    enabled: false,
+    // Slot ID of the ad unit created in your AdSense console. Replace
+    // "0000000000" once you've created a real "Display" ad unit.
+    adSlot: "0000000000",
+  },
+  // Cookie / privacy consent storage key (used by the consent banner).
+  consentStorageKey: "ayush-visitor-consent",
+
   get ogImg() {
     return this.site + "/assets/seo/og_preview.png";
   },

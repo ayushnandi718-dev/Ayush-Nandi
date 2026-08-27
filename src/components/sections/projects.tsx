@@ -4,6 +4,8 @@ import {
   ResponsiveDialog,
   ResponsiveDialogContent,
   ResponsiveDialogTrigger,
+  ResponsiveDialogTitle,
+  ResponsiveDialogDescription,
 } from "../ui/responsive-dialog";
 import { FloatingDock } from "../ui/floating-dock";
 import { ScrollArea } from "../ui/scroll-area";
@@ -12,6 +14,7 @@ import { ArrowUpRight, Keyboard } from "lucide-react";
 import { motion } from "motion/react";
 
 import projects, { Project } from "@/data/projects";
+import { config } from "@/data/config";
 import { SectionHeader } from "./section-header";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -53,7 +56,19 @@ const ProjectsSection = () => {
   return (
     <SectionWrapper id="projects" className="max-w-7xl mx-auto md:min-h-[130vh] px-4">
       <NyanCat />
-      <SectionHeader id="projects" title="Projects" />
+      <div className="relative">
+        <SectionHeader id="projects" title="Projects" />
+        <Link
+          href={config.githubReposUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group absolute top-3 right-1 md:right-4 inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-secondary/30 px-4 py-2 text-sm font-medium text-foreground/90 backdrop-blur-sm transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          aria-label="See more projects on GitHub"
+        >
+          See More
+          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </Link>
+      </div>
       <div className="flex items-center justify-center gap-2 mb-8 px-4 py-2.5 rounded-full border border-border/60 bg-secondary/30 backdrop-blur-sm w-fit mx-auto">
         <Keyboard size={16} className="text-foreground/70" />
         <span className="text-sm font-medium text-foreground/80">
@@ -99,6 +114,14 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </ResponsiveDialogTrigger>
 
         <ResponsiveDialogContent className="md:max-w-4xl md:h-[85vh] md:!flex md:flex-col md:overflow-hidden md:p-0 md:gap-0">
+          {/* Visually-hidden title/description for screen readers (Radix
+              requires a DialogTitle inside DialogContent for accessibility). */}
+          <ResponsiveDialogTitle className="sr-only">
+            {project.title}
+          </ResponsiveDialogTitle>
+          <ResponsiveDialogDescription className="sr-only">
+            Details about the {project.title} project.
+          </ResponsiveDialogDescription>
           {/* Sticky header */}
           <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-8 py-5">
             <div className="flex items-center justify-between gap-4">
