@@ -5,6 +5,8 @@ import SectionWrapper from "../ui/section-wrapper";
 import { SectionHeader } from "./section-header";
 import { config } from "@/data/config";
 import { MapPin, Mail } from "lucide-react";
+import ProfileCard from "../profile-card/ProfileCard";
+import { useLenis } from "@/lib/lenis";
 
 const skills = [
   "React",
@@ -44,6 +46,7 @@ const services = [
 ];
 
 const AboutSection = () => {
+  const lenis = useLenis();
   return (
     <SectionWrapper
       id="about"
@@ -178,33 +181,54 @@ const AboutSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right — Skills pill grid */}
+          {/* Right — Profile card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-wrap gap-3"
+            className="flex items-center justify-center"
           >
-            {skills.map((skill, i) => (
-              <motion.span
-                key={skill}
-                initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{
-                  delay: 0.3 + i * 0.1,
-                  duration: 0.4,
-                  ease: "easeOut",
-                }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="px-5 py-2.5 rounded-full border border-border/60 bg-secondary/30 backdrop-blur-sm text-sm font-medium text-foreground/80 hover:text-foreground hover:border-foreground/30 hover:bg-secondary/50 transition-colors cursor-default"
-              >
-                {skill}
-              </motion.span>
-            ))}
+            <ProfileCard
+              avatarUrl="/assets/me-portrait.jpg"
+              miniAvatarUrl="/assets/me.jpg"
+              innerGradient="linear-gradient(145deg,#ffffff 0%,#f1f5f9 100%)"
+              behindGlowEnabled={false}
+              name={config.author}
+              title="Full-Stack Developer & Digital Creator"
+              handle="ayushnandi718"
+              status="Open to work"
+              onContactClick={() => lenis?.scrollTo("#contact")}
+            />
           </motion.div>
         </div>
+
+        {/* Skills pill grid */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="flex flex-wrap gap-3 mt-10 justify-center"
+        >
+          {skills.map((skill, i) => (
+            <motion.span
+              key={skill}
+              initial={{ opacity: 0, scale: 0.8, y: 10 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{
+                delay: 0.3 + i * 0.1,
+                duration: 0.4,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="px-5 py-2.5 rounded-full border border-border/60 bg-secondary/30 backdrop-blur-sm text-sm font-medium text-foreground/80 hover:text-foreground hover:border-foreground/30 hover:bg-secondary/50 transition-colors cursor-default"
+            >
+              {skill}
+            </motion.span>
+          ))}
+        </motion.div>
 
         {/* Services Grid */}
         <div className="mt-20">

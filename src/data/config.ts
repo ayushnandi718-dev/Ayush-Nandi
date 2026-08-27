@@ -34,6 +34,10 @@ const config = {
   githubUsername: "ayushnandi718-dev",
   githubRepo: "Ayush-Nandi",
 
+  // Static copyright year (no runtime `new Date()` in SSR/prerender — Next.js 16
+  // blocks current-time reads in Server Components). Bump manually each year.
+  copyrightYear: 2026,
+
   // GitHub repositories page — destination for the Projects section "See More" link.
   githubReposUrl: "https://github.com/ayushnandi718-dev?tab=repositories",
 

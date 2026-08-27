@@ -99,6 +99,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const year = config.copyrightYear;
   return (
     <html
       lang="en"
@@ -123,7 +124,7 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-          <SiteFrame>{children}</SiteFrame>
+          <SiteFrame year={year}>{children}</SiteFrame>
         </Providers>
         <DevToolsBlocker />
         <CookieConsentBanner />

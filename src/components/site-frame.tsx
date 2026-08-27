@@ -10,7 +10,13 @@ import AppOverlays from "@/components/app-overlays";
  * "bare" (no header / footer / decorative overlays) so the component
  * galleries can be judged in isolation. Everything else gets full chrome.
  */
-export default function SiteFrame({ children }: { children: React.ReactNode }) {
+export default function SiteFrame({
+  children,
+  year,
+}: {
+  children: React.ReactNode;
+  year?: number;
+}) {
   const pathname = usePathname();
   const bare = pathname?.startsWith("/components") ?? false;
 
@@ -20,7 +26,7 @@ export default function SiteFrame({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       {children}
-      <Footer />
+      <Footer year={year} />
       <AppOverlays />
     </>
   );
