@@ -1,0 +1,242 @@
+{
+  "seo": {
+    "title": "Ayush Nandi builds products | Full Stack Developer & AI Builder",
+    "descriptionLong": "Ayush Nandi is a full-stack developer and AI builder from West Bengal, India. He builds scalable web applications, AI-powered products and modern digital experiences with React, Next.js, TypeScript and Python.",
+    "descriptionShort": "Ayush Nandi builds products — scalable web apps, AI-powered tools and modern digital experiences.",
+    "keywords": [
+      "Ayush Nandi",
+      "Full Stack Developer",
+      "AI Builder",
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "Node.js",
+      "Tailwind CSS",
+      "Open Source Contributor",
+      "AUX Studio",
+      "Bilvo",
+      "AURA Hub",
+      "Portfolio",
+      "Alipurduar",
+      "West Bengal",
+      "India"
+    ],
+    "jobTitle": "Full Stack Developer & AI Builder",
+    "twitterHandle": "@iitwalabanda123"
+  },
+  "site": {
+    "author": "Ayush Nandi",
+    "email": "ayushnandi718@gmail.com",
+    "url": "https://ayushapd.dpdns.org",
+    "githubUsername": "ayushnandi718-dev",
+    "githubRepo": "Ayush-Nandi",
+    "githubReposUrl": "https://github.com/ayushnandi718-dev?tab=repositories",
+    "copyrightYear": 2026
+  },
+  "hero": {
+    "greeting": "Hi, I am",
+    "name": "Ayush Nandi",
+    "role": "Full Stack Developer & AI Builder",
+    "tagline": "A Digital Creator & Web Developer",
+    "description": [
+      "Building scalable web applications,",
+      "AI-powered products,",
+      "and modern digital experiences."
+    ],
+    "stackLine": "⚛️ React.js • Next.js • Python",
+    "affiliations": [
+      "🌱 Open Source Contributor",
+      "🚀 Founder @ AUX Studio"
+    ],
+    "ctas": [
+      {
+        "label": "View Projects",
+        "href": "#projects",
+        "variant": "primary"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/ayushnandi718-dev",
+        "variant": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/ayush-nandi-apdj-india/",
+        "variant": "linkedin"
+      }
+    ]
+  },
+  "featuredProjects": {
+    "title": "Featured Projects",
+    "description": "Work that shows how I think, not just what I built.",
+    "items": [
+      {
+        "id": "bilvo",
+        "icon": "🚀",
+        "title": "Bilvo",
+        "summary": "A modern platform focused on performance, scalability, and user experience.",
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "caseStudy": {
+          "problem": "Products need to stay fast and reliable as they grow.",
+          "solution": "A modern platform built with Next.js, TypeScript, and PostgreSQL.",
+          "result": "Focused on performance, scalability, and a seamless user experience."
+        },
+        "href": "https://github.com/ayushnandi718-dev"
+      },
+      {
+        "id": "aura-hub",
+        "icon": "🤖",
+        "title": "AURA Hub",
+        "summary": "AI-powered ecosystem for productivity and automation.",
+        "tech": [
+          "React",
+          "AI APIs",
+          "Node.js"
+        ],
+        "caseStudy": {
+          "problem": "Productivity and automation tools are scattered across too many places.",
+          "solution": "An AI-powered ecosystem built with React, AI APIs, and Node.js.",
+          "result": "One connected place to build, automate, and ship faster."
+        },
+        "href": "https://github.com/ayushnandi718-dev"
+      },
+      {
+        "id": "aux-studio",
+        "icon": "🏢",
+        "title": "AUX Studio",
+        "summary": "Digital products, automation, and AI tools built under one roof.",
+        "tech": [
+          "Product Design",
+          "Automation",
+          "AI"
+        ],
+        "caseStudy": {
+          "problem": "Good ideas often stall between concept, design, and shipping.",
+          "solution": "A studio for building digital products and AI-powered automation end to end.",
+          "result": "One place to take products from idea to production."
+        },
+        "href": "https://github.com/ayushnandi718-dev"
+      }
+    ]
+  },
+  "building": {
+    "title": "What I'm Building Now",
+    "description": "A live look at what's on my desk right now.",
+    "items": [
+      {
+        "icon": "🚀",
+        "title": "Bilvo",
+        "detail": "Modern platform for performance and scale"
+      },
+      {
+        "icon": "🤖",
+        "title": "AURA Hub",
+        "detail": "AI ecosystem for productivity and automation"
+      },
+      {
+        "icon": "⚡",
+        "title": "New Experiments",
+        "detail": "Fresh ideas, prototypes, and things I'm learning in public"
+      }
+    ]
+  },
+  "metrics": {
+    "title": "Builder Metrics",
+    "description": "A few numbers that show the work behind the work.",
+    "items": [
+      {
+        "value": "74+",
+        "label": "Public Repositories"
+      },
+      {
+        "value": "1200+",
+        "label": "Contributions"
+      },
+      {
+        "value": "Open Source",
+        "label": "Contributor"
+      },
+      {
+        "value": "5",
+        "label": "Git Badges"
+      }
+    ]
+  },
+  "journey": {
+    "heading": "About Ayush Nandi",
+    "description": "The person behind the products.",
+    "paragraphs": [
+      "I'm Ayush Nandi, a Full Stack Developer and AI Builder from West Bengal, India.",
+      "Alongside my academic journey, I build modern web applications, experiment with AI, contribute to open-source projects, and work on digital products through AUX Studio.",
+      "I enjoy turning ideas into scalable products that solve real-world problems."
+    ],
+    "location": "Alipurduar, West Bengal, India",
+    "profileTitle": "Full Stack Developer & AI Builder",
+    "handle": "ayushnandi718",
+    "status": "Open to work"
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "description": "The tools I reach for, kept simple.",
+    "groups": [
+      {
+        "title": "Frontend",
+        "items": [
+          "React.js",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS"
+        ]
+      },
+      {
+        "title": "Backend",
+        "items": [
+          "Node.js",
+          "Express.js",
+          "Python"
+        ]
+      },
+      {
+        "title": "Tools",
+        "items": [
+          "Git",
+          "GitHub",
+          "REST APIs"
+        ]
+      }
+    ]
+  },
+  "socials": {
+    "twitter": "https://x.com/iitwalabanda123",
+    "linkedin": "https://www.linkedin.com/in/ayush-nandi-apdj-india/",
+    "instagram": "https://instagram.com/rva.creates/",
+    "facebook": "https://www.facebook.com/1rva.creates/",
+    "github": "https://github.com/ayushnandi718-dev",
+    "youtube": "https://www.youtube.com/@rva.creates"
+  },
+  "footer": {
+    "name": "Ayush Nandi",
+    "role": "Full Stack Developer & AI Builder",
+    "stackLine": "React.js • Next.js • Python",
+    "lines": [
+      "Open Source Contributor",
+      "Founder @ AUX Studio"
+    ],
+    "location": "Alipurduar, West Bengal, India"
+  },
+  "contact": {
+    "heading": "LET'S WORK TOGETHER",
+    "title": "Get in Touch",
+    "intro": "Have a project in mind or just want to say hi? Feel free to reach out through any of the channels below.",
+    "whatsapp": "https://wa.me/919563316500",
+    "whatsappLabel": "+91 9563316500",
+    "email": "ayushnandi718@gmail.com",
+    "location": "Alipurduar Court, Alipurduar, West Bengal, India 736123",
+    "linktree": "https://tr.ee/hlSnMu"
+  }
+}
