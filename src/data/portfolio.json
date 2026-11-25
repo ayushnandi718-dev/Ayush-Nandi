@@ -51,8 +51,16 @@
     ],
     "auxStudioUrl": "https://auxstudio.dpdns.org",
     "ctas": [
-      { "label": "GitHub", "href": "https://github.com/ayushnandi718-dev", "variant": "github" },
-      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/ayush-nandi-apdj-india/", "variant": "linkedin" }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/ayushnandi718-dev",
+        "variant": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/ayush-nandi-apdj-india/",
+        "variant": "linkedin"
+      }
     ]
   },
   "featuredProjects": {
@@ -64,7 +72,11 @@
         "icon": "🚀",
         "title": "Bilvo",
         "summary": "A modern platform focused on performance, scalability, and user experience.",
-        "tech": ["Next.js", "TypeScript", "PostgreSQL"],
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL"
+        ],
         "caseStudy": {
           "problem": "Products need to stay fast and reliable as they grow.",
           "solution": "A modern platform built with Next.js, TypeScript, and PostgreSQL.",
@@ -77,7 +89,11 @@
         "icon": "🤖",
         "title": "AURA Hub",
         "summary": "AI-powered ecosystem for productivity and automation.",
-        "tech": ["React", "AI APIs", "Node.js"],
+        "tech": [
+          "React",
+          "AI APIs",
+          "Node.js"
+        ],
         "caseStudy": {
           "problem": "Productivity and automation tools are scattered across too many places.",
           "solution": "An AI-powered ecosystem built with React, AI APIs, and Node.js.",
@@ -90,7 +106,11 @@
         "icon": "🏢",
         "title": "AUX Studio",
         "summary": "Digital products, automation, and AI tools built under one roof.",
-        "tech": ["Product Design", "Automation", "AI"],
+        "tech": [
+          "Product Design",
+          "Automation",
+          "AI"
+        ],
         "caseStudy": {
           "problem": "Good ideas often stall between concept, design, and shipping.",
           "solution": "A studio for building digital products and AI-powered automation end to end.",
@@ -108,9 +128,16 @@
         "category": "SaaS Platform",
         "title": "OrbitDine",
         "src": "/assets/projects-screenshots/orbitdine/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["react", "ts", "tailwind", "nextjs"],
+          "frontend": [
+            "react",
+            "ts",
+            "tailwind",
+            "nextjs"
+          ],
           "backend": []
         },
         "tagline": "A multi-tenant restaurant management SaaS with digital QR ordering, kitchen display, and analytics.",
@@ -125,9 +152,16 @@
         "category": "AI Platform",
         "title": "CarbonMind AI",
         "src": "/assets/projects-screenshots/carbonmind/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["react", "ts", "tailwind", "nextjs"],
+          "frontend": [
+            "react",
+            "ts",
+            "tailwind",
+            "nextjs"
+          ],
           "backend": []
         },
         "tagline": "Track your carbon footprint, get AI-powered insights, and reduce your environmental impact.",
@@ -142,9 +176,15 @@
         "category": "Web Design",
         "title": "Galaxy Gym Website",
         "src": "/assets/projects-screenshots/galaxy-gym/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["html", "css", "js"],
+          "frontend": [
+            "html",
+            "css",
+            "js"
+          ],
           "backend": []
         },
         "tagline": "A modern fitness website featuring sleek design and smooth interactions.",
@@ -159,9 +199,15 @@
         "category": "Food Website",
         "title": "Royal Cravings",
         "src": "/assets/projects-screenshots/royal-cravings/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["html", "css", "js"],
+          "frontend": [
+            "html",
+            "css",
+            "js"
+          ],
           "backend": []
         },
         "tagline": "A full food delivery landing page with cart system, menu, reviews & newsletter.",
@@ -176,9 +222,15 @@
         "category": "Productivity App",
         "title": "To-Do List App",
         "src": "/assets/projects-screenshots/todo-list/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["html", "css", "js"],
+          "frontend": [
+            "html",
+            "css",
+            "js"
+          ],
           "backend": []
         },
         "tagline": "A clean task manager to add, check off and delete tasks with minimal UI.",
@@ -193,9 +245,15 @@
         "category": "Demo App",
         "title": "Cake Selling Website",
         "src": "/assets/projects-screenshots/cake-website/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["html", "css", "js"],
+          "frontend": [
+            "html",
+            "css",
+            "js"
+          ],
           "backend": []
         },
         "tagline": "A beautifully designed cake shop website with elegant visuals and smooth animations.",
@@ -210,9 +268,17 @@
         "category": "Album Website",
         "title": "School Album Website",
         "src": "/assets/projects-screenshots/school-album/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["react", "vite", "gsap", "js", "css"],
+          "frontend": [
+            "react",
+            "vite",
+            "gsap",
+            "js",
+            "css"
+          ],
           "backend": []
         },
         "tagline": "Celebrate growth, honor friendships, and preserve school memories.",
@@ -227,9 +293,16 @@
         "category": "Browser Extension",
         "title": "YouTube Bookmarker",
         "src": "/assets/projects-screenshots/youtube-bookmarker/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["js", "html", "css", "chrome"],
+          "frontend": [
+            "js",
+            "html",
+            "css",
+            "chrome"
+          ],
           "backend": []
         },
         "tagline": "Bookmark, edit, and instantly jump between your favorite timestamps on any YouTube video.",
@@ -244,9 +317,16 @@
         "category": "Browser Extension",
         "title": "Study Buddy",
         "src": "/assets/projects-screenshots/study-buddy/landing.png",
-        "screenshots": ["landing.png"],
+        "screenshots": [
+          "landing.png"
+        ],
         "skills": {
-          "frontend": ["js", "html", "css", "chrome"],
+          "frontend": [
+            "js",
+            "html",
+            "css",
+            "chrome"
+          ],
           "backend": []
         },
         "tagline": "A research workspace for students — citations, flashcards, highlights and tab management in one local-first extension.",
@@ -262,18 +342,43 @@
     "title": "What I'm Building Now",
     "description": "A live look at what's on my desk right now.",
     "items": [
-      { "icon": "🚀", "title": "Bilvo", "detail": "Modern platform for performance and scale" },
-      { "icon": "🤖", "title": "AURA Hub", "detail": "AI ecosystem for productivity and automation" },
-      { "icon": "⚡", "title": "New Experiments", "detail": "Fresh ideas, prototypes, and things I'm learning in public" }
+      {
+        "icon": "🚀",
+        "title": "Bilvo",
+        "detail": "Modern platform for performance and scale"
+      },
+      {
+        "icon": "🤖",
+        "title": "AURA Hub",
+        "detail": "AI ecosystem for productivity and automation"
+      },
+      {
+        "icon": "⚡",
+        "title": "New Experiments",
+        "detail": "Fresh ideas, prototypes, and things I'm learning in public"
+      }
     ]
   },
   "metrics": {
     "title": "Builder Metrics",
     "description": "A few numbers that show the work behind the work.",
     "items": [
-      { "value": "74+", "label": "Public Repositories" },
-      { "value": "1200+", "label": "Contributions" },
-      { "value": "Open Source", "label": "Contributor" }
+      {
+        "value": "74+",
+        "label": "Public Repositories"
+      },
+      {
+        "value": "1200+",
+        "label": "Contributions"
+      },
+      {
+        "value": "Open Source",
+        "label": "Contributor"
+      },
+      {
+        "value": "5",
+        "label": "GitHub Badges"
+      }
     ]
   },
   "journey": {
@@ -293,9 +398,31 @@
     "title": "Tech Stack",
     "description": "The tools I reach for, kept simple.",
     "groups": [
-      { "title": "Frontend", "items": ["React.js", "Next.js", "TypeScript", "Tailwind CSS"] },
-      { "title": "Backend", "items": ["Node.js", "Express.js", "Python"] },
-      { "title": "Tools", "items": ["Git", "GitHub", "REST APIs"] }
+      {
+        "title": "Frontend",
+        "items": [
+          "React.js",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS"
+        ]
+      },
+      {
+        "title": "Backend",
+        "items": [
+          "Node.js",
+          "Express.js",
+          "Python"
+        ]
+      },
+      {
+        "title": "Tools",
+        "items": [
+          "Git",
+          "GitHub",
+          "REST APIs"
+        ]
+      }
     ]
   },
   "socials": {
@@ -310,7 +437,10 @@
     "name": "Ayush Nandi",
     "role": "Full Stack Developer & AI Builder",
     "stackLine": "React.js • Next.js • Python",
-    "lines": ["Open Source Contributor", "Founder @ AUX Studio"],
+    "lines": [
+      "Open Source Contributor",
+      "Founder @ AUX Studio"
+    ],
     "location": "Alipurduar, West Bengal, India"
   },
   "contact": {
