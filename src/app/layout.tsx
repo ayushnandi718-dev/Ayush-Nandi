@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Unbounded } from "next/font/google";
 import "./globals.css";
 import { config } from "@/data/config";
+import { content } from "@/data/content";
 
 import SiteFrame from "@/components/site-frame";
 import { Providers } from "@/components/providers";
@@ -55,8 +56,8 @@ export const metadata: Metadata = {
     title: config.title,
     description: config.description.short,
     images: [config.ogImg],
-    creator: "@iitwalabanda123",
-    site: "@iitwalabanda123",
+    creator: content.seo.twitterHandle,
+    site: content.seo.twitterHandle,
   },
   robots: {
     index: true,
@@ -81,7 +82,7 @@ const jsonLd = {
   "@type": "Person",
   name: config.author,
   url: config.site,
-  jobTitle: "Digital Creator & Web Developer",
+  jobTitle: content.seo.jobTitle,
   description: config.description.short,
   email: config.email,
   address: {
@@ -90,8 +91,8 @@ const jsonLd = {
     addressRegion: "West Bengal",
     addressCountry: "IN",
   },
-  sameAs: [config.social.github, config.social.linkedin, config.social.instagram, config.social.twitter],
-  knowsAbout: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Web Development", "Motion Graphics", "Creative Branding"],
+  sameAs: Object.values(content.socials),
+  knowsAbout: content.techStack.groups.flatMap((group) => group.items),
 };
 
 export default function RootLayout({

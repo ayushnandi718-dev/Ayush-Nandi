@@ -38,7 +38,7 @@
     "greeting": "Hi, I am",
     "name": "Ayush Nandi",
     "role": "Full Stack Developer & AI Builder",
-    "tagline": "",
+    "tagline": "A Digital Creator & Web Developer",
     "description": [
       "Building scalable web applications,",
       "AI-powered products,",
@@ -49,22 +49,10 @@
       "🌱 Open Source Contributor",
       "🚀 Founder @ AUX Studio"
     ],
+    "auxStudioUrl": "https://auxstudio.dpdns.org",
     "ctas": [
-      {
-        "label": "View Projects",
-        "href": "#projects",
-        "variant": "primary"
-      },
-      {
-        "label": "GitHub",
-        "href": "https://github.com/ayushnandi718-dev",
-        "variant": "github"
-      },
-      {
-        "label": "LinkedIn",
-        "href": "https://www.linkedin.com/in/ayush-nandi-apdj-india/",
-        "variant": "linkedin"
-      }
+      { "label": "GitHub", "href": "https://github.com/ayushnandi718-dev", "variant": "github" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/ayush-nandi-apdj-india/", "variant": "linkedin" }
     ]
   },
   "featuredProjects": {
@@ -76,11 +64,7 @@
         "icon": "🚀",
         "title": "Bilvo",
         "summary": "A modern platform focused on performance, scalability, and user experience.",
-        "tech": [
-          "Next.js",
-          "TypeScript",
-          "PostgreSQL"
-        ],
+        "tech": ["Next.js", "TypeScript", "PostgreSQL"],
         "caseStudy": {
           "problem": "Products need to stay fast and reliable as they grow.",
           "solution": "A modern platform built with Next.js, TypeScript, and PostgreSQL.",
@@ -93,11 +77,7 @@
         "icon": "🤖",
         "title": "AURA Hub",
         "summary": "AI-powered ecosystem for productivity and automation.",
-        "tech": [
-          "React",
-          "AI APIs",
-          "Node.js"
-        ],
+        "tech": ["React", "AI APIs", "Node.js"],
         "caseStudy": {
           "problem": "Productivity and automation tools are scattered across too many places.",
           "solution": "An AI-powered ecosystem built with React, AI APIs, and Node.js.",
@@ -110,11 +90,7 @@
         "icon": "🏢",
         "title": "AUX Studio",
         "summary": "Digital products, automation, and AI tools built under one roof.",
-        "tech": [
-          "Product Design",
-          "Automation",
-          "AI"
-        ],
+        "tech": ["Product Design", "Automation", "AI"],
         "caseStudy": {
           "problem": "Good ideas often stall between concept, design, and shipping.",
           "solution": "A studio for building digital products and AI-powered automation end to end.",
@@ -124,47 +100,180 @@
       }
     ]
   },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "id": "orbitdine",
+        "category": "SaaS Platform",
+        "title": "OrbitDine",
+        "src": "/assets/projects-screenshots/orbitdine/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["react", "ts", "tailwind", "nextjs"],
+          "backend": []
+        },
+        "tagline": "A multi-tenant restaurant management SaaS with digital QR ordering, kitchen display, and analytics.",
+        "description": "OrbitDine is a full-featured restaurant management platform where multiple restaurant owners can manage their menus, staff, orders, and operations. Customers can browse restaurants by city/cuisine and place orders directly — all without a third-party aggregator.",
+        "featuresHeading": "Key Features",
+        "features": "Restaurant owner dashboard with menu management, staff management, order tracking, and analytics. Customer portal with digital menus, cart, order history, and profile management. Built with Next.js, Supabase, Firebase Auth, and Cloudinary for media management.",
+        "live": "https://orbitdine-red.vercel.app/",
+        "github": "https://github.com/ayushnandi718-dev/OrbitDine"
+      },
+      {
+        "id": "carbonmind",
+        "category": "AI Platform",
+        "title": "CarbonMind AI",
+        "src": "/assets/projects-screenshots/carbonmind/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["react", "ts", "tailwind", "nextjs"],
+          "backend": []
+        },
+        "tagline": "Track your carbon footprint, get AI-powered insights, and reduce your environmental impact.",
+        "description": "CarbonMind AI is a modern web application built with React, Next.js, TypeScript, and Tailwind CSS. It helps users understand and reduce their carbon footprint through intelligent tracking and AI-driven recommendations.",
+        "featuresHeading": "Key Features",
+        "features": "Real-time carbon footprint tracking with interactive dashboards, AI-powered suggestions for reducing emissions, and a clean modern UI built with Tailwind CSS. Open to contributions from the community.",
+        "live": "https://carbonmind-ai.vercel.app/",
+        "github": "https://github.com/ayushnandi718-dev/carbonmind-ai"
+      },
+      {
+        "id": "galaxy-gym",
+        "category": "Web Design",
+        "title": "Galaxy Gym Website",
+        "src": "/assets/projects-screenshots/galaxy-gym/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["html", "css", "js"],
+          "backend": []
+        },
+        "tagline": "A modern fitness website featuring sleek design and smooth interactions.",
+        "description": "A modern portfolio website featuring web development projects, creative designs, and digital creations. Built with clean HTML, CSS, and JavaScript for a responsive, engaging user experience.",
+        "featuresHeading": "Design Focus",
+        "features": "Focused on modern UI/UX principles with responsive layouts, smooth animations, and a dark-themed aesthetic that fits the fitness brand identity.",
+        "live": "https://galaxy-gym-website.vercel.app",
+        "github": "https://github.com/ayushnandi718-dev/galaxy-gym-website"
+      },
+      {
+        "id": "royal-cravings",
+        "category": "Food Website",
+        "title": "Royal Cravings",
+        "src": "/assets/projects-screenshots/royal-cravings/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["html", "css", "js"],
+          "backend": []
+        },
+        "tagline": "A full food delivery landing page with cart system, menu, reviews & newsletter.",
+        "description": "Royal Cravings (RCB) is a beautifully designed food delivery landing page featuring a complete cart system, menu browsing, customer reviews, and newsletter signup — all in one royal experience.",
+        "featuresHeading": "Features",
+        "features": "Interactive menu with item cards, functional cart system with add/remove capabilities, customer review section, and a newsletter subscription form. Responsive design that works across all devices.",
+        "live": "https://ayushnandi718-dev.github.io/FOOD-WEBSITE/",
+        "github": "https://github.com/ayushnandi718-dev/FOOD-WEBSITE"
+      },
+      {
+        "id": "todo-list",
+        "category": "Productivity App",
+        "title": "To-Do List App",
+        "src": "/assets/projects-screenshots/todo-list/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["html", "css", "js"],
+          "backend": []
+        },
+        "tagline": "A clean task manager to add, check off and delete tasks with minimal UI.",
+        "description": "A clean and minimal task manager built with pure HTML, CSS, and JavaScript. Add tasks, mark them complete, and delete them with smooth interactions.",
+        "featuresHeading": "Design Philosophy",
+        "features": "Minimal UI with smooth interactions. Focused on usability and clean code — no frameworks, just pure HTML, CSS, and JavaScript.",
+        "live": "https://ayushnandi718-dev.github.io/TO-DO-LIST/",
+        "github": "https://github.com/ayushnandi718-dev/TO-DO-LIST"
+      },
+      {
+        "id": "cake-website",
+        "category": "Demo App",
+        "title": "Cake Selling Website",
+        "src": "/assets/projects-screenshots/cake-website/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["html", "css", "js"],
+          "backend": []
+        },
+        "tagline": "A beautifully designed cake shop website with elegant visuals and smooth animations.",
+        "description": "A beautifully designed cake shop website featuring elegant visuals, smooth animations, and a modern responsive layout. Crafted using HTML, CSS, and JavaScript for a delightful user experience.",
+        "featuresHeading": "Visual Design",
+        "features": "Elegant color palette, smooth scroll animations, and responsive product cards that showcase the cakes beautifully across all screen sizes.",
+        "live": "https://ayushnandi718-dev.github.io/Cake-Website-Demo/",
+        "github": "https://github.com/ayushnandi718-dev/Cake-Website-Demo"
+      },
+      {
+        "id": "school-album",
+        "category": "Album Website",
+        "title": "School Album Website",
+        "src": "/assets/projects-screenshots/school-album/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["react", "vite", "gsap", "js", "css"],
+          "backend": []
+        },
+        "tagline": "Celebrate growth, honor friendships, and preserve school memories.",
+        "description": "A nostalgic school album website that celebrates growth, honors friendships, and preserves the legacy of school life. Each image and caption marks a moment in time — brotherhood, laughs, mischief, and shared glory.",
+        "featuresHeading": "Sentimental Design",
+        "features": "Built with React and Vite, animated with GSAP, and featuring an interactive 3D dome gallery, an auto-scrolling circular timeline, and a cinematic autoplay soundtrack. A heartfelt tribute to school memories with a warm nostalgic feel throughout.",
+        "live": "https://school-nostalgic.vercel.app",
+        "github": "https://github.com/ayushnandi718-dev/SCHOOL-NOSTALGIC-"
+      },
+      {
+        "id": "youtube-bookmarker",
+        "category": "Browser Extension",
+        "title": "YouTube Bookmarker",
+        "src": "/assets/projects-screenshots/youtube-bookmarker/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["js", "html", "css", "chrome"],
+          "backend": []
+        },
+        "tagline": "Bookmark, edit, and instantly jump between your favorite timestamps on any YouTube video.",
+        "description": "A cross-browser Chrome extension (Manifest V3) that adds a bookmark button to the YouTube player, saves the current timestamp, and lets you manage every bookmark from a clean dark-mode popup.",
+        "featuresHeading": "Key Features",
+        "features": "One-click timestamp bookmarking with a centered confirmation popup, edit and rename bookmarks, click-to-seek navigation, keyboard shortcut (Ctrl+Shift+B), video title and thumbnail preview, and JSON export/import. Built with Manifest V3 for Chrome, Edge, Brave, Opera, and Firefox.",
+        "live": "#",
+        "github": "https://github.com/ayushnandi718-dev/youtube-bookmarker"
+      },
+      {
+        "id": "study-buddy",
+        "category": "Browser Extension",
+        "title": "Study Buddy",
+        "src": "/assets/projects-screenshots/study-buddy/landing.png",
+        "screenshots": ["landing.png"],
+        "skills": {
+          "frontend": ["js", "html", "css", "chrome"],
+          "backend": []
+        },
+        "tagline": "A research workspace for students — citations, flashcards, highlights and tab management in one local-first extension.",
+        "description": "Study Buddy turns any page into a research hub. Right-click any website to save it as a source, cite it in MLA/APA/BibTeX, highlight key text, and turn notes into spaced-repetition flashcards — all stored privately on-device.",
+        "featuresHeading": "Key Features",
+        "features": "One-click citation generation, context-menu saving, spaced-repetition review sessions, project-based organization, full-text search, reading list with due tracking, JSON export/import backup, and keyboard shortcuts. Built with Manifest V3 for Chrome, Edge, Brave, Opera, and Firefox — fully local-first, nothing leaves the browser.",
+        "live": "#",
+        "github": "https://github.com/ayushnandi718-dev/study-buddy"
+      }
+    ]
+  },
   "building": {
     "title": "What I'm Building Now",
     "description": "A live look at what's on my desk right now.",
     "items": [
-      {
-        "icon": "🚀",
-        "title": "Bilvo",
-        "detail": "Modern platform for performance and scale"
-      },
-      {
-        "icon": "🤖",
-        "title": "AURA Hub",
-        "detail": "AI ecosystem for productivity and automation"
-      },
-      {
-        "icon": "⚡",
-        "title": "New Experiments",
-        "detail": "Fresh ideas, prototypes, and things I'm learning in public"
-      }
+      { "icon": "🚀", "title": "Bilvo", "detail": "Modern platform for performance and scale" },
+      { "icon": "🤖", "title": "AURA Hub", "detail": "AI ecosystem for productivity and automation" },
+      { "icon": "⚡", "title": "New Experiments", "detail": "Fresh ideas, prototypes, and things I'm learning in public" }
     ]
   },
   "metrics": {
     "title": "Builder Metrics",
     "description": "A few numbers that show the work behind the work.",
     "items": [
-      {
-        "value": "74+",
-        "label": "Public Repositories"
-      },
-      {
-        "value": "1200+",
-        "label": "Contributions"
-      },
-      {
-        "value": "Open Source",
-        "label": "Contributor"
-      },
-      {
-        "value": "5",
-        "label": "Git Badges"
-      }
+      { "value": "74+", "label": "Public Repositories" },
+      { "value": "1200+", "label": "Contributions" },
+      { "value": "Open Source", "label": "Contributor" }
     ]
   },
   "journey": {
@@ -184,31 +293,9 @@
     "title": "Tech Stack",
     "description": "The tools I reach for, kept simple.",
     "groups": [
-      {
-        "title": "Frontend",
-        "items": [
-          "React.js",
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS"
-        ]
-      },
-      {
-        "title": "Backend",
-        "items": [
-          "Node.js",
-          "Express.js",
-          "Python"
-        ]
-      },
-      {
-        "title": "Tools",
-        "items": [
-          "Git",
-          "GitHub",
-          "REST APIs"
-        ]
-      }
+      { "title": "Frontend", "items": ["React.js", "Next.js", "TypeScript", "Tailwind CSS"] },
+      { "title": "Backend", "items": ["Node.js", "Express.js", "Python"] },
+      { "title": "Tools", "items": ["Git", "GitHub", "REST APIs"] }
     ]
   },
   "socials": {
@@ -223,10 +310,7 @@
     "name": "Ayush Nandi",
     "role": "Full Stack Developer & AI Builder",
     "stackLine": "React.js • Next.js • Python",
-    "lines": [
-      "Open Source Contributor",
-      "Founder @ AUX Studio"
-    ],
+    "lines": ["Open Source Contributor", "Founder @ AUX Studio"],
     "location": "Alipurduar, West Bengal, India"
   },
   "contact": {

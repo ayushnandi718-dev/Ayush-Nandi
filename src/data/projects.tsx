@@ -1,10 +1,11 @@
-import SlideShow from "@/components/slide-show";
 import { Button } from "@/components/ui/button";
 import { TypographyH3, TypographyP } from "@/components/ui/typography";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVite, SiGreensock, SiGooglechrome } from "react-icons/si";
+
+import content, { type PortfolioProject, type ProjectSkillKey } from "@/data/content";
 
 const BASE_PATH = "/assets/projects-screenshots";
 
@@ -22,7 +23,7 @@ const brand = (title: string, icon: ReactNode): Skill => ({
   icon,
 });
 
-const PROJECT_SKILLS = {
+const PROJECT_SKILLS: Record<ProjectSkillKey, Skill> = {
   html: brand("HTML", <SiHtml5 />),
   css: brand("CSS", <SiCss3 />),
   js: brand("JavaScript", <SiJavascript />),
@@ -34,6 +35,9 @@ const PROJECT_SKILLS = {
   gsap: brand("GSAP", <SiGreensock />),
   chrome: brand("Chrome", <SiGooglechrome />),
 };
+
+const skillsFromKeys = (keys: ProjectSkillKey[] = []): Skill[] =>
+  keys.map((key) => PROJECT_SKILLS[key]).filter((skill): skill is Skill => Boolean(skill));
 
 const ProjectsLinks = ({ live, repo }: { live?: string; repo?: string }) => {
   return (
@@ -65,325 +69,40 @@ export type Project = {
   src: string;
   screenshots: string[];
   skills: { frontend: Skill[]; backend: Skill[] };
-  content: React.ReactNode | any;
+  content: ReactNode;
   github?: string;
   live: string;
 };
 
-const projects: Project[] = [
-  {
-    id: "orbitdine",
-    category: "SaaS Platform",
-    title: "OrbitDine",
-    src: `${BASE_PATH}/orbitdine/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.nextjs,
-      ],
-      backend: [],
-    },
-    live: "https://orbitdine-red.vercel.app/",
-    github: "https://github.com/ayushnandi718-dev/OrbitDine",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            A multi-tenant restaurant management SaaS with digital QR ordering, kitchen display, and analytics.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            OrbitDine is a full-featured restaurant management platform where multiple restaurant owners can manage their menus, staff, orders, and operations. Customers can browse restaurants by city/cuisine and place orders directly — all without a third-party aggregator.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-          <p className="font-mono mb-2">
-            Restaurant owner dashboard with menu management, staff management, order tracking, and analytics. Customer portal with digital menus, cart, order history, and profile management. Built with Next.js, Supabase, Firebase Auth, and Cloudinary for media management.
-          </p>
-        </div>
-      );
-    },
+const buildProject = (item: PortfolioProject): Project => ({
+  id: item.id,
+  category: item.category,
+  title: item.title,
+  src: item.src || `${BASE_PATH}/${item.id}/landing.png`,
+  screenshots: item.screenshots?.length ? item.screenshots : ["landing.png"],
+  skills: {
+    frontend: skillsFromKeys(item.skills?.frontend),
+    backend: skillsFromKeys(item.skills?.backend),
   },
+  live: item.live || "#",
+  github: item.github || "",
+  get content() {
+    return (
+      <div>
+        <TypographyP className="font-mono text-2xl text-center">
+          {item.tagline}
+        </TypographyP>
+        <TypographyP className="font-mono">
+          {item.description}
+        </TypographyP>
+        <ProjectsLinks live={item.live} repo={item.github} />
+        <TypographyH3 className="my-4 mt-8">{item.featuresHeading}</TypographyH3>
+        <p className="font-mono mb-2">{item.features}</p>
+      </div>
+    );
+  },
+});
 
-  {
-    id: "carbonmind",
-    category: "AI Platform",
-    title: "CarbonMind AI",
-    src: `${BASE_PATH}/carbonmind/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.nextjs,
-      ],
-      backend: [],
-    },
-    live: "https://carbonmind-ai.vercel.app/",
-    github: "https://github.com/ayushnandi718-dev/carbonmind-ai",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            Track your carbon footprint, get AI-powered insights, and reduce your environmental impact.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            CarbonMind AI is a modern web application built with React, Next.js, TypeScript, and Tailwind CSS. It helps users understand and reduce their carbon footprint through intelligent tracking and AI-driven recommendations.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-          <p className="font-mono mb-2">
-            Real-time carbon footprint tracking with interactive dashboards, AI-powered suggestions for reducing emissions, and a clean modern UI built with Tailwind CSS. Open to contributions from the community.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "galaxy-gym",
-    category: "Web Design",
-    title: "Galaxy Gym Website",
-    src: `${BASE_PATH}/galaxy-gym/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.js,
-      ],
-      backend: [],
-    },
-    live: "https://galaxy-gym-website.vercel.app",
-    github: "https://github.com/ayushnandi718-dev/galaxy-gym-website",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            A modern fitness website featuring sleek design and smooth interactions.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            A modern portfolio website featuring web development projects, creative designs, and digital creations. Built with clean HTML, CSS, and JavaScript for a responsive, engaging user experience.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Design Focus</TypographyH3>
-          <p className="font-mono mb-2">
-            Focused on modern UI/UX principles with responsive layouts, smooth animations, and a dark-themed aesthetic that fits the fitness brand identity.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "royal-cravings",
-    category: "Food Website",
-    title: "Royal Cravings",
-    src: `${BASE_PATH}/royal-cravings/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.js,
-      ],
-      backend: [],
-    },
-    live: "https://ayushnandi718-dev.github.io/FOOD-WEBSITE/",
-    github: "https://github.com/ayushnandi718-dev/FOOD-WEBSITE",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            A full food delivery landing page with cart system, menu, reviews & newsletter.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            Royal Cravings (RCB) is a beautifully designed food delivery landing page featuring a complete cart system, menu browsing, customer reviews, and newsletter signup — all in one royal experience.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
-          <p className="font-mono mb-2">
-            Interactive menu with item cards, functional cart system with add/remove capabilities, customer review section, and a newsletter subscription form. Responsive design that works across all devices.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "todo-list",
-    category: "Productivity App",
-    title: "To-Do List App",
-    src: `${BASE_PATH}/todo-list/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.js,
-      ],
-      backend: [],
-    },
-    live: "https://ayushnandi718-dev.github.io/TO-DO-LIST/",
-    github: "https://github.com/ayushnandi718-dev/TO-DO-LIST",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            A clean task manager to add, check off and delete tasks with minimal UI.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            A clean and minimal task manager built with pure HTML, CSS, and JavaScript. Add tasks, mark them complete, and delete them with smooth interactions.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Design Philosophy</TypographyH3>
-          <p className="font-mono mb-2">
-            Minimal UI with smooth interactions. Focused on usability and clean code — no frameworks, just pure HTML, CSS, and JavaScript.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "cake-website",
-    category: "Demo App",
-    title: "Cake Selling Website",
-    src: `${BASE_PATH}/cake-website/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.js,
-      ],
-      backend: [],
-    },
-    live: "https://ayushnandi718-dev.github.io/Cake-Website-Demo/",
-    github: "https://github.com/ayushnandi718-dev/Cake-Website-Demo",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            A beautifully designed cake shop website with elegant visuals and smooth animations.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            A beautifully designed cake shop website featuring elegant visuals, smooth animations, and a modern responsive layout. Crafted using HTML, CSS, and JavaScript for a delightful user experience.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Visual Design</TypographyH3>
-          <p className="font-mono mb-2">
-            Elegant color palette, smooth scroll animations, and responsive product cards that showcase the cakes beautifully across all screen sizes.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "school-album",
-    category: "Album Website",
-    title: "School Album Website",
-    src: `${BASE_PATH}/school-album/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.vite,
-        PROJECT_SKILLS.gsap,
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.css,
-      ],
-      backend: [],
-    },
-    live: "https://school-nostalgic.vercel.app",
-    github: "https://github.com/ayushnandi718-dev/SCHOOL-NOSTALGIC-",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            Celebrate growth, honor friendships, and preserve school memories.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            A nostalgic school album website that celebrates growth, honors friendships, and preserves the legacy of school life. Each image and caption marks a moment in time — brotherhood, laughs, mischief, and shared glory.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Sentimental Design</TypographyH3>
-          <p className="font-mono mb-2">
-            Built with React and Vite, animated with GSAP, and featuring an interactive 3D dome gallery, an auto-scrolling circular timeline, and a cinematic autoplay soundtrack. A heartfelt tribute to school memories with a warm nostalgic feel throughout.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "youtube-bookmarker",
-    category: "Browser Extension",
-    title: "YouTube Bookmarker",
-    src: `${BASE_PATH}/youtube-bookmarker/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.chrome,
-      ],
-      backend: [],
-    },
-    live: "#",
-    github: "https://github.com/ayushnandi718-dev/youtube-bookmarker",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            Bookmark, edit, and instantly jump between your favorite timestamps on any YouTube video.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            A cross-browser Chrome extension (Manifest V3) that adds a bookmark button to the YouTube player, saves the current timestamp, and lets you manage every bookmark from a clean dark-mode popup.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-          <p className="font-mono mb-2">
-            One-click timestamp bookmarking with a centered confirmation popup, edit and rename bookmarks, click-to-seek navigation, keyboard shortcut (Ctrl+Shift+B), video title and thumbnail preview, and JSON export/import. Built with Manifest V3 for Chrome, Edge, Brave, Opera, and Firefox.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "study-buddy",
-    category: "Browser Extension",
-    title: "Study Buddy",
-    src: `${BASE_PATH}/study-buddy/landing.png`,
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.chrome,
-      ],
-      backend: [],
-    },
-    live: "#",
-    github: "https://github.com/ayushnandi718-dev/study-buddy",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            A research workspace for students — citations, flashcards, highlights and tab management in one local-first extension.
-          </TypographyP>
-          <TypographyP className="font-mono">
-            Study Buddy turns any page into a research hub. Right-click any website to save it as a source, cite it in MLA/APA/BibTeX, highlight key text, and turn notes into spaced-repetition flashcards — all stored privately on-device.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
-          <p className="font-mono mb-2">
-            One-click citation generation, context-menu saving, spaced-repetition review sessions, project-based organization, full-text search, reading list with due tracking, JSON export/import backup, and keyboard shortcuts. Built with Manifest V3 for Chrome, Edge, Brave, Opera, and Firefox — fully local-first, nothing leaves the browser.
-          </p>
-        </div>
-      );
-    },
-  },
-];
+const projects: Project[] = content.projects.items.map(buildProject);
 
 export default projects;

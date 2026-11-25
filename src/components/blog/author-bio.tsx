@@ -13,7 +13,7 @@ export function AuthorBio() {
     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 border border-border/50 rounded-2xl p-6 bg-card/20 backdrop-blur-sm">
       <div className="w-16 h-16 rounded-full shrink-0 overflow-hidden border-2 border-[hsl(20,100%,70%)]/30 bg-gradient-to-br from-[hsl(20,100%,70%)] to-[hsl(20,100%,40%)]">
         <Image
-          src="/assets/me.jpg"
+          src="/assets/meeee.jpg"
           alt="Ayush Nandi"
           width={64}
           height={64}

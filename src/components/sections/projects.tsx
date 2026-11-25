@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useEffect, useRef } from "react";
 import {
   ResponsiveDialog,
@@ -14,6 +14,7 @@ import { ArrowUpRight, Keyboard } from "lucide-react";
 import { motion } from "motion/react";
 
 import projects, { Project } from "@/data/projects";
+import { content } from "@/data/content";
 import { config } from "@/data/config";
 import { SectionHeader } from "./section-header";
 
@@ -57,7 +58,7 @@ const ProjectsSection = () => {
     <SectionWrapper id="projects" className="max-w-7xl mx-auto md:min-h-[130vh] px-4">
       <NyanCat />
       <div className="relative">
-        <SectionHeader id="projects" title="Projects" />
+        <SectionHeader id="projects" title={content.projects.title} />
         <Link
           href={config.githubReposUrl}
           target="_blank"
